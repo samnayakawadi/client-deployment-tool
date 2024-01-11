@@ -160,3 +160,42 @@ export const getClient = async (req, res) => {
     }
 
 }
+
+export const getClients = async (req, res) => {
+    try {
+        const allClients = await clientsCollection.find()
+
+        res.status(200).json({
+            status: "OK",
+            message: "Retrieved All Clients",
+            data: allClients
+        })
+    } catch (error) {
+        res.status(500).json({
+            status: "INTERNALSERVERERROR",
+            message: error
+        })
+    }
+}
+
+export const deleteClient = async (req, res) => {
+
+    const { clientId } = req.query
+
+    const dbClient = await clientsCollection.findOne({ _id: clientId })
+
+    if (dbClient) {
+
+        await clientsCollection.deleteOne()
+
+        res.status(200).json({
+            status: "OK",
+            message: "Client Deleted",
+        })
+    } else {
+        res.status(404).json({
+            status: "OK",
+            message: "Client Not Found",
+        })
+    }
+}
