@@ -10,7 +10,7 @@ export const connectDatabase = () => {
     const mongodbURI = `mongodb://${DB_USERNAME}:${DB_PASSWORD}@${DB_CLUSTERNAME}?authSource=${DB_DATABASENAME}`
 
     mongoose.connect(mongodbURI).then(res => {
-        console.log("MongoDB Connection Successfully")
+        console.log("MongoDB Connection Successful")
     }).catch(error => {
         console.log("MongoDB Connection Failed", error)
     })

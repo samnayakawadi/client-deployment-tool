@@ -2,6 +2,75 @@ import { clientsCollection } from "../model/clients.js"
 
 export const addClient = async (req, res) => {
 
+    const dataToAdd = fillDataHandler(req.body)
+
+    try {
+
+        const clientAdded = await clientsCollection.create(dataToAdd)
+
+        if (clientAdded) {
+            res.json({
+                status: "OK",
+                message: "Client Added",
+                data: clientAdded
+            })
+        }
+        else {
+            res.json({
+                status: "NOTOK",
+                message: "Client Addition Failed",
+            })
+        }
+
+    } catch (error) {
+        res.status(500).json({
+            status: "INTERNALSERVERERROR",
+            message: error
+        })
+    }
+}
+
+export const updateClient = async (req, res) => {
+
+    const { clientId } = req.query
+
+    try {
+        const isClientPresent = await clientsCollection.findOne({ _id: clientId })
+
+        if (isClientPresent) {
+
+            const dataToUpdate = fillDataHandler(req.body)
+
+            const updatedClient = await clientsCollection.findOneAndUpdate(
+                { _id: clientId },
+                { $set: dataToUpdate },
+                { new: true }
+            );
+
+            res.json({
+                status: "OK",
+                message: "Client Updated",
+                data: updatedClient
+            })
+
+        }
+        else {
+            res.status(404).json({
+                status: "NOTFOUND",
+                message: "Client Not Found"
+            })
+        }
+
+    } catch (error) {
+        res.status(500).json({
+            status: "INTERNALSERVERERROR",
+            message: error
+        })
+    }
+}
+
+const fillDataHandler = (body) => {
+
     const {
         clientName,
         realm,
@@ -19,11 +88,11 @@ export const addClient = async (req, res) => {
         userActivity,
         waitingTime,
         autoClose
-    } = req.body
+    } = body
 
     const quizDelivery = delivery
 
-    const clientAdded = await clientsCollection.create({
+    const dataToUpdate = {
         clientName,
         realm,
         "auth-server-url": authServerUrl,
@@ -59,11 +128,7 @@ export const addClient = async (req, res) => {
         },
         waitingTime,
         autoClose
-    })
+    }
 
-    res.json({
-        status: "OK",
-        message: "Client Added",
-        data: clientAdded
-    })
+    return dataToUpdate
 }
