@@ -132,3 +132,31 @@ const fillDataHandler = (body) => {
 
     return dataToUpdate
 }
+
+export const getClient = async (req, res) => {
+    const { clientId } = req.query
+
+    try {
+
+        const dbClient = await clientsCollection.findOne({ _id: clientId })
+
+        if (dbClient) {
+            res.status(200).json({
+                status: "OK",
+                message: "Client Details Fetched",
+                data: dbClient
+            })
+        } else {
+            res.status(404).json({
+                status: "OK",
+                message: "Client Not Found",
+            })
+        }
+    } catch (error) {
+        res.status(500).json({
+            status: "INTERNALSERVERERROR",
+            message: error
+        })
+    }
+
+}
