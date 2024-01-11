@@ -1,4 +1,5 @@
 import { clientsCollection } from "../model/clients.js"
+import fs from "fs"
 
 export const addClient = async (req, res) => {
 
@@ -196,6 +197,37 @@ export const deleteClient = async (req, res) => {
         res.status(404).json({
             status: "OK",
             message: "Client Not Found",
+        })
+    }
+}
+
+export const generateJSON = async (req, res) => {
+    const { clientId } = req.query
+
+    try {
+
+        const dbClient = await clientsCollection.findOne({ _id: clientId })
+
+        if (dbClient) {
+
+            // Adds indentation
+            const jsonString = JSON.stringify(dbClient, null, 2)
+
+            res.setHeader("Content-Type", "application/json")
+            res.setHeader("Content-Disposition", "attachment; filename=data.json")
+
+            res.send(jsonString)
+
+        } else {
+            res.status(404).json({
+                status: "OK",
+                message: "Client Not Found",
+            })
+        }
+    } catch (error) {
+        res.status(500).json({
+            status: "INTERNALSERVERERROR",
+            message: error
         })
     }
 }

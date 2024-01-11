@@ -1,5 +1,5 @@
 import express from "express"
-import { addClient, deleteClient, getClient, getClients, updateClient } from "../controller/clients.js"
+import { addClient, deleteClient, generateJSON, getClient, getClients, updateClient } from "../controller/clients.js"
 
 const clientsRouter = express.Router()
 
@@ -8,5 +8,6 @@ clientsRouter.put("/update", updateClient)
 clientsRouter.get("/get", getClient)
 clientsRouter.get("/getAll", getClients)
 clientsRouter.delete("/delete", deleteClient)
+clientsRouter.get("/generate", generateJSON)
 
 export { clientsRouter }
