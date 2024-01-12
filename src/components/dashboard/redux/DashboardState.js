@@ -3,6 +3,10 @@ export const dashboardState = {
         addNewClient: {
             clientName: undefined,
             isChecked: false
+        },
+        deleteClient: {
+            clientId: null,
+            isChecked: false
         }
     },
     clientsList: []

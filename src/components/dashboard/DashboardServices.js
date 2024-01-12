@@ -13,7 +13,7 @@ const DashboardServices = () => {
                 withCredentials: true
             })
             const clientData = response.data.data
-            toast.success("Client Created")
+            // toast.success("Client Created")
             return clientData;
         } catch (error) {
             toast.error("Client Creation Failed" + error.response)
@@ -29,7 +29,7 @@ const DashboardServices = () => {
                 withCredentials: true
             })
             const clients = response.data.data
-            toast.success("All Clients Fetched")
+            // toast.success("All Clients Fetched")
             return clients;
         } catch (error) {
             toast.error("Clients Fetching Failed" + error.response)
@@ -38,9 +38,25 @@ const DashboardServices = () => {
 
     }
 
+    const deleteClient = async (clientId) => {
+
+        try {
+            await axios.delete(globalState.servers.main + "/clients/delete?clientId=" + clientId, {
+                withCredentials: true
+            })
+            // toast.success("Client Deleted")
+            return true;
+        } catch (error) {
+            toast.error("Client Deletion Failed" + error.response)
+            return null;
+        }
+
+    }
+
     const dashboardServices = {
         addNewClient,
-        getAllClients
+        getAllClients,
+        deleteClient
     }
 
     return dashboardServices

@@ -10,5 +10,13 @@ export const dashboardReducers = {
     },
     pushClientToAllClients: (prevState, actions) => {
         prevState.clientsList.push(actions.payload)
-    }
+    },
+    deleteClientFromAllClients: (prevState, actions) => {
+        // actions.payload = item index
+        prevState.clientsList.splice(actions.payload, 1)
+    },
+    toggleDeleteClient: (prevState, actions) => {
+        prevState.modals.deleteClient.clientId = actions.payload
+        prevState.modals.deleteClient.isChecked = !prevState.modals.deleteClient.isChecked
+    },
 }

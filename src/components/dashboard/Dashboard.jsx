@@ -3,6 +3,7 @@ import planning from "./images/planning.png"
 import AddNewClient from "./modals/AddNewClient"
 import DashboardHandlers from "./DashboardHandlers"
 import { useSelector } from "react-redux"
+import DeleteClientConfirmation from "./modals/DeleteClientConfirmation"
 
 // eslint-disable-next-line react/prop-types
 const Dashboard = () => {
@@ -34,7 +35,7 @@ const Dashboard = () => {
                                 <button className={`btn btn-block btn-md btn-info text-black normal-case no-animation rounded-sm`} >View</button>
                                 <button className={`btn btn-block btn-md btn-success text-black normal-case no-animation rounded-sm`} >Download</button>
                                 <button className={`btn btn-block btn-md btn-warning text-black normal-case no-animation rounded-sm`} >Edit</button>
-                                <button className={`btn btn-block btn-md btn-accent text-black normal-case no-animation rounded-sm`} >Delete</button>
+                                <button className={`btn btn-block btn-md btn-accent text-black normal-case no-animation rounded-sm`} onClick={() => { dashboardHandlers.toggleDeleteClientHandler(singleClient._id) }}>Delete</button>
                             </div>
                         </div>
                     )
@@ -45,6 +46,7 @@ const Dashboard = () => {
                 No Clients Found. Add New Client
             </div>}
             <AddNewClient />
+            <DeleteClientConfirmation />
         </div>
     )
 }
