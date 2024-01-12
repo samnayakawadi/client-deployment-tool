@@ -18,14 +18,27 @@ const DashboardHandlers = () => {
     }
 
     const addNewClientHandler = async () => {
-        const clientId = await dashboardServices.addNewClient(clientName)
+        const clientData = await dashboardServices.addNewClient(clientName)
         dispatch(dashboardActions.toggleAddNewClient())
+        dispatch(dashboardActions.pushClientToAllClients(clientData))
+    }
+
+    const getAllClientsHandler = async () => {
+        const allClients = await dashboardServices.getAllClients()
+
+        if (allClients !== null) {
+            dispatch(dashboardActions.storeAllClients(allClients))
+        } else {
+            dispatch(dashboardActions.storeAllClients([]))
+        }
+
     }
 
     const dashboardHandlers = {
         toggleAddNewClientHandler,
         updateClientNameHandler,
-        addNewClientHandler
+        addNewClientHandler,
+        getAllClientsHandler
     }
 
     return dashboardHandlers

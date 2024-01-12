@@ -4,5 +4,11 @@ export const dashboardReducers = {
     },
     updateClientName: (prevState, actions) => {
         prevState.modals.addNewClient.clientName = actions.payload
+    },
+    storeAllClients: (prevState, actions) => {
+        prevState.clientsList = actions.payload
+    },
+    pushClientToAllClients: (prevState, actions) => {
+        prevState.clientsList.push(actions.payload)
     }
 }

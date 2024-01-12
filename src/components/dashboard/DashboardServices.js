@@ -12,9 +12,9 @@ const DashboardServices = () => {
             const response = await axios.post(globalState.servers.main + "/clients/add?clientName=" + clientName, {}, {
                 withCredentials: true
             })
-            const clientId = response.data.data.clientId
+            const clientData = response.data.data
             toast.success("Client Created")
-            return clientId;
+            return clientData;
         } catch (error) {
             toast.error("Client Creation Failed" + error.response)
             return null;
@@ -22,8 +22,25 @@ const DashboardServices = () => {
 
     }
 
+    const getAllClients = async () => {
+
+        try {
+            const response = await axios.get(globalState.servers.main + "/clients/getAll", {
+                withCredentials: true
+            })
+            const clients = response.data.data
+            toast.success("All Clients Fetched")
+            return clients;
+        } catch (error) {
+            toast.error("Clients Fetching Failed" + error.response)
+            return null;
+        }
+
+    }
+
     const dashboardServices = {
-        addNewClient
+        addNewClient,
+        getAllClients
     }
 
     return dashboardServices

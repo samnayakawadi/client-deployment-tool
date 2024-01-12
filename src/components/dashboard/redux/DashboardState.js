@@ -4,5 +4,6 @@ export const dashboardState = {
             clientName: undefined,
             isChecked: false
         }
-    }
+    },
+    clientsList: []
 }
