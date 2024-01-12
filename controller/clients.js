@@ -3,9 +3,11 @@ import { clientsCollection } from "../model/clients.js"
 
 export const addClient = async (req, res) => {
 
+    const { clientName } = req.query
+
     try {
 
-        const defaultJson = getDefaultJson(req.body.clientName)
+        const defaultJson = getDefaultJson(clientName)
 
         const clientAdded = await clientsCollection.create(defaultJson)
 
@@ -13,7 +15,10 @@ export const addClient = async (req, res) => {
             res.json({
                 status: "OK",
                 message: "Client Added",
-                data: clientAdded
+                data: {
+                    _id: clientAdded._id,
+                    clientName
+                }
             })
         }
         else {
