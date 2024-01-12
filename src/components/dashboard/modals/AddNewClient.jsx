@@ -7,13 +7,15 @@ const AddNewClient = () => {
     const dashboardState = useSelector(prevState => prevState.dashboard)
     const dashboardHandlers = DashboardHandlers()
 
+    console.log("dashboardState", dashboardState)
+
     return (
         <div>
             <input type="checkbox" id="addNewClient" checked={dashboardState.modals.addNewClient.isChecked} className="modal-toggle" readOnly />
             <div className="modal">
                 <div className="modal-box p-3 flex flex-col gap-2">
 
-                    <input type="text" placeholder="Enter Client Name" className="input input-bordered input-success w-full focus:outline-none" />
+                    <input type="text" placeholder="Enter Client Name" className="input input-bordered input-success w-full focus:outline-none" onChange={dashboardHandlers.updateClientNameHandler} />
 
                     <div className="modal-action flex flex-row justify-center mt-0">
                         <div className="basis-6/12">

@@ -10,8 +10,13 @@ const DashboardHandlers = () => {
         dispatch(dashboardActions.toggleAddNewClient())
     }
 
+    const updateClientNameHandler = (e) => {
+        dispatch(dashboardActions.updateClientName(e.target.value))
+    }
+
     const dashboardHandlers = {
-        toggleAddNewClientHandler
+        toggleAddNewClientHandler,
+        updateClientNameHandler
     }
 
     return dashboardHandlers
