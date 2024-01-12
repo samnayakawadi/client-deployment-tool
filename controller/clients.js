@@ -1,13 +1,13 @@
+import { getDefaultJson } from "../handlers/client.js"
 import { clientsCollection } from "../model/clients.js"
-import fs from "fs"
 
 export const addClient = async (req, res) => {
 
-    const dataToAdd = fillDataHandler(req.body)
-
     try {
 
-        const clientAdded = await clientsCollection.create(dataToAdd)
+        const defaultJson = getDefaultJson(req.body.clientName)
+
+        const clientAdded = await clientsCollection.create(defaultJson)
 
         if (clientAdded) {
             res.json({
@@ -40,11 +40,9 @@ export const updateClient = async (req, res) => {
 
         if (isClientPresent) {
 
-            const dataToUpdate = fillDataHandler(req.body)
-
             const updatedClient = await clientsCollection.findOneAndUpdate(
                 { _id: clientId },
-                { $set: dataToUpdate },
+                { $set: req.body },
                 { new: true }
             );
 
@@ -68,70 +66,6 @@ export const updateClient = async (req, res) => {
             message: error
         })
     }
-}
-
-const fillDataHandler = (body) => {
-
-    const {
-        clientName,
-        realm,
-        authServerUrl,
-        resource,
-        questionAuthoring,
-        quizAuthoring,
-        delivery,
-        admin,
-        folderStructure,
-        courseUsers,
-        courseAuthor,
-        ngel,
-        logo,
-        userActivity,
-        waitingTime,
-        autoClose
-    } = body
-
-    const quizDelivery = delivery
-
-    const dataToUpdate = {
-        clientName,
-        realm,
-        "auth-server-url": authServerUrl,
-        "ssl-required": "external",
-        resource,
-        "public-client": true,
-        "confidential-port": 0,
-        servers: {
-            authoringUI: {
-                questionAuthoring,
-                quizAuthoring,
-                delivery: `${delivery}/assessment/delivery`,
-                admin,
-                folderStructure: `${folderStructure}/courseOrganizer/getCourseStructure`,
-                courseUsers: `${courseUsers}/api/getCourseEnrolledLearners`,
-                courseAuthor: `${courseAuthor}/api/checkCourseAuthorStatus`,
-                ngel,
-                logo
-            },
-            deliveryUI: {
-                questionAuthoring,
-                quizAuthoring,
-                quizDelivery,
-                admin,
-                ngel,
-                userActivity
-            },
-            adminUI: {
-                ngel,
-                admin,
-                questionAuthoring
-            }
-        },
-        waitingTime,
-        autoClose
-    }
-
-    return dataToUpdate
 }
 
 export const getClient = async (req, res) => {
@@ -164,7 +98,7 @@ export const getClient = async (req, res) => {
 
 export const getClients = async (req, res) => {
     try {
-        const allClients = await clientsCollection.find()
+        const allClients = await clientsCollection.find().select("clientName")
 
         res.status(200).json({
             status: "OK",

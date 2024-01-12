@@ -1,54 +1,41 @@
 import mongoose from "mongoose";
 
-const adminUISchema = mongoose.Schema({
+const keycloakSchema = mongoose.Schema({
     _id: false,
-    "ngel": String,
-    "admin": String,
-    "questionAuthoring": String
+    "realm": String,
+    "resource": String,
+    "serverUrl": String
 })
 
-const deliveryUISchema = mongoose.Schema({
+const timeSchema = mongoose.Schema({
     _id: false,
-    "questionAuthoring": String,
-    "quizAuthoring": String,
-    "quizDelivery": String,
-    "admin": String,
-    "ngel": String,
-    "userActivity": String
+    "waitingTime": String,
+    "autoClose": String
 })
 
-const authoringUISchema = mongoose.Schema({
+const uiSchema = mongoose.Schema({
+    _id: false,
+    "homePage": String,
+    "logo": String
+})
+
+const servicesSchema = mongoose.Schema({
     _id: false,
     "questionAuthoring": String,
     "quizAuthoring": String,
     "delivery": String,
     "admin": String,
-    "folderStructure": String,
-    "courseUsers": String,
-    "courseAuthor": String,
-    "ngel": String,
-    "logo": String
-})
-
-const serverSchema = mongoose.Schema({
-    _id: false,
-    "authoringUI": authoringUISchema,
-    "deliveryUI": deliveryUISchema,
-    "adminUI": adminUISchema
+    "courseOrganizer": String,
+    "courseCatalog": String
 })
 
 const clientsSchema = mongoose.Schema(
     {
         "clientName": String,
-        "realm": String,
-        "auth-server-url": String,
-        "ssl-required": String,
-        "resource": String,
-        "public-client": Boolean,
-        "confidential-port": Number,
-        "servers": serverSchema,
-        "waitingTime": Number,
-        "autoClose": Number
+        "services": servicesSchema,
+        "ui": uiSchema,
+        "time": timeSchema,
+        "keycloak": keycloakSchema
     }
 )
 
