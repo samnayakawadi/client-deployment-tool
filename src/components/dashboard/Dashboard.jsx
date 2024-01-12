@@ -1,9 +1,11 @@
 import planning from "./images/planning.png"
+import AddNewClient from "./modals/AddNewClient"
 
 // eslint-disable-next-line react/prop-types
-const Dashboard = ({ onHoverHandler }) => {
+const Dashboard = () => {
+
     return (
-        <div id="service" className=" text-white container-padding-x container-padding-y scroll-margin-top" onMouseOver={() => { onHoverHandler("service") }}>
+        <div id="service" className=" text-white container-padding-x container-padding-y scroll-margin-top">
 
             <div className="grid grid-cols-4 gap-2 max-lg:grid-cols-1">
                 <div className="p-3 bg-navbg rounded-md transition ease-linear delay-75 hover:cursor-crosshair flex flex-col items-center">
@@ -38,7 +40,7 @@ const Dashboard = ({ onHoverHandler }) => {
                     </div>
                 </div>
             </div>
-
+            <AddNewClient />
         </div>
     )
 }
