@@ -7,7 +7,6 @@ const DashboardHandlers = () => {
     const dispatch = useDispatch()
     const dashboardServices = DashboardServices()
     const clientName = useSelector(prevState => prevState.dashboard.modals.addNewClient.clientName)
-    const allClients = useSelector(prevState => prevState.dashboard.clientsList)
     const deleteClient = useSelector(prevState => prevState.dashboard.modals.deleteClient)
 
     const toggleAddNewClientHandler = () => {
@@ -21,7 +20,9 @@ const DashboardHandlers = () => {
     const addNewClientHandler = async () => {
         const clientData = await dashboardServices.addNewClient(clientName)
         dispatch(dashboardActions.toggleAddNewClient())
-        dispatch(dashboardActions.pushClientToAllClients(clientData))
+        if (clientData !== null) {
+            dispatch(dashboardActions.pushClientToAllClients(clientData))
+        }
     }
 
     const getAllClientsHandler = async () => {
@@ -47,13 +48,24 @@ const DashboardHandlers = () => {
         }))
     }
 
+    const toggleViewClientHandler = () => {
+        dispatch(dashboardActions.toggleViewClient())
+    }
+
+    const getClientJSONHandler = async (clientId) => {
+        const data = await dashboardServices.getClient(clientId)
+        dispatch(dashboardActions.viewClientJSON(data))
+    }
+
     const dashboardHandlers = {
         toggleAddNewClientHandler,
         updateClientNameHandler,
         addNewClientHandler,
         getAllClientsHandler,
         deleteClientHandler,
-        toggleDeleteClientHandler
+        toggleDeleteClientHandler,
+        toggleViewClientHandler,
+        getClientJSONHandler
     }
 
     return dashboardHandlers

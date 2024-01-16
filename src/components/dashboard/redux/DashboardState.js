@@ -8,6 +8,11 @@ export const dashboardState = {
             clientId: null,
             clientIndex: null,
             isChecked: false
+        },
+        viewClient: {
+            clientId: null,
+            isChecked: false,
+            json: null
         }
     },
     clientsList: []

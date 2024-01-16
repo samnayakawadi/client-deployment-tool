@@ -4,6 +4,7 @@ import AddNewClient from "./modals/AddNewClient"
 import DashboardHandlers from "./DashboardHandlers"
 import { useSelector } from "react-redux"
 import DeleteClientConfirmation from "./modals/DeleteClientConfirmation"
+import ViewClient from "./modals/ViewClient"
 
 // eslint-disable-next-line react/prop-types
 const Dashboard = () => {
@@ -32,7 +33,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                             <div className="grid grid-cols-4 w-full gap-2 pt-3">
-                                <button className={`btn btn-block btn-md btn-info text-black normal-case no-animation rounded-sm`} >View</button>
+                                <button className={`btn btn-block btn-md btn-info text-black normal-case no-animation rounded-sm`} onClick={() => { dashboardHandlers.toggleViewClientHandler(), dashboardHandlers.getClientJSONHandler(singleClient._id) }}>View</button>
                                 <button className={`btn btn-block btn-md btn-success text-black normal-case no-animation rounded-sm`} >Download</button>
                                 <button className={`btn btn-block btn-md btn-warning text-black normal-case no-animation rounded-sm`} >Edit</button>
                                 <button className={`btn btn-block btn-md btn-accent text-black normal-case no-animation rounded-sm`} onClick={() => { dashboardHandlers.toggleDeleteClientHandler(singleClient._id, clientIndex) }}>Delete</button>
@@ -47,6 +48,7 @@ const Dashboard = () => {
             </div>}
             <AddNewClient />
             <DeleteClientConfirmation />
+            <ViewClient />
         </div>
     )
 }

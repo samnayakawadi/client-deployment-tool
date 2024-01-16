@@ -16,7 +16,7 @@ const DashboardServices = () => {
             // toast.success("Client Created")
             return clientData;
         } catch (error) {
-            toast.error("Client Creation Failed" + error.response)
+            toast.error("Client Creation Failed : " + (error.response === undefined ? "Network Error" : error.response))
             return null;
         }
 
@@ -32,7 +32,7 @@ const DashboardServices = () => {
             // toast.success("All Clients Fetched")
             return clients;
         } catch (error) {
-            toast.error("Clients Fetching Failed" + error.response)
+            toast.error("Clients Fetching Failed : " + (error.response === undefined ? "Network Error" : error.response))
             return null;
         }
 
@@ -47,16 +47,30 @@ const DashboardServices = () => {
             // toast.success("Client Deleted")
             return true;
         } catch (error) {
-            toast.error("Client Deletion Failed" + error.response)
+            toast.error("Client Deletion Failed" + (error.response === undefined ? "Network Error" : error.response))
             return null;
         }
 
     }
 
+    const getClient = async (clientId) => {
+        try {
+            const response = await axios.get(globalState.servers.main + "/clients/get?clientId=" + clientId, {
+                withCredentials: true
+            })
+            // toast.success("Client Deleted")
+            return response.data.data;
+        } catch (error) {
+            toast.error("Client Fetching Failed" + (error.response === undefined ? "Network Error" : error.response))
+            return null;
+        }
+    }
+
     const dashboardServices = {
         addNewClient,
         getAllClients,
-        deleteClient
+        deleteClient,
+        getClient
     }
 
     return dashboardServices

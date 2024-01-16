@@ -20,4 +20,10 @@ export const dashboardReducers = {
         prevState.modals.deleteClient.isChecked = !prevState.modals.deleteClient.isChecked
         prevState.modals.deleteClient.clientIndex = actions.payload.clientIndex
     },
+    toggleViewClient: (prevState, actions) => {
+        prevState.modals.viewClient.isChecked = !prevState.modals.viewClient.isChecked
+    },
+    viewClientJSON: (prevState, actions) => {
+        prevState.modals.viewClient.json = actions.payload
+    }
 }
