@@ -126,7 +126,7 @@ export const deleteClient = async (req, res) => {
 
     if (dbClient) {
 
-        await clientsCollection.deleteOne()
+        await dbClient.deleteOne()
 
         res.status(200).json({
             status: "OK",
