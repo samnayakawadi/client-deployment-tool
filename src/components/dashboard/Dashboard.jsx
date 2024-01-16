@@ -5,6 +5,7 @@ import DashboardHandlers from "./DashboardHandlers"
 import { useSelector } from "react-redux"
 import DeleteClientConfirmation from "./modals/DeleteClientConfirmation"
 import ViewClient from "./modals/ViewClient"
+import DownloadClient from "./modals/DownloadClient"
 
 // eslint-disable-next-line react/prop-types
 const Dashboard = () => {
@@ -23,7 +24,7 @@ const Dashboard = () => {
 
                 {clientsList.map((singleClient, clientIndex) => {
                     return (
-                        <div className="p-3 bg-navbg rounded-md transition ease-linear delay-75 hover:cursor-crosshair flex flex-col items-center">
+                        <div key={`client_${singleClient._id}`} className="p-3 bg-navbg rounded-md transition ease-linear delay-75 hover:cursor-crosshair flex flex-col items-center">
                             <div className="flex flex-row justify-center items-center w-full border-2 border-gray-500 p-3 gap-3">
                                 <div className="basis-6/12 flex flex-row justify-center items-center border-r-2 border-gray-500">
                                     <img src={planning} className="w-20" alt="defaultQuizIcon" />
@@ -34,7 +35,7 @@ const Dashboard = () => {
                             </div>
                             <div className="grid grid-cols-4 w-full gap-2 pt-3">
                                 <button className={`btn btn-block btn-md btn-info text-black normal-case no-animation rounded-sm`} onClick={() => { dashboardHandlers.toggleViewClientHandler(), dashboardHandlers.getClientJSONHandler(singleClient._id) }}>View</button>
-                                <button className={`btn btn-block btn-md btn-success text-black normal-case no-animation rounded-sm`} >Download</button>
+                                <button className={`btn btn-block btn-md btn-success text-black normal-case no-animation rounded-sm`} onClick={() => { dashboardHandlers.toggleDownloadClientHandler(singleClient._id) }}>Download</button>
                                 <button className={`btn btn-block btn-md btn-warning text-black normal-case no-animation rounded-sm`} >Edit</button>
                                 <button className={`btn btn-block btn-md btn-accent text-black normal-case no-animation rounded-sm`} onClick={() => { dashboardHandlers.toggleDeleteClientHandler(singleClient._id, clientIndex) }}>Delete</button>
                             </div>
@@ -49,6 +50,7 @@ const Dashboard = () => {
             <AddNewClient />
             <DeleteClientConfirmation />
             <ViewClient />
+            <DownloadClient />
         </div>
     )
 }

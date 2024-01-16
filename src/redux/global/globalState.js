@@ -1,6 +1,6 @@
 export const globalState = {
     servers: {
-        main: "http://localhost:5000"
+        main: "http://10.244.2.206:5000",
     },
     time: {
         autoClose: 2000

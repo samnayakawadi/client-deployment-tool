@@ -13,6 +13,11 @@ export const dashboardState = {
             clientId: null,
             isChecked: false,
             json: null
+        },
+        downloadClient: {
+            clientId: null,
+            isChecked: false,
+            selectedTab: "linux"
         }
     },
     clientsList: []

@@ -1,13 +1,20 @@
 import { useDispatch, useSelector } from "react-redux"
 import { dashboardActions } from "./redux/DashboardSlice"
 import DashboardServices from "./DashboardServices"
+import copy from "copy-to-clipboard"
+import { toast } from "react-toastify"
 
 const DashboardHandlers = () => {
 
     const dispatch = useDispatch()
     const dashboardServices = DashboardServices()
-    const clientName = useSelector(prevState => prevState.dashboard.modals.addNewClient.clientName)
-    const deleteClient = useSelector(prevState => prevState.dashboard.modals.deleteClient)
+
+    const dashboardState = useSelector(prevState => prevState.dashboard)
+    const globalState = useSelector(prevState => prevState.global)
+
+    const clientName = dashboardState.modals.addNewClient.clientName
+    const deleteClient = dashboardState.modals.deleteClient
+    const clientIdFromDownloadModal = dashboardState.modals.downloadClient.clientId
 
     const toggleAddNewClientHandler = () => {
         dispatch(dashboardActions.toggleAddNewClient())
@@ -41,7 +48,7 @@ const DashboardHandlers = () => {
         toggleDeleteClientHandler(null, null)
     }
 
-    const toggleDeleteClientHandler = (clientId, clientIndex) => {
+    const toggleDeleteClientHandler = (clientId = null, clientIndex = null) => {
         dispatch(dashboardActions.toggleDeleteClient({
             clientId,
             clientIndex
@@ -52,9 +59,43 @@ const DashboardHandlers = () => {
         dispatch(dashboardActions.toggleViewClient())
     }
 
-    const getClientJSONHandler = async (clientId) => {
-        const data = await dashboardServices.getClient(clientId)
+    const getClientJSONHandler = async (clientId = null) => {
+        const data = await dashboardServices.viewClientJSON(clientId)
         dispatch(dashboardActions.viewClientJSON(data))
+    }
+
+    const toggleDownloadClientHandler = (clientId = null) => {
+        dispatch(dashboardActions.toggleDownloadClient(clientId))
+    }
+
+    const selectDownloadClientTabHandler = (newTab) => {
+        dispatch(dashboardActions.selectDownloadTab(newTab))
+    }
+
+    const getGenerateJSONCommandHandler = (os = "linux", type = "command") => {
+
+        const mainServer = globalState.servers.main
+        const clientId = dashboardState.modals.downloadClient.clientId
+
+        if (os === "linux") {
+            return `curl -o /var/www/data.json ${mainServer}/clients/generate-json?clientId=${clientId}`
+        } else if (os === "windows") {
+            if (type === "command") {
+                return `Invoke-WebRequest -Uri "${mainServer}/clients/generate-json?clientId=${clientId}" -OutFile "C:/data.json"`
+            } else if (type === "text") {
+                return `Invoke-WebRequest -Uri "${mainServer}/clients/generate-json?clientId=${clientId}" -OutFile "C:\/data.json"`
+            }
+        }
+    }
+
+    const copyCommandHandler = (os = "linux") => {
+        copy(getGenerateJSONCommandHandler(os, "command"))
+        toast.success("Command Copied")
+        toggleDownloadClientHandler()
+    }
+
+    const downloadClientJSONURLGenerator = () => {
+        return dashboardServices.downloadClientJSONURLForAncor(clientIdFromDownloadModal)
     }
 
     const dashboardHandlers = {
@@ -65,7 +106,12 @@ const DashboardHandlers = () => {
         deleteClientHandler,
         toggleDeleteClientHandler,
         toggleViewClientHandler,
-        getClientJSONHandler
+        getClientJSONHandler,
+        toggleDownloadClientHandler,
+        selectDownloadClientTabHandler,
+        getGenerateJSONCommandHandler,
+        copyCommandHandler,
+        downloadClientJSONURLGenerator
     }
 
     return dashboardHandlers

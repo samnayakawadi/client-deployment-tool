@@ -25,5 +25,12 @@ export const dashboardReducers = {
     },
     viewClientJSON: (prevState, actions) => {
         prevState.modals.viewClient.json = actions.payload
+    },
+    toggleDownloadClient: (prevState, actions) => {
+        prevState.modals.downloadClient.isChecked = !prevState.modals.downloadClient.isChecked
+        prevState.modals.downloadClient.clientId = actions.payload
+    },
+    selectDownloadTab: (prevState, actions) => {
+        prevState.modals.downloadClient.selectedTab = actions.payload
     }
 }

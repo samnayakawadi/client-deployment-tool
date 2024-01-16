@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux"
 import DashboardHandlers from "../DashboardHandlers"
+import JSONPretty from "react-json-pretty"
 
 const ViewClient = () => {
 
     const dashboardState = useSelector(prevState => prevState.dashboard)
     const dashboardHandlers = DashboardHandlers()
-    const json = JSON.stringify(dashboardState.modals.viewClient.json, null, 2)
 
     return (
         <div>
@@ -13,9 +13,7 @@ const ViewClient = () => {
             <div className="modal">
                 <div className="modal-box p-3 flex flex-col gap-2">
 
-                    {dashboardState.modals.viewClient.json != null && <pre className="border p-2">
-                        {json}
-                    </pre>}
+                    {dashboardState.modals.viewClient.json != null && <JSONPretty className="border p-2 overflow-y-auto overflow-x-auto" id="json-pretty" data={dashboardState.modals.viewClient.json}></JSONPretty>}
 
                     {dashboardState.modals.viewClient.json == null &&
                         <div role="alert" className="alert alert-error">

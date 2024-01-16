@@ -66,11 +66,30 @@ const DashboardServices = () => {
         }
     }
 
+    const viewClientJSON = async (clientId) => {
+        try {
+            const response = await axios.get(globalState.servers.main + "/clients/view-json?clientId=" + clientId, {
+                withCredentials: true
+            })
+            // toast.success("Client Deleted")
+            return response.data;
+        } catch (error) {
+            toast.error("Client JSON Fetching Failed" + (error.response === undefined ? "Network Error" : error.response))
+            return null;
+        }
+    }
+
+    const downloadClientJSONURLForAncor = (clientId) => {
+        return globalState.servers.main + "/clients/generate-json?clientId=" + clientId
+    }
+
     const dashboardServices = {
         addNewClient,
         getAllClients,
         deleteClient,
-        getClient
+        getClient,
+        viewClientJSON,
+        downloadClientJSONURLForAncor
     }
 
     return dashboardServices

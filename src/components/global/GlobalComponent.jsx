@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux"
 import { Slide, ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-json-pretty/themes/monikai.css';
 
 const GlobalComponent = () => {
 
