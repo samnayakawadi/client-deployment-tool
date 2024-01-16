@@ -6,6 +6,7 @@ export const dashboardState = {
         },
         deleteClient: {
             clientId: null,
+            clientIndex: null,
             isChecked: false
         }
     },

@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { dashboardActions } from "./redux/DashboardSlice"
 import DashboardServices from "./DashboardServices"
-import { toast } from "react-toastify"
 
 const DashboardHandlers = () => {
 
@@ -9,7 +8,7 @@ const DashboardHandlers = () => {
     const dashboardServices = DashboardServices()
     const clientName = useSelector(prevState => prevState.dashboard.modals.addNewClient.clientName)
     const allClients = useSelector(prevState => prevState.dashboard.clientsList)
-    // const deleteClientId = useSelector(prevState => prevState.dashboard.deleteClient.clientId)
+    const deleteClient = useSelector(prevState => prevState.dashboard.modals.deleteClient)
 
     const toggleAddNewClientHandler = () => {
         dispatch(dashboardActions.toggleAddNewClient())
@@ -36,16 +35,16 @@ const DashboardHandlers = () => {
     }
 
     const deleteClientHandler = async () => {
-        // console.log("allClients[clientIndex]", allClients[clientIndex])
-
-        await dashboardServices.deleteClient(clientIndex)
-        dispatch(dashboardActions.deleteClientFromAllClients(clientIndex))
-        toggleDeleteClientHandler(null)
+        await dashboardServices.deleteClient(deleteClient.clientId)
+        dispatch(dashboardActions.deleteClientFromAllClients(deleteClient.clientIndex))
+        toggleDeleteClientHandler(null, null)
     }
 
-    const toggleDeleteClientHandler = (clientId) => {
-        console.log("inside toggleDeleteClientHandler")
-        dispatch(dashboardActions.toggleDeleteClient(clientId))
+    const toggleDeleteClientHandler = (clientId, clientIndex) => {
+        dispatch(dashboardActions.toggleDeleteClient({
+            clientId,
+            clientIndex
+        }))
     }
 
     const dashboardHandlers = {

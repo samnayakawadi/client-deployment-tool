@@ -16,7 +16,8 @@ export const dashboardReducers = {
         prevState.clientsList.splice(actions.payload, 1)
     },
     toggleDeleteClient: (prevState, actions) => {
-        prevState.modals.deleteClient.clientId = actions.payload
+        prevState.modals.deleteClient.clientId = actions.payload.clientId
         prevState.modals.deleteClient.isChecked = !prevState.modals.deleteClient.isChecked
+        prevState.modals.deleteClient.clientIndex = actions.payload.clientIndex
     },
 }

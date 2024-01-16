@@ -35,7 +35,7 @@ const Dashboard = () => {
                                 <button className={`btn btn-block btn-md btn-info text-black normal-case no-animation rounded-sm`} >View</button>
                                 <button className={`btn btn-block btn-md btn-success text-black normal-case no-animation rounded-sm`} >Download</button>
                                 <button className={`btn btn-block btn-md btn-warning text-black normal-case no-animation rounded-sm`} >Edit</button>
-                                <button className={`btn btn-block btn-md btn-accent text-black normal-case no-animation rounded-sm`} onClick={() => { dashboardHandlers.toggleDeleteClientHandler(singleClient._id) }}>Delete</button>
+                                <button className={`btn btn-block btn-md btn-accent text-black normal-case no-animation rounded-sm`} onClick={() => { dashboardHandlers.toggleDeleteClientHandler(singleClient._id, clientIndex) }}>Delete</button>
                             </div>
                         </div>
                     )
