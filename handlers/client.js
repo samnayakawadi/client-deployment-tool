@@ -1,92 +1,81 @@
+const noURLString = "<NO DATA PROVIDED YET>"
+
 export const getDefaultJson = (clientName) => {
     const defaultJson = {
         clientName,
         "services": {
-            "questionAuthoring": "",
-            "quizAuthoring": "",
-            "delivery": "",
-            "admin": "",
-            "courseOrganizer": "",
-            "courseCatalog": ""
+            "questionAuthoring": noURLString,
+            "quizAuthoring": noURLString,
+            "delivery": noURLString,
+            "admin": noURLString,
+            "courseOrganizer": noURLString,
+            "courseCatalog": noURLString,
+            "learningAnalytics": noURLString
         },
         "ui": {
-            "homePage": "",
-            "logo": ""
+            "homePage": noURLString,
+            "logo": noURLString
         },
         "time": {
-            "waitingTime": "",
-            "autoClose": ""
+            "waitingTime": noURLString,
+            "autoClose": noURLString
         },
         "keycloak": {
-            "realm": "",
-            "resource": "",
-            "serverUrl": ""
+            "realm": noURLString,
+            "resource": noURLString,
+            "serverUrl": noURLString
         }
     }
 
     return defaultJson
 }
 
-// const dbJsonToRequiredJsonConvertor = (body) => {
+const noURLProvidedString = (string) => {
+    return (string === "" || string === undefined || string === null) ? noURLString : string
+}
 
-//     const {
-//         clientName,
-//         realm,
-//         authServerUrl,
-//         resource,
-//         questionAuthoring,
-//         quizAuthoring,
-//         delivery,
-//         admin,
-//         folderStructure,
-//         courseUsers,
-//         courseAuthor,
-//         ngel,
-//         logo,
-//         userActivity,
-//         waitingTime,
-//         autoClose
-//     } = body
+export const convertDBJsonToV1 = (dbJson) => {
 
-//     const quizDelivery = delivery
+    const { _id: clientId, clientName, services, ui, time, keycloak } = dbJson
 
-//     const dataToUpdate = {
-//         clientName,
-//         realm,
-//         "auth-server-url": authServerUrl,
-//         "ssl-required": "external",
-//         resource,
-//         "public-client": true,
-//         "confidential-port": 0,
-//         servers: {
-//             authoringUI: {
-//                 questionAuthoring,
-//                 quizAuthoring,
-//                 delivery: `${delivery}/assessment/delivery`,
-//                 admin,
-//                 folderStructure: `${folderStructure}/courseOrganizer/getCourseStructure`,
-//                 courseUsers: `${courseUsers}/api/getCourseEnrolledLearners`,
-//                 courseAuthor: `${courseAuthor}/api/checkCourseAuthorStatus`,
-//                 ngel,
-//                 logo
-//             },
-//             deliveryUI: {
-//                 questionAuthoring,
-//                 quizAuthoring,
-//                 quizDelivery,
-//                 admin,
-//                 ngel,
-//                 userActivity
-//             },
-//             adminUI: {
-//                 ngel,
-//                 admin,
-//                 questionAuthoring
-//             }
-//         },
-//         waitingTime,
-//         autoClose
-//     }
+    const dataToUpdate = {
+        clientId,
+        clientName,
+        realm: noURLProvidedString(keycloak.realm),
+        "auth-server-url": noURLProvidedString(keycloak.serverUrl),
+        "ssl-required": "external",
+        resource: noURLProvidedString(keycloak.resource),
+        "public-client": true,
+        "confidential-port": 0,
+        servers: {
+            authoringUI: {
+                questionAuthoring: noURLProvidedString(services.questionAuthoring),
+                quizAuthoring: noURLProvidedString(services.quizAuthoring),
+                delivery: `${noURLProvidedString(services.quizAuthoring)}/assessment/delivery`,
+                admin: noURLProvidedString(services.quizAuthoring),
+                folderStructure: `${noURLProvidedString(services.courseOrganizer)}/courseOrganizer/getCourseStructure`,
+                courseUsers: `${noURLProvidedString(services.courseCatalog)}/api/getCourseEnrolledLearners`,
+                courseAuthor: `${noURLProvidedString(services.courseCatalog)}/api/checkCourseAuthorStatus`,
+                ngel: noURLProvidedString(ui.homePage),
+                logo: noURLProvidedString(ui.logo)
+            },
+            deliveryUI: {
+                questionAuthoring: noURLProvidedString(services.questionAuthoring),
+                quizAuthoring: noURLProvidedString(services.quizAuthoring),
+                quizDelivery: noURLProvidedString(services.delivery),
+                admin: noURLProvidedString(services.admin),
+                ngel: noURLProvidedString(ui.homePage),
+                userActivity: noURLProvidedString(services.learningAnalytics)
+            },
+            adminUI: {
+                ngel: noURLProvidedString(ui.homePage),
+                admin: noURLProvidedString(services.admin),
+                questionAuthoring: noURLProvidedString(services.questionAuthoring),
+            }
+        },
+        waitingTime: time.waitingTime,
+        autoClose: time.autoClose
+    }
 
-//     return dataToUpdate
-// }
+    return dataToUpdate
+}

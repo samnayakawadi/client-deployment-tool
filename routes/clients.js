@@ -8,6 +8,7 @@ clientsRouter.put("/update", updateClient)
 clientsRouter.get("/get", getClient)
 clientsRouter.get("/getAll", getClients)
 clientsRouter.delete("/delete", deleteClient)
-clientsRouter.get("/generate", generateJSON)
+clientsRouter.get("/generate-json", (req, res, next) => { req.requestType = "download"; next() }, generateJSON)
+clientsRouter.get("/view-json", (req, res, next) => { req.requestType = "view"; next() }, generateJSON)
 
 export { clientsRouter }

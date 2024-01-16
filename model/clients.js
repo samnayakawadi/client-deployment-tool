@@ -26,7 +26,8 @@ const servicesSchema = mongoose.Schema({
     "delivery": String,
     "admin": String,
     "courseOrganizer": String,
-    "courseCatalog": String
+    "courseCatalog": String,
+    "learningAnalytics": String
 })
 
 const clientsSchema = mongoose.Schema(

@@ -1,4 +1,4 @@
-import { getDefaultJson } from "../handlers/client.js"
+import { convertDBJsonToV1, getDefaultJson } from "../handlers/client.js"
 import { clientsCollection } from "../model/clients.js"
 
 export const addClient = async (req, res) => {
@@ -146,14 +146,17 @@ export const generateJSON = async (req, res) => {
     try {
 
         const dbClient = await clientsCollection.findOne({ _id: clientId })
+        const json = convertDBJsonToV1(dbClient)
 
         if (dbClient) {
 
             // Adds indentation
-            const jsonString = JSON.stringify(dbClient, null, 2)
+            const jsonString = JSON.stringify(json, null, 2)
 
             res.setHeader("Content-Type", "application/json")
-            res.setHeader("Content-Disposition", "attachment; filename=data.json")
+            if (req.requestType === "download") {
+                res.setHeader("Content-Disposition", "attachment; filename=data.json")
+            }
 
             res.send(jsonString)
 
@@ -170,3 +173,4 @@ export const generateJSON = async (req, res) => {
         })
     }
 }
+
