@@ -13,7 +13,7 @@ const AddNewClient = () => {
             <div className="modal">
                 <div className="modal-box p-3 flex flex-col gap-2">
 
-                    <input type="text" placeholder="Enter Client Name" className="input input-bordered input-success w-full focus:outline-none" onChange={dashboardHandlers.updateClientNameHandler} />
+                    <input type="text" placeholder="Enter Client Name" value={dashboardState.modals.addNewClient.clientName} className="input input-bordered input-success w-full focus:outline-none" onChange={dashboardHandlers.updateClientNameHandler} />
 
                     <div role="alert" className="alert alert-info">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-current shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>

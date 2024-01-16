@@ -1,6 +1,8 @@
 export const dashboardReducers = {
     toggleAddNewClient: (prevState, actions) => {
+        console.log("toggleAddNewClient")
         prevState.modals.addNewClient.isChecked = !prevState.modals.addNewClient.isChecked
+        prevState.modals.addNewClient.clientName = ""
     },
     updateClientName: (prevState, actions) => {
         prevState.modals.addNewClient.clientName = actions.payload

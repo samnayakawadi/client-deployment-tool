@@ -90,7 +90,7 @@ const DashboardHandlers = () => {
 
     const copyCommandHandler = (os = "linux") => {
         copy(getGenerateJSONCommandHandler(os, "command"))
-        toast.success("Command Copied")
+        // toast.success("Command Copied")
         toggleDownloadClientHandler()
     }
 
