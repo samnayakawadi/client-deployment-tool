@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { dashboardActions } from "./redux/DashboardSlice"
+import { clientActions } from "../editor/client/redux/ClientSlice"
 import DashboardServices from "./DashboardServices"
 import copy from "copy-to-clipboard"
 import { toast } from "react-toastify"
@@ -104,6 +105,7 @@ const DashboardHandlers = () => {
     const navigateToClientEditor = async (clientId) => {
         const clientData = await dashboardServices.getClient(clientId)
         console.log("clientData", clientData)
+        dispatch(clientActions.updateData(clientData))
         navigate("/editor/general")
     }
 

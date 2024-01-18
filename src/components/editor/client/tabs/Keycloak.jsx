@@ -1,4 +1,10 @@
+import { useSelector } from "react-redux"
+
 const Keycloak = () => {
+
+    const clientEditorState = useSelector(prevState => prevState.clientEditor)
+    const keycloak = clientEditorState.data.keycloak
+
     return (
         <div className="flex flex-col gap-2">
             <div className="flex flex-row gap-2 items-center">
@@ -6,7 +12,7 @@ const Keycloak = () => {
                     Realm
                 </div>
                 <div className="basis-9/12">
-                    <input type="text" placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="realm" value={keycloak.realm} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -15,7 +21,7 @@ const Keycloak = () => {
                     Resource
                 </div>
                 <div className="basis-9/12">
-                    <input type="text" placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="resource" value={keycloak.resource} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -24,7 +30,7 @@ const Keycloak = () => {
                     Server URL
                 </div>
                 <div className="basis-9/12">
-                    <input type="text" placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="serverUrl" value={keycloak.serverUrl} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
         </div>
