@@ -1,9 +1,17 @@
-import { useSelector } from "react-redux"
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { clientActions } from "../redux/ClientSlice"
 
 const Time = () => {
 
     const clientEditorState = useSelector(prevState => prevState.clientEditor)
     const time = clientEditorState.data.time
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(clientActions.updateSelectedTab("time"))
+    }, [])
 
     return (
         <div className="flex flex-col gap-2">

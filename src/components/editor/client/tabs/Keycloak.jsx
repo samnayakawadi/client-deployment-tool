@@ -1,9 +1,17 @@
-import { useSelector } from "react-redux"
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { clientActions } from "../redux/ClientSlice"
 
 const Keycloak = () => {
 
     const clientEditorState = useSelector(prevState => prevState.clientEditor)
     const keycloak = clientEditorState.data.keycloak
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(clientActions.updateSelectedTab("keycloak"))
+    }, [])
 
     return (
         <div className="flex flex-col gap-2">
