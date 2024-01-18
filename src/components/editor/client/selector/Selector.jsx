@@ -10,7 +10,7 @@ const Selector = () => {
     const selectedTab = clientEditorState.selectedTab
 
     return (
-        <div className="border">
+        <div>
             <div role="tablist" className="tabs tabs-boxed">
                 <Link to="general" className={`tab ${selectedTab === "general" && "tab-active"}`} onClick={() => { selectorHandlers.selectTabHandler("general") }}>General</Link>
                 <Link to="ui" className={`tab ${selectedTab === "ui" && "tab-active"}`} onClick={() => { selectorHandlers.selectTabHandler("ui") }}>User Interface</Link>

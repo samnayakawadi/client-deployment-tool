@@ -3,6 +3,7 @@ import { dashboardActions } from "./redux/DashboardSlice"
 import DashboardServices from "./DashboardServices"
 import copy from "copy-to-clipboard"
 import { toast } from "react-toastify"
+import { useNavigate } from "react-router"
 
 const DashboardHandlers = () => {
 
@@ -15,6 +16,8 @@ const DashboardHandlers = () => {
     const clientName = dashboardState.modals.addNewClient.clientName
     const deleteClient = dashboardState.modals.deleteClient
     const clientIdFromDownloadModal = dashboardState.modals.downloadClient.clientId
+
+    const navigate = useNavigate()
 
     const toggleAddNewClientHandler = () => {
         dispatch(dashboardActions.toggleAddNewClient())
@@ -98,6 +101,12 @@ const DashboardHandlers = () => {
         return dashboardServices.downloadClientJSONURLForAncor(clientIdFromDownloadModal)
     }
 
+    const navigateToClientEditor = async (clientId) => {
+        const clientData = await dashboardServices.getClient(clientId)
+        console.log("clientData", clientData)
+        navigate("/editor/general")
+    }
+
     const dashboardHandlers = {
         toggleAddNewClientHandler,
         updateClientNameHandler,
@@ -111,7 +120,8 @@ const DashboardHandlers = () => {
         selectDownloadClientTabHandler,
         getGenerateJSONCommandHandler,
         copyCommandHandler,
-        downloadClientJSONURLGenerator
+        downloadClientJSONURLGenerator,
+        navigateToClientEditor
     }
 
     return dashboardHandlers
