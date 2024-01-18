@@ -10,13 +10,13 @@ import Buttons from "./Buttons"
 const Manager = () => {
     return (
         <div className="flex flex-col h-full gap-2">
-            <div className="border-2 border-gray-600 p-2">
+            <div className=" p-2">
                 <Buttons />
             </div>
-            <div className="border-2 border-gray-600 p-2">
+            <div className=" p-2">
                 <Selector />
             </div>
-            <div className="border-2 border-gray-600 flex-grow p-2">
+            <div className="flex-grow p-3 border border-gray-600 m-3">
                 <Routes>
                     <Route path="/general" element={<General />} />
                     <Route path="/ui" element={<UI />} />

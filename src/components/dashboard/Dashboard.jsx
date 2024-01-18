@@ -19,7 +19,7 @@ const Dashboard = () => {
 
     return (
         <div className=" text-white scroll-margin-top">
-            <div className="grid grid-cols-4 gap-2 max-lg:grid-cols-1 p-2">
+            <div className="grid grid-cols-4 gap-2 max-lg:grid-cols-1">
                 {clientsList.map((singleClient, clientIndex) => {
                     return (
                         <div key={`client_${singleClient._id}`} className="p-3 bg-navbg rounded-md transition ease-linear delay-75 hover:cursor-crosshair flex flex-col items-center">
