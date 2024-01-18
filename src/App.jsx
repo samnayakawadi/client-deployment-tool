@@ -3,6 +3,8 @@ import Dashboard from "./components/dashboard/Dashboard"
 import Footer from "./components/footer/Footer"
 import Navbar from "./components/navbar/Navbar"
 import GlobalComponent from "./components/global/GlobalComponent"
+import { Route, Routes } from "react-router"
+import Manager from "./components/editor/client/Manager"
 
 function App() {
 
@@ -14,7 +16,10 @@ function App() {
       </div>
       <div className="flex-grow border-2 border-gray-600 m-2 p-2 overflow-y-auto">
         <GlobalComponent />
-        <Dashboard />
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/editor/*" element={<Manager />} />
+        </Routes>
       </div>
       <Footer />
     </div>

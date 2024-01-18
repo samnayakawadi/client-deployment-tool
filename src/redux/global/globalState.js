@@ -1,6 +1,6 @@
 export const globalState = {
     servers: {
-        main: "https://client-deployment-tool.onrender.com",
+        main: "http://localhost:5000",
     },
     time: {
         autoClose: 2000
