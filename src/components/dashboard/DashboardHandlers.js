@@ -104,8 +104,8 @@ const DashboardHandlers = () => {
 
     const navigateToClientEditor = async (clientId) => {
         const clientData = await dashboardServices.getClient(clientId)
-        console.log("clientData", clientData)
         dispatch(clientActions.updateData(clientData))
+        dispatch(clientActions.showEditor())
         navigate("/editor/general")
     }
 

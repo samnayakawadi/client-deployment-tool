@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { clientActions } from "../redux/ClientSlice"
+import ClientHandlers from "../ClientHandlers"
 
 const Services = () => {
 
@@ -8,6 +9,7 @@ const Services = () => {
     const services = clientEditorState.data.services
 
     const dispatch = useDispatch()
+    const clientHandlers = ClientHandlers()
 
     useEffect(() => {
         dispatch(clientActions.updateSelectedTab("services"))
@@ -23,7 +25,7 @@ const Services = () => {
                     9093
                 </div>
                 <div className="basis-8/12">
-                    <input type="text" name="questionAuthoring" value={services.questionAuthoring} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="questionAuthoring" value={services.questionAuthoring} onChange={clientHandlers.updateServicesTab} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -35,7 +37,7 @@ const Services = () => {
                     9094
                 </div>
                 <div className="basis-8/12">
-                    <input type="text" name="quizAuthoring" value={services.quizAuthoring} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="quizAuthoring" value={services.quizAuthoring} onChange={clientHandlers.updateServicesTab} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -47,7 +49,7 @@ const Services = () => {
                     9095
                 </div>
                 <div className="basis-8/12">
-                    <input type="text" name="delivery" value={services.delivery} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="delivery" value={services.delivery} onChange={clientHandlers.updateServicesTab} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -59,7 +61,7 @@ const Services = () => {
                     9096
                 </div>
                 <div className="basis-8/12">
-                    <input type="text" name="admin" value={services.admin} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="admin" value={services.admin} onChange={clientHandlers.updateServicesTab} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -71,7 +73,7 @@ const Services = () => {
                     9082
                 </div>
                 <div className="basis-8/12">
-                    <input type="text" name="courseOrganizer" value={services.courseOrganizer} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="courseOrganizer" value={services.courseOrganizer} onChange={clientHandlers.updateServicesTab} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -84,7 +86,7 @@ const Services = () => {
                     9085
                 </div>
                 <div className="basis-8/12">
-                    <input type="text" name="courseCatalog" value={services.courseCatalog} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="courseCatalog" value={services.courseCatalog} onChange={clientHandlers.updateServicesTab} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -97,7 +99,7 @@ const Services = () => {
                     9090
                 </div>
                 <div className="basis-8/12">
-                    <input type="text" name="learningAnalytics" value={services.learningAnalytics} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="learningAnalytics" value={services.learningAnalytics} onChange={clientHandlers.updateServicesTab} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
         </div>

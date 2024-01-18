@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router"
+import { Route, Routes, useNavigate } from "react-router"
 import General from "./tabs/General"
 import UI from "./tabs/UI"
 import Services from "./tabs/Services"
@@ -6,8 +6,21 @@ import Time from "./tabs/Time"
 import Keycloak from "./tabs/Keycloak"
 import Selector from "./selector/Selector"
 import Buttons from "./Buttons"
+import { useEffect } from "react"
+import { useSelector } from "react-redux"
 
 const Manager = () => {
+
+    const clientEditorState = useSelector(prevState => prevState.clientEditor)
+    const showEditor = clientEditorState.showEditor
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if (!showEditor) {
+            navigate("/")
+        }
+    })
+
     return (
         <div className="flex flex-col h-full gap-2">
             <div className=" p-2">
