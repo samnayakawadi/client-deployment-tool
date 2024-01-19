@@ -17,4 +17,10 @@ export const clientReducers = {
     updateUITab: (prevState, actions) => {
         prevState.data.ui[actions.payload.name] = actions.payload.value
     },
+    updateTimeTab: (prevState, actions) => {
+        prevState.data.time[actions.payload.name] = actions.payload.value
+    },
+    updateKeycloakTab: (prevState, actions) => {
+        prevState.data.keycloak[actions.payload.name] = actions.payload.value
+    },
 }

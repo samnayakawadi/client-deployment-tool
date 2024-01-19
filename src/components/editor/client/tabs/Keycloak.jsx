@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { clientActions } from "../redux/ClientSlice"
+import ClientHandlers from "../ClientHandlers"
 
 const Keycloak = () => {
 
@@ -8,6 +9,8 @@ const Keycloak = () => {
     const keycloak = clientEditorState.data.keycloak
 
     const dispatch = useDispatch()
+
+    const clientHandlers = ClientHandlers()
 
     useEffect(() => {
         dispatch(clientActions.updateSelectedTab("keycloak"))
@@ -20,7 +23,7 @@ const Keycloak = () => {
                     Realm
                 </div>
                 <div className="basis-9/12">
-                    <input type="text" name="realm" value={keycloak.realm} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="realm" value={keycloak.realm} onChange={clientHandlers.updateKeycloakTab} placeholder="E.g. ngel" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -29,7 +32,7 @@ const Keycloak = () => {
                     Resource
                 </div>
                 <div className="basis-9/12">
-                    <input type="text" name="resource" value={keycloak.resource} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="resource" value={keycloak.resource} onChange={clientHandlers.updateKeycloakTab} placeholder="E.g. reactclient" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -38,7 +41,7 @@ const Keycloak = () => {
                     Server URL
                 </div>
                 <div className="basis-9/12">
-                    <input type="text" name="serverUrl" value={keycloak.serverUrl} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="serverUrl" value={keycloak.serverUrl} onChange={clientHandlers.updateKeycloakTab} placeholder="E.g. http://10.244.2.206:8080 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
         </div>

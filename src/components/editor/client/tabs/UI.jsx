@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { clientActions } from "../redux/ClientSlice"
+import ClientHandlers from "../ClientHandlers"
 
 const UI = () => {
 
@@ -8,6 +9,8 @@ const UI = () => {
     const ui = clientEditorState.data.ui
 
     const dispatch = useDispatch()
+
+    const clientHandlers = ClientHandlers()
 
     useEffect(() => {
         dispatch(clientActions.updateSelectedTab("ui"))
@@ -20,7 +23,7 @@ const UI = () => {
                     Home Page
                 </div>
                 <div className="basis-9/12">
-                    <input value={ui.homePage} name="homePage" type="text" placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input value={ui.homePage} name="homePage" onChange={clientHandlers.updateUITab} type="text" placeholder="E.g. http://10.244.2.206:3000 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -29,7 +32,7 @@ const UI = () => {
                     Logo
                 </div>
                 <div className="basis-9/12">
-                    <input value={ui.logo} name="logo" type="text" placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input value={ui.logo} name="logo" type="text" onChange={clientHandlers.updateUITab} placeholder="E.g. http://10.244.2.206:3000 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
         </div>

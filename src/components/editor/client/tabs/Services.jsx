@@ -22,10 +22,10 @@ const Services = () => {
                     Assessment Question Authoring
                 </div>
                 <div className="basis-1/12">
-                    9093
+                    8093
                 </div>
                 <div className="basis-8/12">
-                    <input type="text" name="questionAuthoring" value={services.questionAuthoring} onChange={clientHandlers.updateServicesTab} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="questionAuthoring" value={services.questionAuthoring} onChange={clientHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8093 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -34,10 +34,10 @@ const Services = () => {
                     Assessment Quiz Authoring
                 </div>
                 <div className="basis-1/12">
-                    9094
+                    8094
                 </div>
                 <div className="basis-8/12">
-                    <input type="text" name="quizAuthoring" value={services.quizAuthoring} onChange={clientHandlers.updateServicesTab} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="quizAuthoring" value={services.quizAuthoring} onChange={clientHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8094 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -46,10 +46,10 @@ const Services = () => {
                     Assessment Delivery
                 </div>
                 <div className="basis-1/12">
-                    9095
+                    8095
                 </div>
                 <div className="basis-8/12">
-                    <input type="text" name="delivery" value={services.delivery} onChange={clientHandlers.updateServicesTab} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="delivery" value={services.delivery} onChange={clientHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8095 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -58,10 +58,10 @@ const Services = () => {
                     Assessment Admin
                 </div>
                 <div className="basis-1/12">
-                    9096
+                    8096
                 </div>
                 <div className="basis-8/12">
-                    <input type="text" name="admin" value={services.admin} onChange={clientHandlers.updateServicesTab} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="admin" value={services.admin} onChange={clientHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8096 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -70,10 +70,10 @@ const Services = () => {
                     Course Organizer
                 </div>
                 <div className="basis-1/12">
-                    9082
+                    8082
                 </div>
                 <div className="basis-8/12">
-                    <input type="text" name="courseOrganizer" value={services.courseOrganizer} onChange={clientHandlers.updateServicesTab} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="courseOrganizer" value={services.courseOrganizer} onChange={clientHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8082 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -83,10 +83,10 @@ const Services = () => {
                     Course Catalog
                 </div>
                 <div className="basis-1/12">
-                    9085
+                    8085
                 </div>
                 <div className="basis-8/12">
-                    <input type="text" name="courseCatalog" value={services.courseCatalog} onChange={clientHandlers.updateServicesTab} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="courseCatalog" value={services.courseCatalog} onChange={clientHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8085 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -96,10 +96,10 @@ const Services = () => {
                     Learning Analytics
                 </div>
                 <div className="basis-1/12">
-                    9090
+                    8080
                 </div>
                 <div className="basis-8/12">
-                    <input type="text" name="learningAnalytics" value={services.learningAnalytics} onChange={clientHandlers.updateServicesTab} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="learningAnalytics" value={services.learningAnalytics} onChange={clientHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8080 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
         </div>

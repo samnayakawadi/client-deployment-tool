@@ -1,7 +1,12 @@
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { clientActions } from "./redux/ClientSlice"
+import ClientServices from "./ClientServices"
 
 const ClientHandlers = () => {
+
+    const clientEditorState = useSelector(prevState => prevState.clientEditor)
+    const data = clientEditorState.data
+    const clientServices = ClientServices()
 
     const dispatch = useDispatch()
 
@@ -13,9 +18,29 @@ const ClientHandlers = () => {
         dispatch(clientActions.updateServicesTab(e.target))
     }
 
+    const updateUITab = (e) => {
+        dispatch(clientActions.updateUITab(e.target))
+    }
+
+    const updateTimeTab = (e) => {
+        dispatch(clientActions.updateTimeTab(e.target))
+    }
+
+    const updateKeycloakTab = (e) => {
+        dispatch(clientActions.updateKeycloakTab(e.target))
+    }
+
+    const updateClientHandler = async () => {
+        await clientServices.updateClient(data._id, data)
+    }
+
     const clientHandlers = {
         updateGeneralTab,
-        updateServicesTab
+        updateServicesTab,
+        updateClientHandler,
+        updateUITab,
+        updateTimeTab,
+        updateKeycloakTab
     }
 
     return clientHandlers

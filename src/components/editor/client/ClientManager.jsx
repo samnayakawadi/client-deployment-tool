@@ -23,10 +23,16 @@ const Manager = () => {
 
     return (
         <div className="flex flex-col h-full gap-2">
-            <div className=" p-2">
+            <div className="p-2">
                 <Buttons />
             </div>
-            <div className=" p-2">
+            <div className="p-2">
+                <div role="alert" class="alert alert-info">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Please input the server URL in the following format: "http://10.244.2.206:5000" or "http://megh1.hyderabad.cdac.in". You can adjust the protocol to either HTTP or HTTPS based on your specific requirements.</span>
+                </div>
+            </div>
+            <div className="p-2">
                 <Selector />
             </div>
             <div className="flex-grow p-3 border border-gray-600 m-3">

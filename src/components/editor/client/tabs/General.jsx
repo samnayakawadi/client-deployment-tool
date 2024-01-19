@@ -21,7 +21,7 @@ const General = () => {
                     Client Name
                 </div>
                 <div className="basis-9/12">
-                    <input type="text" name="clientName" value={clientName} onChange={clientHandlers.updateGeneralTab} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="clientName" value={clientName} onChange={clientHandlers.updateGeneralTab} placeholder="E.g. NGEL" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { clientActions } from "../redux/ClientSlice"
+import ClientHandlers from "../ClientHandlers"
 
 const Time = () => {
 
@@ -8,6 +9,8 @@ const Time = () => {
     const time = clientEditorState.data.time
 
     const dispatch = useDispatch()
+
+    const clientHandlers = ClientHandlers()
 
     useEffect(() => {
         dispatch(clientActions.updateSelectedTab("time"))
@@ -20,7 +23,7 @@ const Time = () => {
                     Waiting Time (ms)
                 </div>
                 <div className="basis-9/12">
-                    <input type="text" name="waitingTime" value={time.waitingTime} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="waitingTime" value={time.waitingTime} onChange={clientHandlers.updateTimeTab} placeholder="E.g. 1000" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -29,7 +32,7 @@ const Time = () => {
                     Auto Close (ms)
                 </div>
                 <div className="basis-9/12">
-                    <input type="text" name="autoClose" value={time.autoClose} placeholder="Type here" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="autoClose" value={time.autoClose} onChange={clientHandlers.updateTimeTab} placeholder="E.g. 2000" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
         </div>
