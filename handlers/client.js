@@ -4,26 +4,26 @@ export const getDefaultJson = (clientName) => {
     const defaultJson = {
         clientName,
         "services": {
-            "questionAuthoring": noURLString,
-            "quizAuthoring": noURLString,
-            "delivery": noURLString,
-            "admin": noURLString,
-            "courseOrganizer": noURLString,
-            "courseCatalog": noURLString,
-            "learningAnalytics": noURLString
+            "questionAuthoring": "",
+            "quizAuthoring": "",
+            "delivery": "",
+            "admin": "",
+            "courseOrganizer": "",
+            "courseCatalog": "",
+            "learningAnalytics": ""
         },
         "ui": {
-            "homePage": noURLString,
-            "logo": noURLString
+            "homePage": "",
+            "logo": ""
         },
         "time": {
-            "waitingTime": noURLString,
-            "autoClose": noURLString
+            "waitingTime": "",
+            "autoClose": ""
         },
         "keycloak": {
-            "realm": noURLString,
-            "resource": noURLString,
-            "serverUrl": noURLString
+            "realm": "",
+            "resource": "",
+            "serverUrl": ""
         }
     }
 

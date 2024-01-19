@@ -9,8 +9,6 @@ export const connectDatabase = () => {
 
     const mongodbURI = process.env.server_mode === "DEV" ? `mongodb://${DB_USERNAME}:${DB_PASSWORD}@${DB_CLUSTERNAME}?authSource=${DB_DATABASENAME}` : `mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@${DB_CLUSTERNAME}/${DB_DATABASENAME}?retryWrites=true&w=majority`
 
-    console.log("mongodbURI", mongodbURI)
-
     mongoose.connect(mongodbURI).then(res => {
         console.log("MongoDB Connection Successful")
     }).catch(error => {

@@ -10,7 +10,7 @@ config({
 const app = express()
 
 app.use(cors({
-    origin: process.env.allowed_client_1,
+    origin: [process.env.allowed_client_1, process.env.allowed_client_2],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }))
