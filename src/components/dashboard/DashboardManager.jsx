@@ -3,7 +3,7 @@ import Dashboard from "./Dashboard"
 
 const Manager = () => {
     return (
-        <div className="flex flex-col h-full gap-2">
+        <div className="flex flex-col h-full">
             <div className="p-2">
                 <Buttons />
             </div>

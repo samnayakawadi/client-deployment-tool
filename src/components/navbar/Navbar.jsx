@@ -28,8 +28,8 @@ const Navbar = ({ currentLocation }) => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 font-semibold">
-                        <li><a href="#home" className={`hover:text-redColor ${currentLocation === "home" ? "text-redColor" : "text-white"} hover:bg-navbg`}>Documentation</a></li>
-                        <li><a href="https://meghsikshak.in/" className={`hover:text-redColor ${currentLocation === "home" ? "text-redColor" : "text-white"} hover:bg-navbg`}>Support</a></li>
+                        <li><a href="https://docs.google.com/document/d/1FrKSuWAcDpc-xF2ftVJPIp-S0BCyVQw-64_OwRTBgcg/edit?usp=sharing" target="_blank" rel="noreferrer"  className={`hover:text-redColor ${currentLocation === "home" ? "text-redColor" : "text-white"} hover:bg-navbg`}>Documentation</a></li>
+                        <li><a href="https://meghsikshak.in/" target="_blank" rel="noreferrer"  className={`hover:text-redColor ${currentLocation === "home" ? "text-redColor" : "text-white"} hover:bg-navbg`}>Support</a></li>
                         {/* <li><a href="#about" className={`hover:text-redColor ${currentLocation === "about" ? "text-redColor" : "text-white"} hover:bg-navbg`}>About</a></li>
                         <li><a href="#service" className={`hover:text-redColor ${currentLocation === "service" ? "text-redColor" : "text-white"} hover:bg-navbg`}>Service</a></li>
                         <li><a href="#project" className={`hover:text-redColor ${currentLocation === "project" ? "text-redColor" : "text-white"} hover:bg-navbg`}>Projects</a></li>

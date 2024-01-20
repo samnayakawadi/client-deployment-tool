@@ -20,5 +20,8 @@ export const dashboardState = {
             selectedTab: "linux"
         }
     },
-    clientsList: []
+    getClients: {
+        isLoading: true,
+        clientsList: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}] // Add more objects for more skeletons
+    }
 }

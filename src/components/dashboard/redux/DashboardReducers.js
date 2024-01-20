@@ -7,14 +7,14 @@ export const dashboardReducers = {
         prevState.modals.addNewClient.clientName = actions.payload
     },
     storeAllClients: (prevState, actions) => {
-        prevState.clientsList = actions.payload
+        prevState.getClients.clientsList = actions.payload
     },
     pushClientToAllClients: (prevState, actions) => {
-        prevState.clientsList.push(actions.payload)
+        prevState.getClients.clientsList.push(actions.payload)
     },
     deleteClientFromAllClients: (prevState, actions) => {
         // actions.payload = item index
-        prevState.clientsList.splice(actions.payload, 1)
+        prevState.getClients.clientsList.splice(actions.payload, 1)
     },
     toggleDeleteClient: (prevState, actions) => {
         prevState.modals.deleteClient.clientId = actions.payload.clientId
@@ -33,5 +33,8 @@ export const dashboardReducers = {
     },
     selectDownloadTab: (prevState, actions) => {
         prevState.modals.downloadClient.selectedTab = actions.payload
+    },
+    isLoadingClients: (prevState, actions) => {
+        prevState.getClients.isLoading = actions.payload
     }
 }

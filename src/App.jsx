@@ -9,12 +9,12 @@ import DashboardManager from "./components/dashboard/DashboardManager"
 function App() {
 
   return (
-    <div className="cursor-crosshair flex flex-col h-screen">
+    <div className="cursor-crosshair flex flex-col h-screen bg-gray-900">
       <Navbar />
-      <div className="m-2 mb-0 flex flex-col gap-2">
+      {/* <div className="m-2 mb-0 flex flex-col gap-2">
         <Breadcrumb />
-      </div>
-      <div className="flex-grow m-2 overflow-y-auto">
+      </div> */}
+      <div className="flex-grow overflow-y-auto">
         <GlobalComponent />
         <Routes>
           <Route path="/" element={<DashboardManager />} />

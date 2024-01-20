@@ -3,8 +3,8 @@ import { dashboardActions } from "./redux/DashboardSlice"
 import { clientActions } from "../editor/client/redux/ClientSlice"
 import DashboardServices from "./DashboardServices"
 import copy from "copy-to-clipboard"
-import { toast } from "react-toastify"
 import { useNavigate } from "react-router"
+import { toast } from "react-toastify"
 
 const DashboardHandlers = () => {
 
@@ -37,6 +37,7 @@ const DashboardHandlers = () => {
     }
 
     const getAllClientsHandler = async () => {
+        dispatch(dashboardActions.isLoadingClients(true))
         const allClients = await dashboardServices.getAllClients()
 
         if (allClients !== null) {
@@ -44,6 +45,7 @@ const DashboardHandlers = () => {
         } else {
             dispatch(dashboardActions.storeAllClients([]))
         }
+        dispatch(dashboardActions.isLoadingClients(false))
     }
 
     const deleteClientHandler = async () => {
@@ -66,6 +68,7 @@ const DashboardHandlers = () => {
     const getClientJSONHandler = async (clientId = null) => {
         const data = await dashboardServices.viewClientJSON(clientId)
         dispatch(dashboardActions.viewClientJSON(data))
+        dashboardHandlers.toggleViewClientHandler()
     }
 
     const toggleDownloadClientHandler = (clientId = null) => {
@@ -94,7 +97,7 @@ const DashboardHandlers = () => {
 
     const copyCommandHandler = (os = "linux") => {
         copy(getGenerateJSONCommandHandler(os, "command"))
-        // toast.success("Command Copied")
+        toast.success("Command Copied")
         toggleDownloadClientHandler()
     }
 

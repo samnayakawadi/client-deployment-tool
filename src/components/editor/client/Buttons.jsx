@@ -8,7 +8,7 @@ const Buttons = () => {
     return (
         <div className="flex flex-row justify-between">
             <Link to="/" className="btn btn-success">Return to Dashboard</Link>
-            <button className="btn btn-success" onClick={clientHandlers.updateClientHandler}>Save Client</button>
+            <button className="btn btn-success" onClick={clientHandlers.updateClientHandler}>Update Client</button>
         </div>
     )
 }

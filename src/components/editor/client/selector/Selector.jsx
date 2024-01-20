@@ -8,7 +8,7 @@ const Selector = () => {
 
     return (
         <div>
-            <div role="tablist" className="tabs tabs-boxed">
+            <div role="tablist" className="tabs tabs-boxed border border-gray-700">
                 <Link to="general" className={`tab ${selectedTab === "general" && "tab-active"}`}>General</Link>
                 <Link to="ui" className={`tab ${selectedTab === "ui" && "tab-active"}`}>User Interface</Link>
                 <Link to="services" className={`tab ${selectedTab === "services" && "tab-active"}`}>Services</Link>
