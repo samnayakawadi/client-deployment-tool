@@ -12,14 +12,16 @@ export const addClient = async (req, res) => {
         const clientAdded = await clientsCollection.create(defaultJson)
 
         if (clientAdded) {
-            res.json({
-                status: "OK",
-                message: "Client Added",
-                data: {
-                    _id: clientAdded._id,
-                    clientName
-                }
-            })
+            setTimeout(() => {
+                res.json({
+                    status: "OK",
+                    message: "Client Added",
+                    data: {
+                        _id: clientAdded._id,
+                        clientName
+                    }
+                })
+            }, process.env.network_delay)
         }
         else {
             res.json({
@@ -51,11 +53,13 @@ export const updateClient = async (req, res) => {
                 { new: true }
             );
 
-            res.json({
-                status: "OK",
-                message: "Client Updated",
-                data: updatedClient
-            })
+            setTimeout(() => {
+                res.json({
+                    status: "OK",
+                    message: "Client Updated",
+                    data: updatedClient
+                })
+            }, process.env.network_delay)
 
         }
         else {
@@ -81,11 +85,13 @@ export const getClient = async (req, res) => {
         const dbClient = await clientsCollection.findOne({ _id: clientId })
 
         if (dbClient) {
-            res.status(200).json({
-                status: "OK",
-                message: "Client Details Fetched",
-                data: dbClient
-            })
+            setTimeout(() => {
+                res.status(200).json({
+                    status: "OK",
+                    message: "Client Details Fetched",
+                    data: dbClient
+                })
+            }, process.env.network_delay)
         } else {
             res.status(404).json({
                 status: "OK",
@@ -105,11 +111,13 @@ export const getClients = async (req, res) => {
     try {
         const allClients = await clientsCollection.find().select("clientName")
 
-        res.status(200).json({
-            status: "OK",
-            message: "Retrieved All Clients",
-            data: allClients
-        })
+        setTimeout(() => {
+            res.status(200).json({
+                status: "OK",
+                message: "Retrieved All Clients",
+                data: allClients
+            })
+        }, process.env.network_delay)
     } catch (error) {
         res.status(500).json({
             status: "INTERNALSERVERERROR",
@@ -128,10 +136,12 @@ export const deleteClient = async (req, res) => {
 
         await dbClient.deleteOne()
 
-        res.status(200).json({
-            status: "OK",
-            message: "Client Deleted",
-        })
+        setTimeout(() => {
+            res.status(200).json({
+                status: "OK",
+                message: "Client Deleted",
+            })
+        }, process.env.network_delay)
     } else {
         res.status(404).json({
             status: "OK",
@@ -158,7 +168,9 @@ export const generateJSON = async (req, res) => {
                 res.setHeader("Content-Disposition", "attachment; filename=data.json")
             }
 
-            res.send(jsonString)
+            setTimeout(() => {
+                res.send(jsonString)
+            }, process.env.network_delay)
 
         } else {
             res.status(404).json({
