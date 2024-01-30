@@ -1,5 +1,6 @@
-import { convertDBJsonToV1, getDefaultJson } from "../handlers/client.js"
-import { clientsCollection } from "../model/clients.js"
+import { convertDBJsonToV1 } from "../handlers/ui.js"
+import { getDefaultJson } from "../handlers/common.js"
+import { clientsCollection } from "../model/client.js"
 
 export const addClient = async (req, res) => {
 
@@ -186,3 +187,12 @@ export const generateJSON = async (req, res) => {
     }
 }
 
+export const generateProperties = (req, res) => {
+
+
+
+    res.setHeader('Content-Type', 'text/plain');
+    res.setHeader("Content-Disposition", "attachment; filename=questionAuthoring.properties")
+
+    res.send(properties)
+}
