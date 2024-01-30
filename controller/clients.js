@@ -1,4 +1,4 @@
-import { convertDBJsonToV1 } from "../handlers/ui.js"
+import { convertDBUIJsonToV1 } from "../handlers/ui.js"
 import { getDefaultJson } from "../handlers/common.js"
 import { clientsCollection } from "../model/client.js"
 
@@ -157,7 +157,7 @@ export const generateJSON = async (req, res) => {
     try {
 
         const dbClient = await clientsCollection.findOne({ _id: clientId })
-        const json = convertDBJsonToV1(dbClient)
+        const json = convertDBUIJsonToV1(dbClient.ui)
 
         if (dbClient) {
 
@@ -180,6 +180,7 @@ export const generateJSON = async (req, res) => {
             })
         }
     } catch (error) {
+        console.log(error)
         res.status(500).json({
             status: "INTERNALSERVERERROR",
             message: error

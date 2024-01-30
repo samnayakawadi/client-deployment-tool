@@ -1,27 +1,52 @@
 export const getDefaultJson = (clientName) => {
     const defaultJson = {
         clientName,
-        "services": {
-            "questionAuthoring": "",
-            "quizAuthoring": "",
-            "delivery": "",
-            "admin": "",
-            "courseOrganizer": "",
-            "courseCatalog": "",
-            "learningAnalytics": ""
-        },
         "ui": {
-            "homePage": "",
-            "logo": ""
+            "services": {
+                "questionAuthoring": "",
+                "quizAuthoring": "",
+                "delivery": "",
+                "admin": "",
+                "courseOrganizer": "",
+                "courseCatalog": "",
+                "learningAnalytics": ""
+            },
+            "home": {
+                "homePage": "",
+                "logo": ""
+            },
+            "time": {
+                "waitingTime": "",
+                "autoClose": ""
+            },
+            "keycloak": {
+                "realm": "",
+                "resource": "",
+                "serverUrl": ""
+            }
         },
-        "time": {
-            "waitingTime": "",
-            "autoClose": ""
+        "services": {
+            "services": {
+                "questionAuthoring": "",
+                "quizAuthoring": "",
+                "delivery": "",
+                "admin": "",
+                "courseOrganizer": "",
+                "courseCatalog": "",
+                "learningAnalytics": ""
+            },
+            "uploads": {
+                "assessmentFileUpload": "",
+                "assessmentQTIUpload": ""
+            }
         },
-        "keycloak": {
-            "realm": "",
-            "resource": "",
-            "serverUrl": ""
+        "database": {
+            "mongo": {
+                "authenticationDatabase": "",
+                "username": "",
+                "password": "",
+                "database": ""
+            }
         }
     }
 

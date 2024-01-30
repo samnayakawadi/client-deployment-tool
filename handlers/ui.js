@@ -4,9 +4,9 @@ const noURLProvidedString = (string) => {
     return (string === "" || string === undefined || string === null) ? noURLString : string
 }
 
-export const convertDBJsonToV1 = (dbJson) => {
+export const convertDBUIJsonToV1 = (uiJson) => {
 
-    const { _id: clientId, clientName, services, ui, time, keycloak } = dbJson
+    const { _id: clientId, clientName, services, home, time, keycloak } = uiJson
 
     const dataToUpdate = {
         clientId,
@@ -26,19 +26,19 @@ export const convertDBJsonToV1 = (dbJson) => {
                 folderStructure: `${noURLProvidedString(services.courseOrganizer)}/courseOrganizer/getCourseStructure`,
                 courseUsers: `${noURLProvidedString(services.courseCatalog)}/api/getCourseEnrolledLearners`,
                 courseAuthor: `${noURLProvidedString(services.courseCatalog)}/api/checkCourseAuthorStatus`,
-                ngel: noURLProvidedString(ui.homePage),
-                logo: noURLProvidedString(ui.logo)
+                ngel: noURLProvidedString(home.mainPage),
+                logo: noURLProvidedString(home.logo)
             },
             deliveryUI: {
                 questionAuthoring: noURLProvidedString(services.questionAuthoring),
                 quizAuthoring: noURLProvidedString(services.quizAuthoring),
                 quizDelivery: noURLProvidedString(services.delivery),
                 admin: noURLProvidedString(services.admin),
-                ngel: noURLProvidedString(ui.homePage),
+                ngel: noURLProvidedString(home.mainPage),
                 userActivity: noURLProvidedString(services.learningAnalytics)
             },
             adminUI: {
-                ngel: noURLProvidedString(ui.homePage),
+                ngel: noURLProvidedString(home.mainPage),
                 admin: noURLProvidedString(services.admin),
                 questionAuthoring: noURLProvidedString(services.questionAuthoring),
             }
