@@ -18,8 +18,8 @@ const ClientHandlers = () => {
         dispatch(clientActions.updateServicesTab(e.target))
     }
 
-    const updateUITab = (e) => {
-        dispatch(clientActions.updateUITab(e.target))
+    const updateHomeTab = (e) => {
+        dispatch(clientActions.updateHomeTab(e.target))
     }
 
     const updateTimeTab = (e) => {
@@ -38,7 +38,7 @@ const ClientHandlers = () => {
         updateGeneralTab,
         updateServicesTab,
         updateClientHandler,
-        updateUITab,
+        updateHomeTab,
         updateTimeTab,
         updateKeycloakTab
     }

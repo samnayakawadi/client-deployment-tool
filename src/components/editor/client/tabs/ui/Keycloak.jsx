@@ -6,14 +6,14 @@ import ClientHandlers from "../../ClientHandlers"
 const Keycloak = () => {
 
     const clientEditorState = useSelector(prevState => prevState.clientEditor)
-    const keycloak = clientEditorState.data.keycloak
+    const keycloak = clientEditorState.data.ui.keycloak
 
     const dispatch = useDispatch()
 
     const clientHandlers = ClientHandlers()
 
     useEffect(() => {
-        dispatch(clientActions.updateSelectedTab("keycloak"))
+        dispatch(clientActions.updateSelectedTab({ menu: "ui", selectedTab: "keycloak" }))
     }, [])
 
     return (

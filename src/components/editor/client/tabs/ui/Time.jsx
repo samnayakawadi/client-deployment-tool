@@ -6,14 +6,14 @@ import ClientHandlers from "../../ClientHandlers"
 const Time = () => {
 
     const clientEditorState = useSelector(prevState => prevState.clientEditor)
-    const time = clientEditorState.data.time
+    const time = clientEditorState.data.ui.time
 
     const dispatch = useDispatch()
 
     const clientHandlers = ClientHandlers()
 
     useEffect(() => {
-        dispatch(clientActions.updateSelectedTab("time"))
+        dispatch(clientActions.updateSelectedTab({ menu: "ui", selectedTab: "time" }))
     }, [])
 
     return (

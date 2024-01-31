@@ -11,7 +11,7 @@ const General = () => {
     const clientHandlers = ClientHandlers()
 
     useEffect(() => {
-        dispatch(clientActions.updateSelectedTab("general"))
+        dispatch(clientActions.updateSelectedTab({ menu: "ui", selectedTab: "general" }))
     }, [])
 
     return (

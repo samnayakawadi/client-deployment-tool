@@ -1,17 +1,15 @@
 import { useSelector } from "react-redux"
+import { Link } from "react-router-dom"
 
 const DatabaseSelector = () => {
     const clientEditorState = useSelector(prevState => prevState.clientEditor)
-    const selectedTab = clientEditorState.selectedTab
+    const selectedTab = clientEditorState.selectedTabs.database
 
     return (
         <div>
             <div role="tablist" className="tabs tabs-boxed border border-gray-700">
-                <Link to="general" className={`tab ${selectedTab === "general" && "tab-active"}`}>General</Link>
-                <Link to="ui" className={`tab ${selectedTab === "ui" && "tab-active"}`}>Home</Link>
-                <Link to="services" className={`tab ${selectedTab === "services" && "tab-active"}`}>Services</Link>
-                <Link to="time" className={`tab ${selectedTab === "time" && "tab-active"}`}>Time</Link>
-                <Link to="keycloak" className={`tab ${selectedTab === "keycloak" && "tab-active"}`}>Keycloak</Link>
+                <Link to="/editor/database/mongo" className={`tab ${selectedTab === "mongo" && "tab-active"}`}>MongoDB</Link>
+                <Link to="/editor/database/sql" className={`tab ${selectedTab === "sql" && "tab-active"}`}>SQL</Link>
             </div>
         </div>
     )

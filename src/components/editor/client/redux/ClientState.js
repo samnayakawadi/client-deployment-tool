@@ -1,32 +1,64 @@
 export const clientState = {
     showEditor: false, // This flag is used when Page is refreshed
-    selectedTab: "general",
-    data: { // Dummy Data Added Below
-        "_id": "65a6658ab4b5e8adf8836556",
-        "clientName": "CAKES",
-        "services": {
-            "questionAuthoring": "<NO DATA PROVIDED YET>",
-            "quizAuthoring": "<NO DATA PROVIDED YET>",
-            "delivery": "<NO DATA PROVIDED YET>",
-            "admin": "<NO DATA PROVIDED YET>",
-            "courseOrganizer": "<NO DATA PROVIDED YET>",
-            "courseCatalog": "<NO DATA PROVIDED YET>",
-            "learningAnalytics": "<NO DATA PROVIDED YET>"
-        },
-        "ui": {
-            "homePage": "<NO DATA PROVIDED YET>",
-            "logo": "<NO DATA PROVIDED YET>"
-        },
-        "time": {
-            "waitingTime": "<NO DATA PROVIDED YET>",
-            "autoClose": "<NO DATA PROVIDED YET>"
-        },
-        "keycloak": {
-            "realm": "<NO DATA PROVIDED YET>",
-            "resource": "<NO DATA PROVIDED YET>",
-            "serverUrl": "<NO DATA PROVIDED YET>"
-        },
-        "__v": 0
+    selectedTabs: {
+        ui: "general",
+        services: "services",
+        database: "mongo"
     },
-    menu: "ui"
+    data: { // Dummy Data Added Below
+        "_id": "65b8df18e84f474f618df258",
+        "clientName": "Test Client",
+        "ui": {
+            "home": {
+                "homePage": "",
+                "logo": ""
+            },
+            "services": {
+                "questionAuthoring": "",
+                "quizAuthoring": "",
+                "delivery": "",
+                "admin": "",
+                "courseOrganizer": "",
+                "courseCatalog": "",
+                "learningAnalytics": ""
+            },
+            "time": {
+                "waitingTime": "",
+                "autoClose": ""
+            },
+            "keycloak": {
+                "realm": "",
+                "resource": "",
+                "serverUrl": ""
+            },
+            "_id": "65b8df18e84f474f618df259"
+        },
+        "services": {
+            "services": {
+                "questionAuthoring": "",
+                "quizAuthoring": "",
+                "delivery": "",
+                "admin": "",
+                "courseOrganizer": "",
+                "courseCatalog": "",
+                "learningAnalytics": ""
+            },
+            "uploads": {
+                "assessmentFileUpload": "",
+                "assessmentQTIUpload": ""
+            },
+            "_id": "65b8df18e84f474f618df25a"
+        },
+        "database": {
+            "mongo": {
+                "authenticationDatabase": "",
+                "username": "",
+                "password": "",
+                "database": "",
+                "_id": "65b8df18e84f474f618df25c"
+            },
+            "_id": "65b8df18e84f474f618df25b"
+        },
+    },
+    menu: "ui" //ui, services, database
 }

@@ -109,7 +109,7 @@ const DashboardHandlers = () => {
         const clientData = await dashboardServices.getClient(clientId)
         dispatch(clientActions.updateData(clientData))
         dispatch(clientActions.showEditor())
-        navigate("/editor/general")
+        navigate("/editor/ui/general")
     }
 
     const dashboardHandlers = {

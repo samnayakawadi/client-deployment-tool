@@ -8,14 +8,14 @@ const SelectorHandlers = () => {
 
     const selectedTab = clientEditorState.selectedTab
 
-    const selectTabHandler = (newTab) => {
-        if (selectedTab !== newTab) {
-            dispatch(clientActions.updateSelectedTab(newTab))
-        }
-    }
+    // const selectTabHandler = (newTab) => {
+    //     if (selectedTab !== newTab) {
+    //         dispatch(clientActions.updateSelectedTab(newTab))
+    //     }
+    // }
 
     const selectorHandlers = {
-        selectTabHandler
+        // selectTabHandler
     }
 
     return selectorHandlers

@@ -6,14 +6,14 @@ import ClientHandlers from "../../ClientHandlers"
 const Home = () => {
 
     const clientEditorState = useSelector(prevState => prevState.clientEditor)
-    const ui = clientEditorState.data.ui
+    const home = clientEditorState.data.ui.home
 
     const dispatch = useDispatch()
 
     const clientHandlers = ClientHandlers()
 
     useEffect(() => {
-        dispatch(clientActions.updateSelectedTab("ui"))
+        dispatch(clientActions.updateSelectedTab({ menu: "ui", selectedTab: "home" }))
     }, [])
 
     return (
@@ -23,7 +23,7 @@ const Home = () => {
                     Main Page
                 </div>
                 <div className="basis-9/12">
-                    <input value={ui.homePage} name="homePage" onChange={clientHandlers.updateUITab} type="text" placeholder="E.g. http://10.244.2.206:3000 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input value={home.homePage} name="homePage" onChange={clientHandlers.updateHomeTab} type="text" placeholder="E.g. http://10.244.2.206:3000 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -32,7 +32,7 @@ const Home = () => {
                     Logo
                 </div>
                 <div className="basis-9/12">
-                    <input value={ui.logo} name="logo" type="text" onChange={clientHandlers.updateUITab} placeholder="E.g. http://10.244.2.206:3000 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input value={home.logo} name="logo" type="text" onChange={clientHandlers.updateHomeTab} placeholder="E.g. http://10.244.2.206:3000 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
         </div>

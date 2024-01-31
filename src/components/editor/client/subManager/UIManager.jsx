@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router"
-import Selector from "../selector/UISelector"
+import UISelector from "../selector/UISelector"
 import General from "../tabs/ui/General"
 import Home from "../tabs/ui/Home"
 import Services from "../tabs/ui/Services"
@@ -10,7 +10,7 @@ const UIManager = () => {
     return (
         <div className="flex flex-col h-full">
             <div className="p-2">
-                <Selector />
+                <UISelector />
             </div>
             <div className="flex-grow p-3 border border-gray-700 mx-2">
                 <Routes>

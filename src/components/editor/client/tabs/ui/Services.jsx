@@ -6,13 +6,13 @@ import ClientHandlers from "../../ClientHandlers"
 const Services = () => {
 
     const clientEditorState = useSelector(prevState => prevState.clientEditor)
-    const services = clientEditorState.data.services
+    const services = clientEditorState.data.ui.services
 
     const dispatch = useDispatch()
     const clientHandlers = ClientHandlers()
 
     useEffect(() => {
-        dispatch(clientActions.updateSelectedTab("services"))
+        dispatch(clientActions.updateSelectedTab({ menu: "ui", selectedTab: "services" }))
     }, [])
 
     return (
