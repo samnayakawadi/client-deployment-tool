@@ -8,7 +8,7 @@ export const Menu = () => {
     const selectedTabs = clientState.selectedTabs
 
     return (
-        <div role="tablist" className="tabs tabs-lifted tabs-lg">
+        <div role="tablist" className="tabs tabs-boxed border border-gray-700">
             <Link to={`/editor/ui/${selectedTabs.ui}`} role="tab" className={`tab ${menu === "ui" && "tab-active"}`}>User Interface</Link>
             <Link to={`/editor/services/${selectedTabs.services}`} role="tab" className={`tab ${menu === "services" && "tab-active"}`}>Services</Link>
             <Link to={`/editor/database/${selectedTabs.database}`} role="tab" className={`tab ${menu === "database" && "tab-active"}`}>Database</Link>

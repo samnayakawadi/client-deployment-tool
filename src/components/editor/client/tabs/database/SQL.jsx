@@ -11,7 +11,7 @@ const SQL = () => {
     }, [])
 
     return (
-        <div>SQL</div>
+        <div className="flex flex-row justify-center items-center">Coming Soon</div>
     )
 }
 

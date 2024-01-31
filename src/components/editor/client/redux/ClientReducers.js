@@ -31,5 +31,8 @@ export const clientReducers = {
     },
     updateServicesUploadsTab: (prevState, actions) => {
         prevState.data.services.uploads[actions.payload.name] = actions.payload.value
+    },
+    updateDatabaseMongoTab: (prevState, actions) => {
+        prevState.data.database.mongo[actions.payload.name] = actions.payload.value
     }
 }
