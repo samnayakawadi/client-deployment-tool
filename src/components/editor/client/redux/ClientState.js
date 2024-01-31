@@ -27,5 +27,6 @@ export const clientState = {
             "serverUrl": "<NO DATA PROVIDED YET>"
         },
         "__v": 0
-    }
+    },
+    menu: "ui"
 }

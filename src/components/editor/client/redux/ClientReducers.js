@@ -23,4 +23,7 @@ export const clientReducers = {
     updateKeycloakTab: (prevState, actions) => {
         prevState.data.keycloak[actions.payload.name] = actions.payload.value
     },
+    updateMenuTab: (prevState, actions) => {
+        prevState.menu = actions.payload
+    }
 }

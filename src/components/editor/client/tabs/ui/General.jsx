@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
-import { clientActions } from "../redux/ClientSlice"
+import { clientActions } from "../../redux/ClientSlice"
 import { useEffect } from "react"
-import ClientHandlers from "../ClientHandlers"
+import ClientHandlers from "../../ClientHandlers"
 
 const General = () => {
 

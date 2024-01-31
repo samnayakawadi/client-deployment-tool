@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { clientActions } from "../redux/ClientSlice"
-import ClientHandlers from "../ClientHandlers"
+import { clientActions } from "../../redux/ClientSlice"
+import ClientHandlers from "../../ClientHandlers"
 
 const Services = () => {
 

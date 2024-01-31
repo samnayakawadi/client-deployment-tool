@@ -1,13 +1,11 @@
 import { Route, Routes, useNavigate } from "react-router"
-import General from "./tabs/General"
-import UI from "./tabs/UI"
-import Services from "./tabs/Services"
-import Time from "./tabs/Time"
-import Keycloak from "./tabs/Keycloak"
-import Selector from "./selector/Selector"
 import Buttons from "./Buttons"
 import { useEffect } from "react"
 import { useSelector } from "react-redux"
+import { Menu } from "./menu/Menu"
+import UIManager from "./subManager/UIManager"
+import ServicesManager from "./subManager/ServicesManager"
+import DatabaseManager from "./subManager/DatabaseManager"
 
 const Manager = () => {
 
@@ -32,16 +30,14 @@ const Manager = () => {
                     <span>Note : Do not add "/" at the end of any URLs.</span>
                 </div>
             </div>
-            <div className="p-2">
-                <Selector />
+            <div className="p-2 pb-0">
+                <Menu />
             </div>
-            <div className="flex-grow p-3 border border-gray-700 mx-2">
+            <div className="h-full">
                 <Routes>
-                    <Route path="/general" element={<General />} />
-                    <Route path="/ui" element={<UI />} />
-                    <Route path="/services" element={<Services />} />
-                    <Route path="/time" element={<Time />} />
-                    <Route path="/keycloak" element={<Keycloak />} />
+                    <Route path="ui/*" element={<UIManager />} />
+                    <Route path="services/*" element={<ServicesManager />} />
+                    <Route path="database/*" element={<DatabaseManager />} />
                 </Routes>
             </div>
         </div>
