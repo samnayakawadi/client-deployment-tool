@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { clientActions } from "../../redux/ClientSlice"
-import ClientHandlers from "../../ClientHandlers"
+import UIHandlers from "./UIHandlers"
 
 const Services = () => {
 
@@ -9,7 +9,8 @@ const Services = () => {
     const services = clientEditorState.data.ui.services
 
     const dispatch = useDispatch()
-    const clientHandlers = ClientHandlers()
+
+    const uiHandlers = UIHandlers()
 
     useEffect(() => {
         dispatch(clientActions.updateSelectedTab({ menu: "ui", selectedTab: "services" }))
@@ -25,7 +26,7 @@ const Services = () => {
                     8093
                 </div>
                 <div className="basis-8/12">
-                    <input type="text" name="questionAuthoring" value={services.questionAuthoring} onChange={clientHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8093 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="questionAuthoring" value={services.questionAuthoring} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8093 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -37,7 +38,7 @@ const Services = () => {
                     8094
                 </div>
                 <div className="basis-8/12">
-                    <input type="text" name="quizAuthoring" value={services.quizAuthoring} onChange={clientHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8094 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="quizAuthoring" value={services.quizAuthoring} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8094 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -49,7 +50,7 @@ const Services = () => {
                     8095
                 </div>
                 <div className="basis-8/12">
-                    <input type="text" name="delivery" value={services.delivery} onChange={clientHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8095 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="delivery" value={services.delivery} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8095 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -61,7 +62,7 @@ const Services = () => {
                     8096
                 </div>
                 <div className="basis-8/12">
-                    <input type="text" name="admin" value={services.admin} onChange={clientHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8096 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="admin" value={services.admin} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8096 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -73,7 +74,7 @@ const Services = () => {
                     8082
                 </div>
                 <div className="basis-8/12">
-                    <input type="text" name="courseOrganizer" value={services.courseOrganizer} onChange={clientHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8082 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="courseOrganizer" value={services.courseOrganizer} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8082 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -86,7 +87,7 @@ const Services = () => {
                     8085
                 </div>
                 <div className="basis-8/12">
-                    <input type="text" name="courseCatalog" value={services.courseCatalog} onChange={clientHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8085 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="courseCatalog" value={services.courseCatalog} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8085 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -99,7 +100,7 @@ const Services = () => {
                     8080
                 </div>
                 <div className="basis-8/12">
-                    <input type="text" name="learningAnalytics" value={services.learningAnalytics} onChange={clientHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8080 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="learningAnalytics" value={services.learningAnalytics} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8080 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
         </div>

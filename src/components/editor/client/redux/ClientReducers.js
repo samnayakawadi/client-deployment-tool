@@ -8,22 +8,28 @@ export const clientReducers = {
     updateData: (prevState, actions) => {
         prevState.data = actions.payload
     },
-    updateGeneralTab: (prevState, actions) => {
+    updateUIGeneralTab: (prevState, actions) => {
         prevState.data.clientName = actions.payload
     },
-    updateServicesTab: (prevState, actions) => {
+    updateUIServicesTab: (prevState, actions) => {
         prevState.data.ui.services[actions.payload.name] = actions.payload.value
     },
-    updateHomeTab: (prevState, actions) => {
+    updateUIHomeTab: (prevState, actions) => {
         prevState.data.ui.home[actions.payload.name] = actions.payload.value
     },
-    updateTimeTab: (prevState, actions) => {
+    updateUITimeTab: (prevState, actions) => {
         prevState.data.ui.time[actions.payload.name] = actions.payload.value
     },
-    updateKeycloakTab: (prevState, actions) => {
+    updateUIKeycloakTab: (prevState, actions) => {
         prevState.data.ui.keycloak[actions.payload.name] = actions.payload.value
     },
     updateMenuTab: (prevState, actions) => {
         prevState.menu = actions.payload
+    },
+    updateServicesServicesTab: (prevState, actions) => {
+        prevState.data.services.services[actions.payload.name] = actions.payload.value
+    },
+    updateServicesUploadsTab: (prevState, actions) => {
+        prevState.data.services.uploads[actions.payload.name] = actions.payload.value
     }
 }

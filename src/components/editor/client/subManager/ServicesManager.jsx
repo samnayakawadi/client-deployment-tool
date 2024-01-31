@@ -2,8 +2,17 @@ import { Route, Routes } from "react-router"
 import ServicesSelector from "../selector/ServicesSelector"
 import Services from "../tabs/services/Services"
 import Uploads from "../tabs/services/Uploads"
+import MenuHandlers from "../menu/MenuHandlers"
+import { useEffect } from "react"
 
 const ServicesManager = () => {
+
+    const menuHandlers = MenuHandlers()
+
+    useEffect(() => {
+        menuHandlers.updateMenuHandler("services")
+    }, [])
+
     return (
         <div className="flex flex-col h-full">
             <div className="p-2">

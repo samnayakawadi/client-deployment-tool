@@ -5,8 +5,17 @@ import Home from "../tabs/ui/Home"
 import Services from "../tabs/ui/Services"
 import Time from "../tabs/ui/Time"
 import Keycloak from "../tabs/ui/Keycloak"
+import { useEffect } from "react"
+import MenuHandlers from "../menu/MenuHandlers"
 
 const UIManager = () => {
+
+    const menuHandlers = MenuHandlers()
+
+    useEffect(() => {
+        menuHandlers.updateMenuHandler("ui")
+    }, [])
+
     return (
         <div className="flex flex-col h-full">
             <div className="p-2">

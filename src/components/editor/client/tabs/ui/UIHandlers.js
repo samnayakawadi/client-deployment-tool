@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux"
-import { clientActions } from "./redux/ClientSlice"
-import ClientServices from "./ClientServices"
+import { clientActions } from "../../redux/ClientSlice"
+import ClientServices from "../../ClientServices"
 
-const ClientHandlers = () => {
+const UIHandlers = () => {
 
     const clientEditorState = useSelector(prevState => prevState.clientEditor)
     const data = clientEditorState.data
@@ -11,30 +11,30 @@ const ClientHandlers = () => {
     const dispatch = useDispatch()
 
     const updateGeneralTab = (e) => {
-        dispatch(clientActions.updateGeneralTab(e.target.value))
+        dispatch(clientActions.updateUIGeneralTab(e.target.value))
     }
 
     const updateServicesTab = (e) => {
-        dispatch(clientActions.updateServicesTab(e.target))
+        dispatch(clientActions.updateUIServicesTab(e.target))
     }
 
     const updateHomeTab = (e) => {
-        dispatch(clientActions.updateHomeTab(e.target))
+        dispatch(clientActions.updateUIHomeTab(e.target))
     }
 
     const updateTimeTab = (e) => {
-        dispatch(clientActions.updateTimeTab(e.target))
+        dispatch(clientActions.updateUITimeTab(e.target))
     }
 
     const updateKeycloakTab = (e) => {
-        dispatch(clientActions.updateKeycloakTab(e.target))
+        dispatch(clientActions.updateUIKeycloakTab(e.target))
     }
 
     const updateClientHandler = async () => {
         await clientServices.updateClient(data._id, data)
     }
 
-    const clientHandlers = {
+    const uiHandlers = {
         updateGeneralTab,
         updateServicesTab,
         updateClientHandler,
@@ -43,8 +43,8 @@ const ClientHandlers = () => {
         updateKeycloakTab
     }
 
-    return clientHandlers
+    return uiHandlers
 
 }
 
-export default ClientHandlers
+export default UIHandlers

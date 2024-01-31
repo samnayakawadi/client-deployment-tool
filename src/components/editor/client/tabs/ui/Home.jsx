@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { clientActions } from "../../redux/ClientSlice"
-import ClientHandlers from "../../ClientHandlers"
+import UIHandlers from "./UIHandlers"
 
 const Home = () => {
 
@@ -10,7 +10,7 @@ const Home = () => {
 
     const dispatch = useDispatch()
 
-    const clientHandlers = ClientHandlers()
+    const uiHandlers = UIHandlers()
 
     useEffect(() => {
         dispatch(clientActions.updateSelectedTab({ menu: "ui", selectedTab: "home" }))
@@ -23,7 +23,7 @@ const Home = () => {
                     Main Page
                 </div>
                 <div className="basis-9/12">
-                    <input value={home.homePage} name="homePage" onChange={clientHandlers.updateHomeTab} type="text" placeholder="E.g. http://10.244.2.206:3000 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input value={home.homePage} name="homePage" onChange={uiHandlers.updateHomeTab} type="text" placeholder="E.g. http://10.244.2.206:3000 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -32,7 +32,7 @@ const Home = () => {
                     Logo
                 </div>
                 <div className="basis-9/12">
-                    <input value={home.logo} name="logo" type="text" onChange={clientHandlers.updateHomeTab} placeholder="E.g. http://10.244.2.206:3000 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input value={home.logo} name="logo" type="text" onChange={uiHandlers.updateHomeTab} placeholder="E.g. http://10.244.2.206:3000 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
         </div>

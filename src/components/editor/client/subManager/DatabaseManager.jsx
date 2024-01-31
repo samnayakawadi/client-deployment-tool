@@ -2,8 +2,17 @@ import { Route, Routes } from "react-router"
 import DatabaseSelector from "../selector/DatabaseSelector"
 import Mongo from "../tabs/database/Mongo"
 import SQL from "../tabs/database/SQL"
+import MenuHandlers from "../menu/MenuHandlers"
+import { useEffect } from "react"
 
 const DatabaseManager = () => {
+
+    const menuHandlers = MenuHandlers()
+
+    useEffect(() => {
+        menuHandlers.updateMenuHandler("database")
+    }, [])
+
     return (
         <div className="flex flex-col h-full">
             <div className="p-2">

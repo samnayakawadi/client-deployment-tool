@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom"
-import ClientHandlers from "./ClientHandlers"
+import UIHandlers from "./tabs/ui/UIHandlers"
 
 const Buttons = () => {
 
-    const clientHandlers = ClientHandlers()
+    const uiHandlers = UIHandlers()
 
     return (
         <div className="flex flex-row justify-between">
             <Link to="/" className="btn btn-success">Return to Dashboard</Link>
-            <button className="btn btn-success" onClick={clientHandlers.updateClientHandler}>Update Client</button>
+            <button className="btn btn-success" onClick={uiHandlers.updateClientHandler}>Update Client</button>
         </div>
     )
 }
