@@ -44,10 +44,10 @@ const Mongo = () => {
             </div>
             <div className="flex flex-row gap-2 items-center">
                 <div className="basis-3/12 text-center">
-                    Database
+                    Host
                 </div>
                 <div className="basis-9/12">
-                    <input type="text" name="database" value={mongo.database} onChange={mongoHandlers.updateMongoTab} placeholder="E.g. questionAuthoring" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="host" value={mongo.host} onChange={mongoHandlers.updateMongoTab} placeholder="E.g. 10.244.2.206 or megh3.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
         </div>

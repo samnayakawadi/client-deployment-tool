@@ -6,7 +6,7 @@ export const clientState = {
         database: "mongo"
     },
     data: { // Dummy Data Added Below
-        "_id": "65b8df18e84f474f618df258",
+        "_id": "65bb4810c9fd9d17971d5e6d",
         "clientName": "Test Client",
         "ui": {
             "home": {
@@ -30,8 +30,7 @@ export const clientState = {
                 "realm": "",
                 "resource": "",
                 "serverUrl": ""
-            },
-            "_id": "65b8df18e84f474f618df259"
+            }
         },
         "services": {
             "services": {
@@ -47,17 +46,19 @@ export const clientState = {
                 "assessmentFileUpload": "",
                 "assessmentQTIUpload": ""
             },
-            "_id": "65b8df18e84f474f618df25a"
+            "keycloak": {
+                "realm": "",
+                "resource": "",
+                "serverUrl": ""
+            }
         },
         "database": {
             "mongo": {
                 "authenticationDatabase": "",
                 "username": "",
                 "password": "",
-                "database": "",
-                "_id": "65b8df18e84f474f618df25c"
-            },
-            "_id": "65b8df18e84f474f618df25b"
+                "database": ""
+            }
         },
     },
     menu: "ui" //ui, services, database

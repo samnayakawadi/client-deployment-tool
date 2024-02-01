@@ -8,7 +8,7 @@ const Uploads = () => {
     const dispatch = useDispatch()
 
     const clientEditor = useSelector(prevState => prevState.clientEditor)
-    const services = clientEditor.data.services.services
+    const uploads = clientEditor.data.services.uploads
 
     const servicesHandlers = ServicesHandlers()
 
@@ -23,7 +23,7 @@ const Uploads = () => {
                     Assessment File Upload
                 </div>
                 <div className="basis-9/12">
-                    <input type="text" name="assessmentFileUpload" value={services.questionAuthoring} onChange={servicesHandlers.updateUploadsTab} placeholder="E.g. http://10.244.2.206:8093 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="assessmentFileUpload" value={uploads.assessmentFileUpload} onChange={servicesHandlers.updateUploadsTab} placeholder="E.g. D\:\\Uploaded Files by Question Authoring\\" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -32,7 +32,7 @@ const Uploads = () => {
                     Assessment QTI Upload
                 </div>
                 <div className="basis-9/12">
-                    <input type="text" name="assessmentQTIUpload" value={services.quizAuthoring} onChange={servicesHandlers.updateUploadsTab} placeholder="E.g. http://10.244.2.206:8094 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="assessmentQTIUpload" value={uploads.assessmentQTIUpload} onChange={servicesHandlers.updateUploadsTab} placeholder="E.g. C\:\\Users\\samnayakawadi\\Downloads\\QTI Conversion Service\\QuizDelivery\\" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 

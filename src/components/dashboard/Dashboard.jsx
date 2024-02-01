@@ -20,8 +20,8 @@ const Dashboard = () => {
     }, [])
 
     return (
-        <div>
-            <div className="grid grid-cols-4 gap-2 max-lg:grid-cols-1 px-2">
+        <div className="h-full px-2">
+            <div className="grid grid-cols-4 gap-2 max-lg:grid-cols-1">
                 {clientsList.map((singleClient, clientIndex) => {
                     return (
                         <div>
@@ -58,9 +58,11 @@ const Dashboard = () => {
                 })}
             </div>
 
-            {/* {clientsList.length === 0 && <div className="flex justify-center items-center h-full">
-                No Clients Found. Add New Client
-            </div>} */}
+            {clientsList.length === 0 && <div className="border border-gray-600 h-full flex justify-center items-center">
+                <div>
+                    No Clients Found. Add New Client
+                </div>
+            </div>}
             <AddNewClient />
             <DeleteClientConfirmation />
             <ViewClient />

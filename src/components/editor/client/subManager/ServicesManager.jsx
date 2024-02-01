@@ -4,6 +4,7 @@ import Services from "../tabs/services/Services"
 import Uploads from "../tabs/services/Uploads"
 import MenuHandlers from "../menu/MenuHandlers"
 import { useEffect } from "react"
+import Keycloak from "../tabs/services/Keycloak"
 
 const ServicesManager = () => {
 
@@ -22,6 +23,7 @@ const ServicesManager = () => {
                 <Routes>
                     <Route path="services" element={<Services />} />
                     <Route path="uploads" element={<Uploads />} />
+                    <Route path="keycloak" element={<Keycloak />} />
                 </Routes>
             </div>
         </div>

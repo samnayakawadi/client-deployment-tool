@@ -10,6 +10,7 @@ const ServicesSelector = () => {
             <div role="tablist" className="tabs tabs-boxed border border-gray-700">
                 <Link to="/editor/services/services" className={`tab ${selectedTab === "services" && "tab-active"}`}>Services</Link>
                 <Link to="/editor/services/uploads" className={`tab ${selectedTab === "uploads" && "tab-active"}`}>Uploads</Link>
+                <Link to="/editor/services/keycloak" className={`tab ${selectedTab === "keycloak" && "tab-active"}`}>Keycloak</Link>
             </div>
         </div>
     )
