@@ -1,6 +1,7 @@
 import { convertDBUIJsonToV1 } from "../handlers/ui.js"
 import { getDefaultJson } from "../handlers/common.js"
 import { clientsCollection } from "../model/client.js"
+import { questionAuthoring } from "../handlers/services.js"
 
 export const addClient = async (req, res) => {
 
@@ -188,12 +189,16 @@ export const generateJSON = async (req, res) => {
     }
 }
 
-export const generateProperties = (req, res) => {
+export const generateProperties = async (req, res) => {
 
+    const { clientId } = req.query
 
+    const dbClient = await clientsCollection.findOne({ _id: clientId })
+
+    const properties = questionAuthoring(dbClient)
 
     res.setHeader('Content-Type', 'text/plain');
-    res.setHeader("Content-Disposition", "attachment; filename=questionAuthoring.properties")
+    res.setHeader("Content-Disposition", "attachment; filename=application.properties")
 
     res.send(properties)
 }

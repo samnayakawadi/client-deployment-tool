@@ -38,6 +38,11 @@ export const getDefaultJson = (clientName) => {
             "uploads": {
                 "assessmentFileUpload": "",
                 "assessmentQTIUpload": ""
+            },
+            "keycloak": {
+                "realm": "",
+                "resource": "",
+                "serverUrl": ""
             }
         },
         "database": {
@@ -45,7 +50,7 @@ export const getDefaultJson = (clientName) => {
                 "authenticationDatabase": "",
                 "username": "",
                 "password": "",
-                "database": ""
+                "host": ""
             }
         }
     }

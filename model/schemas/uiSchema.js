@@ -32,6 +32,7 @@ const uiServicesSchema = mongoose.Schema({
 
 // parent
 export const uiSchema = mongoose.Schema({
+    _id: false,
     "home": uiHomeSchema,
     "services": uiServicesSchema,
     "time": uiTimeSchema,

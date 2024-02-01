@@ -1,5 +1,12 @@
 import mongoose from "mongoose";
 
+const keycloak = mongoose.Schema({
+    _id: false,
+    "realm": String,
+    "resource": String,
+    "serverUrl": String
+})
+
 const services = mongoose.Schema({
     _id: false,
     "questionAuthoring": String,
@@ -18,6 +25,8 @@ const uploads = mongoose.Schema({
 })
 
 export const servicesSchema = mongoose.Schema({
+    _id: false,
     "services": services,
-    "uploads": uploads
+    "uploads": uploads,
+    "keycloak": keycloak
 })
