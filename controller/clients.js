@@ -193,12 +193,26 @@ export const generateProperties = async (req, res) => {
 
     const { clientId } = req.query
 
-    const dbClient = await clientsCollection.findOne({ _id: clientId })
+    try {
+        const dbClient = await clientsCollection.findOne({ _id: clientId })
 
-    const properties = questionAuthoring(dbClient)
+        const properties = questionAuthoring(dbClient)
 
-    res.setHeader('Content-Type', 'text/plain');
-    res.setHeader("Content-Disposition", "attachment; filename=application.properties")
+        res.setHeader('Content-Type', 'text/plain');
 
-    res.send(properties)
+        if (req.requestType === "download") {
+            res.setHeader("Content-Disposition", "attachment; filename=application.properties")
+        }
+
+        setTimeout(() => {
+            res.send(properties)
+        }, process.env.network_delay)
+        
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            status: "INTERNALSERVERERROR",
+            message: error
+        })
+    }
 }

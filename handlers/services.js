@@ -1,5 +1,11 @@
 import { encryptText } from "./jasypt.js";
 
+const noURLString = "<NO DATA PROVIDED YET>"
+
+const noURLProvidedString = (string, isEncoded = false) => {
+  return (string === "" || string === undefined || string === null) ? noURLString : (isEncoded ? encryptText(string) : string)
+}
+
 export const questionAuthoring = (data) => {
 
   const { services, database } = data
@@ -28,24 +34,24 @@ export const questionAuthoring = (data) => {
     server.port.questionAuthoring=8093
     
     # Dynamic - Keycloak
-    keycloak.auth-server-url=${services.keycloak.serverUrl}
-    keycloak.realm=${services.keycloak.realm}
-    keycloak.resource=${services.keycloak.resource}
+    keycloak.auth-server-url=${noURLProvidedString(services.keycloak.serverUrl, false)}
+    keycloak.realm=${noURLProvidedString(services.keycloak.realm, false)}
+    keycloak.resource=${noURLProvidedString(services.keycloak.resource, false)}
     
     # Dynamic - MongoDB
-    spring.data.mongodb.host=${database.mongo.host}
-    spring.data.mongodb.authentication-database=${database.mongo.authenticationDatabase}
-    spring.data.mongodb.username=${database.mongo.username}
-    spring.data.mongodb.password=${database.mongo.password}
+    spring.data.mongodb.host=${noURLProvidedString(database.mongo.host, false)}
+    spring.data.mongodb.authentication-database=${noURLProvidedString(database.mongo.authenticationDatabase, false)}
+    spring.data.mongodb.username=${noURLProvidedString(database.mongo.username, false)}
+    spring.data.mongodb.password=${noURLProvidedString(database.mongo.password, false)}
     
     # Dynamic - Services
-    ngel.course-catalog.url=${services.services.courseCatalog}
-    assessment.quiz.authoring=${services.services.quizAuthoring}
+    ngel.course-catalog.url=${noURLProvidedString(services.services.courseCatalog, false)}
+    assessment.quiz.authoring=${noURLProvidedString(services.services.quizAuthoring, false)}
     image.sanitizer=http://meghs1.hyderabad.cdac.in
     
     #Dynamic - Files
-    qti.upload.url=${services.uploads.assessmentQTIUpload}
-    file.upload.url=${services.uploads.assessmentFileUpload}
+    qti.upload.url=${noURLProvidedString(services.uploads.assessmentQTIUpload, false)}
+    file.upload.url=${noURLProvidedString(services.uploads.assessmentFileUpload, false)}
   `;
 
   return properties

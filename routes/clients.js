@@ -10,6 +10,7 @@ clientsRouter.get("/getAll", getClients)
 clientsRouter.delete("/delete", deleteClient)
 clientsRouter.get("/generate-json", (req, res, next) => { req.requestType = "download"; next() }, generateJSON)
 clientsRouter.get("/view-json", (req, res, next) => { req.requestType = "view"; next() }, generateJSON)
-clientsRouter.get("/generate-properties", generateProperties)
+clientsRouter.get("/generate-properties", (req, res, next) => { req.requestType = "download"; next() }, generateProperties)
+clientsRouter.get("/view-properties", (req, res, next) => { req.requestType = "view"; next() }, generateProperties)
 
 export { clientsRouter }
