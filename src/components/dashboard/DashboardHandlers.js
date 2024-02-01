@@ -61,14 +61,20 @@ const DashboardHandlers = () => {
         }))
     }
 
-    const toggleViewClientHandler = () => {
-        dispatch(dashboardActions.toggleViewClient())
+    const toggleViewClientHandler = (value) => {
+        dispatch(dashboardActions.toggleViewClient(value))
     }
 
     const getClientJSONHandler = async (clientId = null) => {
         const data = await dashboardServices.viewClientJSON(clientId)
         dispatch(dashboardActions.viewClientJSON(data))
-        dashboardHandlers.toggleViewClientHandler()
+        toggleViewClientHandler(true)
+    }
+
+    const getClientPropertiesHandler = async (clientId = null) => {
+        const data = await dashboardServices.viewClientProperties(clientId)
+        dispatch(dashboardActions.viewClientProperties(data))
+        toggleViewClientHandler(true)
     }
 
     const toggleDownloadClientHandler = (clientId = null) => {
@@ -112,6 +118,10 @@ const DashboardHandlers = () => {
         navigate("/editor/ui/general")
     }
 
+    const updateViewClientTab = (newTab = "json") => {
+        dispatch(dashboardActions.updateViewClientTab(newTab))
+    }
+
     const dashboardHandlers = {
         toggleAddNewClientHandler,
         updateClientNameHandler,
@@ -126,7 +136,9 @@ const DashboardHandlers = () => {
         getGenerateJSONCommandHandler,
         copyCommandHandler,
         downloadClientJSONURLGenerator,
-        navigateToClientEditor
+        navigateToClientEditor,
+        updateViewClientTab,
+        getClientPropertiesHandler
     }
 
     return dashboardHandlers

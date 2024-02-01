@@ -10,9 +10,11 @@ export const dashboardState = {
             isChecked: false
         },
         viewClient: {
+            tab: "json", // json or properties
             clientId: null,
             isChecked: false,
-            json: null
+            json: null,
+            properties: null
         },
         downloadClient: {
             clientId: null,

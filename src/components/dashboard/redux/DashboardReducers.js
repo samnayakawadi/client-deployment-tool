@@ -22,10 +22,13 @@ export const dashboardReducers = {
         prevState.modals.deleteClient.clientIndex = actions.payload.clientIndex
     },
     toggleViewClient: (prevState, actions) => {
-        prevState.modals.viewClient.isChecked = !prevState.modals.viewClient.isChecked
+        prevState.modals.viewClient.isChecked = actions.payload
     },
     viewClientJSON: (prevState, actions) => {
         prevState.modals.viewClient.json = actions.payload
+    },
+    viewClientProperties: (prevState, actions) => {
+        prevState.modals.viewClient.properties = actions.payload
     },
     toggleDownloadClient: (prevState, actions) => {
         prevState.modals.downloadClient.isChecked = !prevState.modals.downloadClient.isChecked
@@ -36,5 +39,8 @@ export const dashboardReducers = {
     },
     isLoadingClients: (prevState, actions) => {
         prevState.getClients.isLoading = actions.payload
+    },
+    updateViewClientTab: (prevState, actions) => {
+        prevState.modals.viewClient.tab = actions.payload
     }
 }

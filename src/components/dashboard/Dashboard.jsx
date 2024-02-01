@@ -35,7 +35,7 @@ const Dashboard = () => {
                                     </div>
                                 </div>
                                 <div className="grid grid-cols-4 w-full gap-2 pt-3">
-                                    <button className={`btn btn-block btn-md btn-info text-black normal-case no-animation rounded-sm`} onClick={() => { dashboardHandlers.getClientJSONHandler(singleClient._id) }}>View</button>
+                                    <button className={`btn btn-block btn-md btn-info text-black normal-case no-animation rounded-sm`} onClick={() => { dashboardHandlers.getClientJSONHandler(singleClient._id); dashboardHandlers.getClientPropertiesHandler(singleClient._id) }}>View</button>
                                     <button className={`btn btn-block btn-md btn-success text-black normal-case no-animation rounded-sm`} onClick={() => { dashboardHandlers.toggleDownloadClientHandler(singleClient._id) }}>Download</button>
                                     <button className={`btn btn-block btn-md btn-warning text-black normal-case no-animation rounded-sm`} onClick={() => { dashboardHandlers.navigateToClientEditor(singleClient._id) }}>Edit</button>
                                     <button className={`btn btn-block btn-md btn-accent text-black normal-case no-animation rounded-sm`} onClick={() => { dashboardHandlers.toggleDeleteClientHandler(singleClient._id, clientIndex) }}>Delete</button>

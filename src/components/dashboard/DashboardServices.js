@@ -73,15 +73,30 @@ const DashboardServices = () => {
 
     const viewClientJSON = async (clientId) => {
         toast.dismiss()
-        const toastId = toast.loading("Fetching Client")
+        const toastId = toast.loading("Fetching Application.json")
         try {
             const response = await axios.get(globalState.servers.main + "/clients/view-json?clientId=" + clientId, {
                 withCredentials: true
             })
-            toast.update(toastId, { render: "Client Fetched", type: "success", isLoading: false, autoClose: autoClose, closeOnClick: true })
+            toast.update(toastId, { render: "Application.json Fetched", type: "success", isLoading: false, autoClose: autoClose, closeOnClick: true })
             return response.data;
         } catch (error) {
-            toast.update(toastId, { render: "Client JSON Fetching Failed" + (error.response === undefined ? "Network Error" : error.response), type: "error", isLoading: false, autoClose: autoClose, closeOnClick: true })
+            toast.update(toastId, { render: "Application.json Fetching Failed" + (error.response === undefined ? "Network Error" : error.response), type: "error", isLoading: false, autoClose: autoClose, closeOnClick: true })
+            return null;
+        }
+    }
+
+    const viewClientProperties = async (clientId) => {
+        // toast.dismiss()
+        const toastId = toast.loading("Fetching Application.properties")
+        try {
+            const response = await axios.get(globalState.servers.main + "/clients/generate-properties?clientId=" + clientId, {
+                withCredentials: true
+            })
+            toast.update(toastId, { render: "Application.properties Fetched", type: "success", isLoading: false, autoClose: autoClose, closeOnClick: true })
+            return response.data;
+        } catch (error) {
+            toast.update(toastId, { render: "Application.properties Fetching Failed" + (error.response === undefined ? "Network Error" : error.response), type: "error", isLoading: false, autoClose: autoClose, closeOnClick: true })
             return null;
         }
     }
@@ -96,7 +111,8 @@ const DashboardServices = () => {
         deleteClient,
         getClient,
         viewClientJSON,
-        downloadClientJSONURLForAncor
+        downloadClientJSONURLForAncor,
+        viewClientProperties
     }
 
     return dashboardServices
