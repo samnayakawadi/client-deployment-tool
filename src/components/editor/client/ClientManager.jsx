@@ -6,18 +6,25 @@ import { Menu } from "./menu/Menu"
 import UIManager from "./subManager/UIManager"
 import ServicesManager from "./subManager/ServicesManager"
 import DatabaseManager from "./subManager/DatabaseManager"
+import ClientHandlers from "./ClientHandlers"
+import UIHandlers from "./tabs/ui/UIHandlers"
 
 const Manager = () => {
 
     const clientEditorState = useSelector(prevState => prevState.clientEditor)
     const showEditor = clientEditorState.showEditor
     const navigate = useNavigate()
+    const uiHandlers = UIHandlers()
+    const clientHandlers = ClientHandlers()
 
     useEffect(() => {
         if (!showEditor) {
             navigate("/")
         }
     })
+
+    // ctrl + s feature
+    clientHandlers.handleCtrlS(uiHandlers.updateClientHandler);
 
     return (
         <div className="flex flex-col h-full">
