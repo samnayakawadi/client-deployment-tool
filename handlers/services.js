@@ -6,7 +6,7 @@ const noURLProvidedString = (string, isEncoded = false) => {
   return (string === "" || string === undefined || string === null) ? noURLString : (isEncoded ? encryptText(string) : string)
 }
 
-export const questionAuthoring = (data) => {
+export const questionAuthoringProperties = (data) => {
 
   const { services, database } = data
 
@@ -47,7 +47,7 @@ export const questionAuthoring = (data) => {
     # Dynamic - Services
     ngel.course-catalog.url=${noURLProvidedString(services.services.courseCatalog, false)}
     assessment.quiz.authoring=${noURLProvidedString(services.services.quizAuthoring, false)}
-    image.sanitizer=http://meghs1.hyderabad.cdac.in
+    image.sanitizer=${noURLProvidedString(services.services.imageSanitizer, false)}
     
     #Dynamic - Files
     qti.upload.url=${noURLProvidedString(services.uploads.assessmentQTIUpload, false)}

@@ -1,7 +1,7 @@
 import { convertDBUIJsonToV1 } from "../handlers/ui.js"
 import { getDefaultJson } from "../handlers/common.js"
 import { clientsCollection } from "../model/client.js"
-import { questionAuthoring } from "../handlers/services.js"
+import { questionAuthoringProperties } from "../handlers/services.js"
 
 export const addClient = async (req, res) => {
 
@@ -196,7 +196,7 @@ export const generateProperties = async (req, res) => {
     try {
         const dbClient = await clientsCollection.findOne({ _id: clientId })
 
-        const properties = questionAuthoring(dbClient)
+        const properties = questionAuthoringProperties(dbClient)
 
         res.setHeader('Content-Type', 'text/plain');
 
