@@ -73,30 +73,30 @@ const DashboardServices = () => {
 
     const viewClientJSON = async (clientId) => {
         toast.dismiss()
-        const toastId = toast.loading("Fetching Application.json")
+        const toastId = toast.loading("Fetching Data.json")
         try {
             const response = await axios.get(globalState.servers.main + "/clients/view-json?clientId=" + clientId, {
                 withCredentials: true
             })
-            toast.update(toastId, { render: "Application.json Fetched", type: "success", isLoading: false, autoClose: autoClose, closeOnClick: true })
+            toast.update(toastId, { render: "Data.json Fetched", type: "success", isLoading: false, autoClose: autoClose, closeOnClick: true })
             return response.data;
         } catch (error) {
-            toast.update(toastId, { render: "Application.json Fetching Failed" + (error.response === undefined ? "Network Error" : error.response), type: "error", isLoading: false, autoClose: autoClose, closeOnClick: true })
+            toast.update(toastId, { render: "Data.json Fetching Failed" + (error.response === undefined ? "Network Error" : error.response), type: "error", isLoading: false, autoClose: autoClose, closeOnClick: true })
             return null;
         }
     }
 
     const viewClientProperties = async (clientId) => {
         // toast.dismiss()
-        const toastId = toast.loading("Fetching Application.properties")
+        const toastId = toast.loading("Fetching Data.properties")
         try {
             const response = await axios.get(globalState.servers.main + "/clients/generate-properties?clientId=" + clientId, {
                 withCredentials: true
             })
-            toast.update(toastId, { render: "Application.properties Fetched", type: "success", isLoading: false, autoClose: autoClose, closeOnClick: true })
+            toast.update(toastId, { render: "Data.properties Fetched", type: "success", isLoading: false, autoClose: autoClose, closeOnClick: true })
             return response.data;
         } catch (error) {
-            toast.update(toastId, { render: "Application.properties Fetching Failed" + (error.response === undefined ? "Network Error" : error.response), type: "error", isLoading: false, autoClose: autoClose, closeOnClick: true })
+            toast.update(toastId, { render: "Data.properties Fetching Failed" + (error.response === undefined ? "Network Error" : error.response), type: "error", isLoading: false, autoClose: autoClose, closeOnClick: true })
             return null;
         }
     }
