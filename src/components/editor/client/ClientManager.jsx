@@ -30,7 +30,7 @@ const Manager = () => {
                     <span>Note : Do not add "/" at the end of any URLs.</span>
                 </div>
             </div> */}
-            <div className="p-2 pb-0">
+            <div className="p-2 py-0">
                 <Menu />
             </div>
             <div className="h-full">

@@ -1,5 +1,6 @@
 export const clientState = {
     showEditor: false, // This flag is used when Page is refreshed
+    menu: "ui", //ui, services, database
     selectedTabs: {
         ui: "general",
         services: "services",
@@ -60,6 +61,5 @@ export const clientState = {
                 "database": ""
             }
         },
-    },
-    menu: "ui" //ui, services, database
+    }
 }

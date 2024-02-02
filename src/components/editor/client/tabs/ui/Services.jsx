@@ -66,6 +66,8 @@ const Services = () => {
                 </div>
             </div>
 
+            <hr className="border-1 border-gray-700"/>
+
             <div className="flex flex-row gap-2 items-center">
                 <div className="basis-3/12 text-center">
                     Course Organizer

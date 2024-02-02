@@ -13,6 +13,7 @@ const DashboardHandlers = () => {
 
     const dashboardState = useSelector(prevState => prevState.dashboard)
     const globalState = useSelector(prevState => prevState.global)
+    const clientEditor = useSelector(prevState => prevState.clientEditor)
 
     const clientName = dashboardState.modals.addNewClient.clientName
     const deleteClient = dashboardState.modals.deleteClient
@@ -119,7 +120,7 @@ const DashboardHandlers = () => {
         const clientData = await dashboardServices.getClient(clientId)
         dispatch(clientActions.updateData(clientData))
         dispatch(clientActions.showEditor())
-        navigate("/editor/ui/general")
+        navigate(`/editor/${clientEditor.menu}/${clientEditor.selectedTabs[clientEditor.menu]}`)
     }
 
     const updateViewClientTab = (newTab = "json") => {
