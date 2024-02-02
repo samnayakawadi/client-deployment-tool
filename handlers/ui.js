@@ -26,7 +26,7 @@ export const convertDBUIJsonToV1 = (uiJson) => {
                 folderStructure: `${noURLProvidedString(services.courseOrganizer)}/courseOrganizer/getCourseStructure`,
                 courseUsers: `${noURLProvidedString(services.courseCatalog)}/api/getCourseEnrolledLearners`,
                 courseAuthor: `${noURLProvidedString(services.courseCatalog)}/api/checkCourseAuthorStatus`,
-                ngel: noURLProvidedString(home.mainPage),
+                ngel: noURLProvidedString(home.homePage),
                 logo: noURLProvidedString(home.logo)
             },
             deliveryUI: {
@@ -34,11 +34,11 @@ export const convertDBUIJsonToV1 = (uiJson) => {
                 quizAuthoring: noURLProvidedString(services.quizAuthoring),
                 quizDelivery: noURLProvidedString(services.delivery),
                 admin: noURLProvidedString(services.admin),
-                ngel: noURLProvidedString(home.mainPage),
+                ngel: noURLProvidedString(home.homePage),
                 userActivity: noURLProvidedString(services.learningAnalytics)
             },
             adminUI: {
-                ngel: noURLProvidedString(home.mainPage),
+                ngel: noURLProvidedString(home.homePage),
                 admin: noURLProvidedString(services.admin),
                 questionAuthoring: noURLProvidedString(services.questionAuthoring),
             }
