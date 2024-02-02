@@ -9,7 +9,7 @@ export const getDefaultJson = (clientName) => {
                 "admin": "",
                 "courseOrganizer": "",
                 "courseCatalog": "",
-                "learningAnalytics": ""
+                "learningAnalytics": "",
             },
             "home": {
                 "homePage": "",
@@ -33,7 +33,8 @@ export const getDefaultJson = (clientName) => {
                 "admin": "",
                 "courseOrganizer": "",
                 "courseCatalog": "",
-                "learningAnalytics": ""
+                "learningAnalytics": "",
+                "imageSanitizer": "",
             },
             "uploads": {
                 "assessmentFileUpload": "",
