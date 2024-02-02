@@ -105,6 +105,10 @@ const DashboardServices = () => {
         return globalState.servers.main + "/clients/generate-json?clientId=" + clientId
     }
 
+    const downloadClientPropertiesURLForAncor = (clientId) => {
+        return globalState.servers.main + "/clients/generate-properties?clientId=" + clientId
+    }
+
     const dashboardServices = {
         addNewClient,
         getAllClients,
@@ -112,7 +116,8 @@ const DashboardServices = () => {
         getClient,
         viewClientJSON,
         downloadClientJSONURLForAncor,
-        viewClientProperties
+        viewClientProperties,
+        downloadClientPropertiesURLForAncor
     }
 
     return dashboardServices

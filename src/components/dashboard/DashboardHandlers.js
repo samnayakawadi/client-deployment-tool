@@ -111,6 +111,10 @@ const DashboardHandlers = () => {
         return dashboardServices.downloadClientJSONURLForAncor(clientIdFromDownloadModal)
     }
 
+    const downloadClientPropertiesURLGenerator = () => {
+        return dashboardServices.downloadClientPropertiesURLForAncor(clientIdFromDownloadModal)
+    }
+
     const navigateToClientEditor = async (clientId) => {
         const clientData = await dashboardServices.getClient(clientId)
         dispatch(clientActions.updateData(clientData))
@@ -138,7 +142,8 @@ const DashboardHandlers = () => {
         downloadClientJSONURLGenerator,
         navigateToClientEditor,
         updateViewClientTab,
-        getClientPropertiesHandler
+        getClientPropertiesHandler,
+        downloadClientPropertiesURLGenerator
     }
 
     return dashboardHandlers
