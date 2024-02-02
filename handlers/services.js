@@ -3,7 +3,7 @@ import { encryptText } from "./jasypt.js";
 const noURLString = "<NO DATA PROVIDED YET>"
 
 const noURLProvidedString = (string, isEncoded = false) => {
-  return (string === "" || string === undefined || string === null) ? noURLString : (isEncoded ? encryptText(string) : string)
+  return (string === "" || string === undefined || string === null) ? noURLString : (isEncoded ? `ENC(${encryptText(string)})` : string)
 }
 
 export const questionAuthoringProperties = (data) => {
@@ -34,24 +34,24 @@ export const questionAuthoringProperties = (data) => {
     server.port.questionAuthoring=8093
     
     # Dynamic - Keycloak
-    keycloak.auth-server-url=${noURLProvidedString(services.keycloak.serverUrl, false)}
-    keycloak.realm=${noURLProvidedString(services.keycloak.realm, false)}
-    keycloak.resource=${noURLProvidedString(services.keycloak.resource, false)}
+    keycloak.auth-server-url=${noURLProvidedString(services.keycloak.serverUrl, true)}
+    keycloak.realm=${noURLProvidedString(services.keycloak.realm, true)}
+    keycloak.resource=${noURLProvidedString(services.keycloak.resource, true)}
     
     # Dynamic - MongoDB
-    spring.data.mongodb.host=${noURLProvidedString(database.mongo.host, false)}
-    spring.data.mongodb.authentication-database=${noURLProvidedString(database.mongo.authenticationDatabase, false)}
-    spring.data.mongodb.username=${noURLProvidedString(database.mongo.username, false)}
-    spring.data.mongodb.password=${noURLProvidedString(database.mongo.password, false)}
+    spring.data.mongodb.host=${noURLProvidedString(database.mongo.host, true)}
+    spring.data.mongodb.authentication-database=${noURLProvidedString(database.mongo.authenticationDatabase, true)}
+    spring.data.mongodb.username=${noURLProvidedString(database.mongo.username, true)}
+    spring.data.mongodb.password=${noURLProvidedString(database.mongo.password, true)}
     
     # Dynamic - Services
-    ngel.course-catalog.url=${noURLProvidedString(services.services.courseCatalog, false)}
-    assessment.quiz.authoring=${noURLProvidedString(services.services.quizAuthoring, false)}
-    image.sanitizer=${noURLProvidedString(services.services.imageSanitizer, false)}
+    ngel.course-catalog.url=${noURLProvidedString(services.services.courseCatalog, true)}
+    assessment.quiz.authoring=${noURLProvidedString(services.services.quizAuthoring, true)}
+    image.sanitizer=${noURLProvidedString(services.services.imageSanitizer, true)}
     
     #Dynamic - Files
-    qti.upload.url=${noURLProvidedString(services.uploads.assessmentQTIUpload, false)}
-    file.upload.url=${noURLProvidedString(services.uploads.assessmentFileUpload, false)}
+    qti.upload.url=${noURLProvidedString(services.uploads.assessmentQTIUpload, true)}
+    file.upload.url=${noURLProvidedString(services.uploads.assessmentFileUpload, true)}
   `;
 
   return properties
