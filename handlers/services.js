@@ -28,6 +28,7 @@ export const questionAuthoringProperties = (data) => {
 
     # Static - Databases
     spring.data.mongodb.database.questionAuthoring=questionDatabase
+    spring.data.mongodb.database.quizAuthoring=quizDatabase
     
     # Static - Port
     tomcat.ajp.port.questionAuthoring=9093 
@@ -45,9 +46,10 @@ export const questionAuthoringProperties = (data) => {
     spring.data.mongodb.password=${noURLProvidedString(database.mongo.password, true)}
     
     # Dynamic - Services
-    ngel.course-catalog.url=${noURLProvidedString(services.services.courseCatalog, true)}
-    assessment.quiz.authoring=${noURLProvidedString(services.services.quizAuthoring, true)}
-    image.sanitizer=${noURLProvidedString(services.services.imageSanitizer, true)}
+    services.course-catalog=${noURLProvidedString(services.services.courseCatalog, true)}
+    services.quiz-authoring=${noURLProvidedString(services.services.quizAuthoring, true)}
+    services.image-sanitizer=${noURLProvidedString(services.services.imageSanitizer, true)}
+    services.course-organizer=${noURLProvidedString(services.services.courseOrganizer, true)}
     
     #Dynamic - Files
     qti.upload.url=${noURLProvidedString(services.uploads.assessmentQTIUpload, true)}
