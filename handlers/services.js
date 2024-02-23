@@ -30,6 +30,7 @@ export const questionAuthoringProperties = (data) => {
     spring.data.mongodb.database.questionAuthoring=questionDatabase
     spring.data.mongodb.database.quizAuthoring=quizDatabase
     spring.data.mongodb.database.delivery=deliveryDatabase
+    spring.data.mongodb.database.quizAdmin=adminDatabase
     
     # Static - Port
     tomcat.ajp.port.questionAuthoring=9093 
