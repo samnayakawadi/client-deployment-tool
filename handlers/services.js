@@ -34,7 +34,13 @@ export const questionAuthoringProperties = (data) => {
     
     # Static - Port
     tomcat.ajp.port.questionAuthoring=9093 
+    tomcat.ajp.port.quizAuthoring=9094
+    tomcat.ajp.port.delivery=9095 
+    tomcat.ajp.port.quizAdmin=9096
     server.port.questionAuthoring=8093
+    server.port.quizAuthoring=8094
+    server.port.delivery=8095
+    server.port.quizAdmin=8096
     
     # Dynamic - Keycloak
     keycloak.auth-server-url=${noURLProvidedString(services.keycloak.serverUrl, true)}
