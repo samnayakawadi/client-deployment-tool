@@ -41,6 +41,11 @@ export const questionAuthoringProperties = (data) => {
     server.port.quizAuthoring=8094
     server.port.delivery=8095
     server.port.quizAdmin=8096
+
+    # Static - Admin
+    ui.admin.url = ${noURLProvidedString("http://megh1.hyderabad.cdac.in/arcane", true)}
+    seb.url = https://sourceforge.net/projects/seb/files/seb/SEB_3.4.1/SEB_3.4.1.505_SetupBundle.exe/download
+    mobile.admin.key = ${noURLProvidedString("cdac@123", true)}
     
     # Dynamic - Keycloak
     keycloak.auth-server-url=${noURLProvidedString(services.keycloak.serverUrl, true)}
