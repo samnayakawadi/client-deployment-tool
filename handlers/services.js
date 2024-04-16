@@ -44,7 +44,7 @@ export const questionAuthoringProperties = (data) => {
 
     # Static - Admin
     ui.admin.url = ${noURLProvidedString("http://megh1.hyderabad.cdac.in/arcane", true)}
-    seb.url = https://sourceforge.net/projects/seb/files/seb/SEB_3.4.1/SEB_3.4.1.505_SetupBundle.exe/download
+    seb.url = https://safeexambrowser.org/download
     mobile.admin.key = ${noURLProvidedString("cdac@123", true)}
     
     # Dynamic - Keycloak

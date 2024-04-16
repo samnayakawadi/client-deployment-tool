@@ -6,7 +6,7 @@ const noURLProvidedString = (string) => {
 
 export const convertDBUIJsonToV1 = (uiJson) => {
 
-    const { _id: clientId, clientName, services, home, time, keycloak } = uiJson
+    const { _id: clientId, clientName, services, home, options, keycloak, } = uiJson
 
     const dataToUpdate = {
         clientId,
@@ -21,8 +21,8 @@ export const convertDBUIJsonToV1 = (uiJson) => {
             authoringUI: {
                 questionAuthoring: noURLProvidedString(services.questionAuthoring),
                 quizAuthoring: noURLProvidedString(services.quizAuthoring),
-                delivery: `${noURLProvidedString(services.quizAuthoring)}/assessment/delivery`,
-                admin: noURLProvidedString(services.quizAuthoring),
+                delivery: `${noURLProvidedString(services.delivery)}`,
+                admin: noURLProvidedString(services.admin),
                 folderStructure: `${noURLProvidedString(services.courseOrganizer)}/courseOrganizer/getCourseStructure`,
                 courseUsers: `${noURLProvidedString(services.courseCatalog)}/api/getCourseEnrolledLearners`,
                 courseAuthor: `${noURLProvidedString(services.courseCatalog)}/api/checkCourseAuthorStatus`,
@@ -41,10 +41,13 @@ export const convertDBUIJsonToV1 = (uiJson) => {
                 ngel: noURLProvidedString(home.homePage),
                 admin: noURLProvidedString(services.admin),
                 questionAuthoring: noURLProvidedString(services.questionAuthoring),
+                courseCatalog: noURLProvidedString(services.courseCatalog),
+                userManagement: noURLProvidedString(services.userManagement)
             }
         },
-        waitingTime: time.waitingTime,
-        autoClose: time.autoClose
+        waitingTime: options.waitingTime,
+        autoClose: options.autoClose,
+        isStandalone: options.isStandalone
     }
 
     return dataToUpdate

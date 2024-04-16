@@ -7,10 +7,11 @@ const uiKeycloakSchema = mongoose.Schema({
     "serverUrl": String
 })
 
-const uiTimeSchema = mongoose.Schema({
+const uiOptionsSchema = mongoose.Schema({
     _id: false,
     "waitingTime": String,
-    "autoClose": String
+    "autoClose": String,
+    "isStandalone": Boolean
 })
 
 const uiHomeSchema = mongoose.Schema({
@@ -27,7 +28,8 @@ const uiServicesSchema = mongoose.Schema({
     "admin": String,
     "courseOrganizer": String,
     "courseCatalog": String,
-    "learningAnalytics": String
+    "learningAnalytics": String,
+    "userManagement": String
 })
 
 // parent
@@ -35,6 +37,6 @@ export const uiSchema = mongoose.Schema({
     _id: false,
     "home": uiHomeSchema,
     "services": uiServicesSchema,
-    "time": uiTimeSchema,
-    "keycloak": uiKeycloakSchema
+    "options": uiOptionsSchema,
+    "keycloak": uiKeycloakSchema,
 })

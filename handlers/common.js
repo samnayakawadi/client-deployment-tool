@@ -10,14 +10,16 @@ export const getDefaultJson = (clientName) => {
                 "courseOrganizer": "",
                 "courseCatalog": "",
                 "learningAnalytics": "",
+                "userManagement": ""
             },
             "home": {
                 "homePage": "",
                 "logo": ""
             },
-            "time": {
+            "options": {
                 "waitingTime": "",
-                "autoClose": ""
+                "autoClose": "",
+                "isStandalone": false
             },
             "keycloak": {
                 "realm": "",
