@@ -66,7 +66,7 @@ const Services = () => {
                 </div>
             </div>
 
-            <hr className="border-1 border-gray-700"/>
+            <hr className="border-1 border-gray-700" />
 
             <div className="flex flex-row gap-2 items-center">
                 <div className="basis-3/12 text-center">
@@ -77,6 +77,18 @@ const Services = () => {
                 </div>
                 <div className="basis-8/12">
                     <input type="text" name="courseOrganizer" value={services.courseOrganizer} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8082 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
+                </div>
+            </div>
+
+            <div className="flex flex-row gap-2 items-center">
+                <div className="basis-3/12 text-center">
+                    User Management
+                </div>
+                <div className="basis-1/12">
+                    8084
+                </div>
+                <div className="basis-8/12">
+                    <input type="text" name="userManagement" value={services.userManagement} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8080 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
@@ -99,7 +111,7 @@ const Services = () => {
                     Learning Analytics
                 </div>
                 <div className="basis-1/12">
-                    8080
+                    8090
                 </div>
                 <div className="basis-8/12">
                     <input type="text" name="learningAnalytics" value={services.learningAnalytics} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8080 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />

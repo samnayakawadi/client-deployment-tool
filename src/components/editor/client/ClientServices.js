@@ -4,7 +4,7 @@ import { toast } from "react-toastify"
 
 const ClientServices = () => {
     const globalState = useSelector(prevState => prevState.global)
-    const autoClose = globalState.time.autoClose
+    const autoClose = globalState.options.autoClose
 
     const updateClient = async (clientId, data) => {
 

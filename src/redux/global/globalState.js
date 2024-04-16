@@ -3,7 +3,7 @@ export const globalState = {
         main: "http://localhost:5000",
         // main: "https://client-deployment-tool.onrender.com",
     },
-    time: {
+    options: {
         autoClose: 2000
     }
 }

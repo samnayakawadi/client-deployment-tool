@@ -5,7 +5,7 @@ import 'react-json-pretty/themes/monikai.css';
 
 const GlobalComponent = () => {
 
-    const autoClose = useSelector(prevState => prevState.global.time.autoClose)
+    const autoClose = useSelector(prevState => prevState.global.options.autoClose)
 
     return (
         <div>

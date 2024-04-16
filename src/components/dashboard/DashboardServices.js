@@ -5,7 +5,7 @@ import { toast } from "react-toastify"
 const DashboardServices = () => {
 
     const globalState = useSelector(prevState => prevState.global)
-    const autoClose = globalState.time.autoClose
+    const autoClose = globalState.options.autoClose
 
     const addNewClient = async (clientName) => {
         toast.dismiss()

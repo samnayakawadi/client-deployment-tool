@@ -3,10 +3,10 @@ import UISelector from "../selector/UISelector"
 import General from "../tabs/ui/General"
 import Home from "../tabs/ui/Home"
 import Services from "../tabs/ui/Services"
-import Time from "../tabs/ui/Time"
 import Keycloak from "../tabs/ui/Keycloak"
 import { useEffect } from "react"
 import MenuHandlers from "../menu/MenuHandlers"
+import Options from "../tabs/ui/Options"
 
 const UIManager = () => {
 
@@ -26,7 +26,7 @@ const UIManager = () => {
                     <Route path="general" element={<General />} />
                     <Route path="home" element={<Home />} />
                     <Route path="services" element={<Services />} />
-                    <Route path="time" element={<Time />} />
+                    <Route path="options" element={<Options />} />
                     <Route path="keycloak" element={<Keycloak />} />
                 </Routes>
             </div>

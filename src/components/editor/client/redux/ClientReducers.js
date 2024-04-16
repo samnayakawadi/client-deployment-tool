@@ -17,8 +17,14 @@ export const clientReducers = {
     updateUIHomeTab: (prevState, actions) => {
         prevState.data.ui.home[actions.payload.name] = actions.payload.value
     },
-    updateUITimeTab: (prevState, actions) => {
-        prevState.data.ui.time[actions.payload.name] = actions.payload.value
+    updateUIOptionsTab: (prevState, actions) => {
+        console.log("prevState.data.ui.options.isStandalone", prevState.data.ui.options.isStandalone)
+        if(actions.payload.name === "isStandalone"){
+            prevState.data.ui.options.isStandalone = !prevState.data.ui.options.isStandalone
+        }
+        else{
+            prevState.data.ui.options[actions.payload.name] = actions.payload.value
+        }
     },
     updateUIKeycloakTab: (prevState, actions) => {
         prevState.data.ui.keycloak[actions.payload.name] = actions.payload.value

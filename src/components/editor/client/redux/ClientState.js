@@ -23,9 +23,10 @@ export const clientState = {
                 "courseCatalog": "",
                 "learningAnalytics": ""
             },
-            "time": {
+            "options": {
                 "waitingTime": "",
-                "autoClose": ""
+                "autoClose": "",
+                "isStandalone": false
             },
             "keycloak": {
                 "realm": "",

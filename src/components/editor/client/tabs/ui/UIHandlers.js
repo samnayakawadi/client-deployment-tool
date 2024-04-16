@@ -22,8 +22,8 @@ const UIHandlers = () => {
         dispatch(clientActions.updateUIHomeTab(e.target))
     }
 
-    const updateTimeTab = (e) => {
-        dispatch(clientActions.updateUITimeTab(e.target))
+    const updateOptionsTab = (e) => {
+        dispatch(clientActions.updateUIOptionsTab(e.target))
     }
 
     const updateKeycloakTab = (e) => {
@@ -39,7 +39,7 @@ const UIHandlers = () => {
         updateServicesTab,
         updateClientHandler,
         updateHomeTab,
-        updateTimeTab,
+        updateOptionsTab,
         updateKeycloakTab
     }
 
