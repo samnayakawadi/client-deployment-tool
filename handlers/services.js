@@ -63,6 +63,8 @@ export const questionAuthoringProperties = (data) => {
     services.quiz-authoring=${noURLProvidedString(services.services.quizAuthoring, true)}
     services.image-sanitizer=${noURLProvidedString(services.services.imageSanitizer, true)}
     services.course-organizer=${noURLProvidedString(services.services.courseOrganizer, true)}
+    services.user-activity=${noURLProvidedString(services.services.userActivity, true)}
+    services.learning-analytics=${noURLProvidedString(services.services.learningAnalytics, true)}
     
     #Dynamic - Files
     qti.upload.url=${noURLProvidedString(services.uploads.assessmentQTIUpload, true)}

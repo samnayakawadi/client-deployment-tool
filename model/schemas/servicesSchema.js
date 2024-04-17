@@ -16,7 +16,8 @@ const services = mongoose.Schema({
     "courseOrganizer": String,
     "courseCatalog": String,
     "learningAnalytics": String,
-    "imageSanitizer": String
+    "imageSanitizer": String,
+    "userActivity": String,
 })
 
 const uploads = mongoose.Schema({

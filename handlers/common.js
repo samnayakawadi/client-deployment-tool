@@ -37,6 +37,7 @@ export const getDefaultJson = (clientName) => {
                 "courseCatalog": "",
                 "learningAnalytics": "",
                 "imageSanitizer": "",
+                "userActivity": ""
             },
             "uploads": {
                 "assessmentFileUpload": "",
