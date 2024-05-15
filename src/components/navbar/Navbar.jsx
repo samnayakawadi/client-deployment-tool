@@ -23,8 +23,8 @@ const Navbar = ({ currentLocation }) => {
                             </li> */}
                         </ul>
                     </div>
-                    <a href="#" className="btn btn-ghost normal-case text-xl hover:bg-navbg max-lg:hidden">Deploy Master</a>
-                    <a href="#" className="btn btn-ghost normal-case text-xl hover:bg-navbg lg:hidden">Deploy Master</a>
+                    <a href="#" className="btn btn-ghost normal-case text-xl hover:bg-navbg max-lg:hidden">Client Deployment Tool</a>
+                    <a href="#" className="btn btn-ghost normal-case text-xl hover:bg-navbg lg:hidden">CDT</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 font-semibold">

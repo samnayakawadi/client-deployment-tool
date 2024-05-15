@@ -12,7 +12,8 @@ export const clientState = {
         "ui": {
             "home": {
                 "homePage": "",
-                "logo": ""
+                "logo": "",
+                "seb": ""
             },
             "services": {
                 "questionAuthoring": "",
