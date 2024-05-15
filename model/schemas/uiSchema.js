@@ -17,7 +17,8 @@ const uiOptionsSchema = mongoose.Schema({
 const uiHomeSchema = mongoose.Schema({
     _id: false,
     "homePage": String,
-    "logo": String
+    "logo": String,
+    "seb": String
 })
 
 const uiServicesSchema = mongoose.Schema({

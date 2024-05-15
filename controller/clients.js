@@ -207,7 +207,7 @@ export const generateProperties = async (req, res) => {
         setTimeout(() => {
             res.send(properties)
         }, process.env.network_delay)
-        
+
     } catch (error) {
         console.log(error)
         res.status(500).json({
