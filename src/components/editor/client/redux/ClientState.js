@@ -43,7 +43,10 @@ export const clientState = {
                 "admin": "",
                 "courseOrganizer": "",
                 "courseCatalog": "",
-                "learningAnalytics": ""
+                "learningAnalytics": "",
+                "imageSanitizer": "",
+                "userActivity": "",
+                "userManagement": ""
             },
             "uploads": {
                 "assessmentFileUpload": "",

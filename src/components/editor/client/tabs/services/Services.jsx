@@ -117,6 +117,18 @@ const Services = () => {
                 </div>
             </div>
 
+            <div className="flex flex-row gap-2 items-center">
+                <div className="basis-3/12 text-center">
+                    User Management
+                </div>
+                <div className="basis-1/12">
+                    8084
+                </div>
+                <div className="basis-8/12">
+                    <input type="text" name="userManagement" value={services.userManagement} onChange={servicesHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8100 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
+                </div>
+            </div>
+
             <hr className="border-1 border-gray-700" />
 
             <div className="flex flex-row gap-2 items-center">
