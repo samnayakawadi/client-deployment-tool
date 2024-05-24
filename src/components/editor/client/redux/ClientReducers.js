@@ -1,5 +1,5 @@
 export const clientReducers = {
-    showEditor: (prevState, actions) => {
+    showEditor: (prevState) => {
         prevState.showEditor = true
     },
     updateSelectedTab: (prevState, actions) => {
@@ -19,10 +19,13 @@ export const clientReducers = {
     },
     updateUIOptionsTab: (prevState, actions) => {
         console.log("prevState.data.ui.options.isStandalone", prevState.data.ui.options.isStandalone)
-        if(actions.payload.name === "isStandalone"){
+        if (actions.payload.name === "isStandalone") {
             prevState.data.ui.options.isStandalone = !prevState.data.ui.options.isStandalone
         }
-        else{
+        else if (actions.payload.name === "isNewContentDelivery") {
+            prevState.data.ui.options.isNewContentDelivery = !prevState.data.ui.options.isNewContentDelivery
+        }
+        else {
             prevState.data.ui.options[actions.payload.name] = actions.payload.value
         }
     },

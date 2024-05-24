@@ -97,7 +97,8 @@ const DashboardHandlers = () => {
             if (type === "command") {
                 return `Invoke-WebRequest -Uri "${mainServer}/clients/generate-json?clientId=${clientId}" -OutFile "C:/data.json"`
             } else if (type === "text") {
-                return `Invoke-WebRequest -Uri "${mainServer}/clients/generate-json?clientId=${clientId}" -OutFile "C:\/data.json"`
+                // return `Invoke-WebRequest -Uri "${mainServer}/clients/generate-json?clientId=${clientId}" -OutFile "C:\/data.json"`
+                return `Invoke-WebRequest -Uri "${mainServer}/clients/generate-json?clientId=${clientId}" -OutFile "C:/data.json"`
             }
         }
     }
@@ -127,6 +128,26 @@ const DashboardHandlers = () => {
         dispatch(dashboardActions.updateViewClientTab(newTab))
     }
 
+    const copyDataHandler = () => {
+        const selectedTab = dashboardState.modals.viewClient.tab
+
+        const json = dashboardState.modals.viewClient.json
+        const properties = dashboardState.modals.viewClient.properties
+
+        if (selectedTab === "json" && json != null) {
+            const jsonString = JSON.stringify(json, null, 2)
+            copy(jsonString)
+            toast.success("JSON Copied")
+        }
+        else if (selectedTab === "properties" && properties != null) {
+            copy(properties)
+            toast.success("Properties Copied")
+        }
+        else {
+            toast.error("Copying Data Failed")
+        }
+    }
+
     const dashboardHandlers = {
         toggleAddNewClientHandler,
         updateClientNameHandler,
@@ -144,7 +165,8 @@ const DashboardHandlers = () => {
         navigateToClientEditor,
         updateViewClientTab,
         getClientPropertiesHandler,
-        downloadClientPropertiesURLGenerator
+        downloadClientPropertiesURLGenerator,
+        copyDataHandler
     }
 
     return dashboardHandlers

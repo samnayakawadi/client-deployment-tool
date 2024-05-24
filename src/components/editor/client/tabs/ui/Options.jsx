@@ -45,6 +45,17 @@ const Options = () => {
                     <input type="checkbox" name="isStandalone" checked={options.isStandalone} onClick={uiHandlers.updateOptionsTab} className="toggle toggle-success" />
                 </div>
             </div>
+
+            <div className="flex flex-row gap-2 items-center">
+                <div className="basis-3/12 text-center">
+                    Is New Content Delivery
+                </div>
+                <div className="basis-9/12">
+                    {/* <input type="text" name="autoClose" value={options.autoClose} onChange={uiHandlers.updateOptionsTab} placeholder="E.g. 2000" className="input input-bordered input-secondary w-full focus:outline-none" /> */}
+                    <input type="checkbox" name="isNewContentDelivery" checked={options.isNewContentDelivery} onClick={uiHandlers.updateOptionsTab} className="toggle toggle-success" />
+                </div>
+            </div>
+
         </div>
     )
 }

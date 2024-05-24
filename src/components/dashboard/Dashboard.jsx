@@ -24,7 +24,7 @@ const Dashboard = () => {
             <div className="grid grid-cols-4 gap-2 max-lg:grid-cols-1">
                 {clientsList.map((singleClient, clientIndex) => {
                     return (
-                        <div>
+                        <div key={clientIndex}>
                             {!isLoading && (<div key={`client_${singleClient._id}`} className="rounded-md transition ease-linear delay-75 hover:cursor-crosshair flex flex-col items-center">
                                 <div className="flex flex-row justify-center items-center w-full border-2 border-gray-600 p-3 gap-3">
                                     <div className="basis-6/12 flex flex-row justify-center items-center border-r-2 border-gray-600">

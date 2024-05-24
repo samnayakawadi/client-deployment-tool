@@ -37,8 +37,11 @@ const ViewClient = () => {
                         </div>}
 
                     <div className="modal-action flex flex-row justify-center mt-0">
-                        <div className="basis-full">
-                            <button htmlFor="globalModal" className="btn no-animation btn-success btn-block normal-case" onClick={() => { dashboardHandlers.toggleViewClientHandler(false) }}>Close</button>
+                        <div className="basis-6/12">
+                            <button htmlFor="globalModal" className="btn no-animation btn-accent btn-block normal-case" onClick={() => { dashboardHandlers.toggleViewClientHandler(false) }}>Close</button>
+                        </div>
+                        <div className="basis-6/12">
+                            <button htmlFor="globalModal" className="btn no-animation btn-success btn-block normal-case" onClick={dashboardHandlers.copyDataHandler}>Copy</button>
                         </div>
                     </div>
                 </div>

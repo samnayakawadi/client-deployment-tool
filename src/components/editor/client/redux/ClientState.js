@@ -27,7 +27,8 @@ export const clientState = {
             "options": {
                 "waitingTime": "",
                 "autoClose": "",
-                "isStandalone": false
+                "isStandalone": false,
+                "isNewContentDelivery": false
             },
             "keycloak": {
                 "realm": "",
