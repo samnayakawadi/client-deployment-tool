@@ -47,7 +47,8 @@ export const convertDBUIJsonToV1 = (uiJson) => {
         },
         waitingTime: options.waitingTime,
         autoClose: options.autoClose,
-        isStandalone: options.isStandalone
+        isStandalone: options.isStandalone,
+        isNewContentDelivery: options.isNewContentDelivery
     }
 
     return dataToUpdate
