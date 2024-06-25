@@ -21,6 +21,14 @@ export const getDefaultJson = (clientName) => {
                 "autoClose": "",
                 "isStandalone": false
             },
+            "branding": {
+                "logoWidth": "",
+                "logoHeight": "",
+                "footer": "",
+                "facebook": "",
+                "twitter": "",
+                "youtube": ""
+            },
             "keycloak": {
                 "realm": "",
                 "resource": "",

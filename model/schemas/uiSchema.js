@@ -34,6 +34,16 @@ const uiServicesSchema = mongoose.Schema({
     "userManagement": String
 })
 
+const uiBrandingSchema = mongoose.Schema({
+    _id: false,
+    "logoWidth": String,
+    "logoHeight": String,
+    "footer": String,
+    "facebook": String,
+    "twitter": String,
+    "youtube": String
+})
+
 // parent
 export const uiSchema = mongoose.Schema({
     _id: false,
@@ -41,4 +51,5 @@ export const uiSchema = mongoose.Schema({
     "services": uiServicesSchema,
     "options": uiOptionsSchema,
     "keycloak": uiKeycloakSchema,
+    "branding": uiBrandingSchema
 })

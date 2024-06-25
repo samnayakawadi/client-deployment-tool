@@ -6,7 +6,7 @@ const noURLProvidedString = (string) => {
 
 export const convertDBUIJsonToV1 = (uiJson) => {
 
-    const { _id: clientId, clientName, services, home, options, keycloak, } = uiJson
+    const { _id: clientId, clientName, services, home, options, branding, keycloak, } = uiJson
 
     const dataToUpdate = {
         clientId,
@@ -44,6 +44,14 @@ export const convertDBUIJsonToV1 = (uiJson) => {
                 courseCatalog: noURLProvidedString(services.courseCatalog),
                 userManagement: noURLProvidedString(services.userManagement)
             }
+        },
+        branding: {
+            logoWidth: branding.logoWidth,
+            logoHeight: branding.logoHeight,
+            footer: branding.footer,
+            facebook: branding.facebook,
+            twitter: branding.twitter,
+            youtube: branding.youtube
         },
         waitingTime: options.waitingTime,
         autoClose: options.autoClose,
