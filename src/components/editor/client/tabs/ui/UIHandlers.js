@@ -34,13 +34,18 @@ const UIHandlers = () => {
         await clientServices.updateClient(data._id, data)
     }
 
+    const updateBrandingHandler = (e) => {
+        dispatch(clientActions.updateUIBrandingTab(e.target))
+    }
+
     const uiHandlers = {
         updateGeneralTab,
         updateServicesTab,
         updateClientHandler,
         updateHomeTab,
         updateOptionsTab,
-        updateKeycloakTab
+        updateKeycloakTab,
+        updateBrandingHandler
     }
 
     return uiHandlers

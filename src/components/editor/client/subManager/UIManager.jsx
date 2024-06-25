@@ -7,6 +7,7 @@ import Keycloak from "../tabs/ui/Keycloak"
 import { useEffect } from "react"
 import MenuHandlers from "../menu/MenuHandlers"
 import Options from "../tabs/ui/Options"
+import Branding from "../tabs/ui/Branding"
 
 const UIManager = () => {
 
@@ -27,6 +28,7 @@ const UIManager = () => {
                     <Route path="home" element={<Home />} />
                     <Route path="services" element={<Services />} />
                     <Route path="options" element={<Options />} />
+                    <Route path="branding" element={<Branding />} />
                     <Route path="keycloak" element={<Keycloak />} />
                 </Routes>
             </div>

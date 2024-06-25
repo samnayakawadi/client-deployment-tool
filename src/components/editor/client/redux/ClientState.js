@@ -30,6 +30,14 @@ export const clientState = {
                 "isStandalone": false,
                 "isNewContentDelivery": false
             },
+            "branding": {
+                "logoWidth": "",
+                "logoHeight": "",
+                "footer": "",
+                "facebook": "",
+                "twitter": "",
+                "youtube": ""
+            },
             "keycloak": {
                 "realm": "",
                 "resource": "",

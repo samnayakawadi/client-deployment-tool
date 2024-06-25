@@ -13,6 +13,7 @@ const UISelector = () => {
                 <Link to="/editor/ui/home" className={`tab ${selectedTab === "home" && "tab-active"}`}>Home</Link>
                 <Link to="/editor/ui/services" className={`tab ${selectedTab === "services" && "tab-active"}`}>Services</Link>
                 <Link to="/editor/ui/options" className={`tab ${selectedTab === "options" && "tab-active"}`}>Options</Link>
+                <Link to="/editor/ui/branding" className={`tab ${selectedTab === "branding" && "tab-active"}`}>Branding</Link>
                 <Link to="/editor/ui/keycloak" className={`tab ${selectedTab === "keycloak" && "tab-active"}`}>Keycloak</Link>
             </div>
         </div>

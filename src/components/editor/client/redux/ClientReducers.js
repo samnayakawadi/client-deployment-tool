@@ -32,6 +32,9 @@ export const clientReducers = {
     updateUIKeycloakTab: (prevState, actions) => {
         prevState.data.ui.keycloak[actions.payload.name] = actions.payload.value
     },
+    updateUIBrandingTab: (prevState, actions) => {
+        prevState.data.ui.branding[actions.payload.name] = actions.payload.value
+    },
     updateMenuTab: (prevState, actions) => {
         prevState.menu = actions.payload
     },
