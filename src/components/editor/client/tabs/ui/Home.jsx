@@ -38,7 +38,7 @@ const Home = () => {
 
             <div className="flex flex-row gap-2 items-center">
                 <div className="basis-3/12 text-center">
-                    SEB
+                    SEB Arcane URL
                 </div>
                 <div className="basis-9/12">
                     <input value={home.seb} name="seb" type="text" onChange={uiHandlers.updateHomeTab} placeholder="E.g. http://10.244.2.206:3000 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />

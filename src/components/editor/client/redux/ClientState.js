@@ -54,7 +54,7 @@ export const clientState = {
                 "courseCatalog": "",
                 "learningAnalytics": "",
                 "imageSanitizer": "",
-                "userActivity": "",
+                "courseCompletion": "",
                 "userManagement": ""
             },
             "uploads": {

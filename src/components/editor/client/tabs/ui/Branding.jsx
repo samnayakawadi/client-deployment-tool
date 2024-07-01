@@ -21,6 +21,14 @@ const Branding = () => {
             <div className="flex flex-col gap-2">
                 <div className="flex flex-row gap-2 items-center">
                     <div className="basis-3/12 text-center">
+                        Logo URL
+                    </div>
+                    <div className="basis-9/12">
+                        <input type="text" name="logo" value={branding.logo} onChange={uiHandlers.updateBrandingHandler} placeholder="http://meghs1.hyderabad.cdac.in/static/media/logo.0f8ed84b.png" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    </div>
+                </div>
+                <div className="flex flex-row gap-2 items-center">
+                    <div className="basis-3/12 text-center">
                         Logo Width
                     </div>
                     <div className="basis-9/12">
