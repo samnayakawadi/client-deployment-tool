@@ -12,7 +12,8 @@ const uiOptionsSchema = mongoose.Schema({
     "waitingTime": String,
     "autoClose": String,
     "isStandalone": Boolean,
-    "isNewContentDelivery": Boolean
+    "isNewContentDelivery": Boolean,
+    "serverMode": String
 })
 
 const uiHomeSchema = mongoose.Schema({
