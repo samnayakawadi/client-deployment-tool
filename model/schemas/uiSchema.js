@@ -18,7 +18,6 @@ const uiOptionsSchema = mongoose.Schema({
 const uiHomeSchema = mongoose.Schema({
     _id: false,
     "homePage": String,
-    "logo": String,
     "seb": String
 })
 
@@ -36,6 +35,7 @@ const uiServicesSchema = mongoose.Schema({
 
 const uiBrandingSchema = mongoose.Schema({
     _id: false,
+    "logo": String,
     "logoWidth": String,
     "logoHeight": String,
     "footer": String,

@@ -14,7 +14,7 @@ export const getDefaultJson = (clientName) => {
             },
             "home": {
                 "homePage": "",
-                "logo": ""
+                "seb": ""
             },
             "options": {
                 "waitingTime": "",
@@ -22,6 +22,7 @@ export const getDefaultJson = (clientName) => {
                 "isStandalone": false
             },
             "branding": {
+                "logo": "",
                 "logoWidth": "",
                 "logoHeight": "",
                 "footer": "",
@@ -45,7 +46,7 @@ export const getDefaultJson = (clientName) => {
                 "courseCatalog": "",
                 "learningAnalytics": "",
                 "imageSanitizer": "",
-                "userActivity": ""
+                "courseCompletion": ""
             },
             "uploads": {
                 "assessmentFileUpload": "",

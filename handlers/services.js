@@ -70,7 +70,7 @@ export const questionAuthoringProperties = (data) => {
     services.course-catalog=${noURLProvidedString(services.services.courseCatalog, true)}
     services.image-sanitizer=${noURLProvidedString(services.services.imageSanitizer, true)}
     services.course-organizer=${noURLProvidedString(services.services.courseOrganizer, true)}
-    services.user-activity.url=${noURLProvidedString(services.services.userActivity, true)}
+    services.course-completion=${noURLProvidedString(services.services.courseCompletion, true)}
     services.learning-analytics=${noURLProvidedString(services.services.learningAnalytics, true)}
     services.usermanagement=${noURLProvidedString(services.services.userManagement, true)}
     

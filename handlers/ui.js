@@ -23,34 +23,19 @@ export const convertDBUIJsonToV1 = (uiJson) => {
         "public-client": true,
         "confidential-port": 0,
         servers: {
-            authoringUI: {
-                questionAuthoring: noURLProvidedString(services.questionAuthoring, true),
-                quizAuthoring: noURLProvidedString(services.quizAuthoring, true),
-                delivery: `${noURLProvidedString(services.delivery, true)}`,
-                admin: noURLProvidedString(services.admin, true),
-                folderStructure: `${noURLProvidedString(services.courseOrganizer + "/courseOrganizer/getCourseStructure", true)}`,
-                courseUsers: `${noURLProvidedString(services.courseCatalog + "/api/getCourseEnrolledLearners", true)}`,
-                courseAuthor: `${noURLProvidedString(services.courseCatalog + "/api/checkCourseAuthorStatus", true)}`,
-                ngel: noURLProvidedString(home.homePage, true),
-                logo: noURLProvidedString(home.logo, true)
-            },
-            deliveryUI: {
-                questionAuthoring: noURLProvidedString(services.questionAuthoring, true),
-                quizAuthoring: noURLProvidedString(services.quizAuthoring, true),
-                quizDelivery: noURLProvidedString(services.delivery, true),
-                admin: noURLProvidedString(services.admin, true),
-                ngel: noURLProvidedString(home.homePage, true),
-                userActivity: noURLProvidedString(services.learningAnalytics, true)
-            },
-            adminUI: {
-                ngel: noURLProvidedString(home.homePage, true),
-                admin: noURLProvidedString(services.admin, true),
-                questionAuthoring: noURLProvidedString(services.questionAuthoring, true),
-                courseCatalog: noURLProvidedString(services.courseCatalog, true),
-                userManagement: noURLProvidedString(services.userManagement, true)
-            }
+            home: noURLProvidedString(home.homePage, true),
+            questionAuthoring: noURLProvidedString(services.questionAuthoring, true),
+            quizAuthoring: noURLProvidedString(services.quizAuthoring, true),
+            quizDelivery: `${noURLProvidedString(services.delivery, true)}`,
+            quizAdmin: noURLProvidedString(services.admin, true),
+            courseOrganizer: noURLProvidedString(services.courseOrganizer, true),
+            courseCatalog: noURLProvidedString(services.courseCatalog, true),
+            learningAnalytics: noURLProvidedString(services.learningAnalytics, true),
+            userManagement: noURLProvidedString(services.userManagement, true),
+            courseCompletion: noURLProvidedString(services.courseCompletion, true)
         },
         branding: {
+            logo: noURLProvidedString(branding.logo, true),
             logoWidth: branding.logoWidth,
             logoHeight: branding.logoHeight,
             footer: branding.footer,
