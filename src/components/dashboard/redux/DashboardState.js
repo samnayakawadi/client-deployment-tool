@@ -25,5 +25,9 @@ export const dashboardState = {
     getClients: {
         isLoading: true,
         clientsList: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}] // Add more objects for more skeletons
+    },
+    scripts: {
+        branches: ["main", "dev_samnayakawadi"],
+        currentBranch: "main"
     }
 }

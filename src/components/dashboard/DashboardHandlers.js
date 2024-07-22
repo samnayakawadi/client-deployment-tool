@@ -148,6 +148,10 @@ const DashboardHandlers = () => {
         }
     }
 
+    const updateCurrentBranchHandler = (e) => {
+        dispatch(dashboardActions.updateCurrentBranch(e.target.value))
+    }
+
     const dashboardHandlers = {
         toggleAddNewClientHandler,
         updateClientNameHandler,
@@ -166,7 +170,8 @@ const DashboardHandlers = () => {
         updateViewClientTab,
         getClientPropertiesHandler,
         downloadClientPropertiesURLGenerator,
-        copyDataHandler
+        copyDataHandler,
+        updateCurrentBranchHandler
     }
 
     return dashboardHandlers

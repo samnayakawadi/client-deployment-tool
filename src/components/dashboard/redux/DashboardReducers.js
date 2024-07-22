@@ -42,5 +42,8 @@ export const dashboardReducers = {
     },
     updateViewClientTab: (prevState, actions) => {
         prevState.modals.viewClient.tab = actions.payload
+    },
+    updateCurrentBranch: (prevState, actions) => {
+        prevState.scripts.currentBranch = actions.payload
     }
 }
