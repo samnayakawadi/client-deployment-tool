@@ -20,6 +20,9 @@ export const dashboardState = {
             clientId: null,
             isChecked: false,
             selectedTab: "linux"
+        },
+        troubleshootScripts: {
+            isChecked: false
         }
     },
     getClients: {

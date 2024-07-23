@@ -152,6 +152,10 @@ const DashboardHandlers = () => {
         dispatch(dashboardActions.updateCurrentBranch(e.target.value))
     }
 
+    const toggleTroubleshootModalHandler = () => {
+        dispatch(dashboardActions.toggleTroubleshootModal())
+    }
+
     const dashboardHandlers = {
         toggleAddNewClientHandler,
         updateClientNameHandler,
@@ -171,7 +175,8 @@ const DashboardHandlers = () => {
         getClientPropertiesHandler,
         downloadClientPropertiesURLGenerator,
         copyDataHandler,
-        updateCurrentBranchHandler
+        updateCurrentBranchHandler,
+        toggleTroubleshootModalHandler
     }
 
     return dashboardHandlers

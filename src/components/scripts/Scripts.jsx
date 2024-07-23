@@ -18,6 +18,7 @@ const Scripts = () => {
                 logoClass="fas fa-code"
                 downloadLink={`/scriptsToDownload/_common/Client/ClientConfigureWinRM.ps1`}
             />
+            <div className="text-center p-0 hover:underline hover:cursor-pointer" onClick={dashboardHandlers.toggleTroubleshootModalHandler}>Troubleshoot Step 1</div>
             <hr />
             <div className="text-center p-2">Step 2. Select The Branch</div>
             <select className="select select-info w-full focus:outline-none" value={scripts.currentBranch} onChange={dashboardHandlers.updateCurrentBranchHandler}>
@@ -43,6 +44,7 @@ const Scripts = () => {
                 logoClass="fas fa-code"
                 downloadLink={`/scriptsToDownload/${scripts.currentBranch}/Client/ClientBuildAndFTP.bat`}
             />
+            <div className="p-1" />
         </div>
     )
 }

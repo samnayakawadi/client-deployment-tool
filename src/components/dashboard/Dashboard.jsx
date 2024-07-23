@@ -7,6 +7,7 @@ import DeleteClientConfirmation from "./modals/DeleteClientConfirmation"
 import ViewClient from "./modals/ViewClient"
 import DownloadClient from "./modals/DownloadClient"
 import Scripts from "../scripts/Scripts"
+import TroubleshootModal from "../scripts/components/TroubleshootModal"
 
 // eslint-disable-next-line react/prop-types
 const Dashboard = () => {
@@ -19,6 +20,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         dashboardHandlers.getAllClientsHandler()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
@@ -77,6 +79,7 @@ const Dashboard = () => {
                 <DeleteClientConfirmation />
                 <ViewClient />
                 <DownloadClient />
+                <TroubleshootModal />
             </div>
 
         </div>

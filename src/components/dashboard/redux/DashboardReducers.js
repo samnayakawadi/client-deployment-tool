@@ -1,5 +1,5 @@
 export const dashboardReducers = {
-    toggleAddNewClient: (prevState, actions) => {
+    toggleAddNewClient: (prevState) => {
         prevState.modals.addNewClient.isChecked = !prevState.modals.addNewClient.isChecked
         prevState.modals.addNewClient.clientName = ""
     },
@@ -45,5 +45,8 @@ export const dashboardReducers = {
     },
     updateCurrentBranch: (prevState, actions) => {
         prevState.scripts.currentBranch = actions.payload
+    },
+    toggleTroubleshootModal: (prevState) => {
+        prevState.modals.troubleshootScripts.isChecked = !prevState.modals.troubleshootScripts.isChecked
     }
 }
