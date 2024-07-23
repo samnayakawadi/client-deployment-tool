@@ -14,7 +14,7 @@ const Scripts = () => {
             <hr />
             <div className="text-center p-2">Step 1. Once in a Lifetime Setup ⬇️</div>
             <ScriptCard
-                scriptName="Script to Configure WinRM"
+                scriptName="Configure WinRM"
                 logoClass="fas fa-code"
                 downloadLink={`/scriptsToDownload/_common/Client/ClientConfigureWinRM.ps1`}
             />
@@ -28,23 +28,33 @@ const Scripts = () => {
             <hr />
             <div className="text-center p-2">Step 3. Select Any One from Below ⬇️</div>
             <ScriptCard
-                scriptName="Script to Build"
+                scriptName="Build"
                 logoClass="fas fa-code"
                 downloadLink={`/scriptsToDownload/${scripts.currentBranch}/Client/ClientBuildOnly.bat`}
             />
             <div className="text-center p-0">Or</div>
             <ScriptCard
-                scriptName="Script to File Transfer"
+                scriptName="File Transfer"
                 logoClass="fas fa-code"
                 downloadLink={`/scriptsToDownload/${scripts.currentBranch}/Client/ClientFTPOnly.bat`}
             />
             <div className="text-center p-0">Or</div>
             <ScriptCard
-                scriptName="Script to Build & File Transfer"
+                scriptName="Build & File Transfer"
                 logoClass="fas fa-code"
                 downloadLink={`/scriptsToDownload/${scripts.currentBranch}/Client/ClientBuildAndFTP.bat`}
             />
             <div className="p-1" />
+            <hr />
+            <div className="text-center p-2">Step 4. Download data.json & data.properties to /downloads folder ⬇️</div>
+            <hr />
+            <div className="text-center p-2">Step 5. Upload everything to /var/www ⬇️</div>
+            <ScriptCard
+                scriptName="Deployer for Linux"
+                logoClass="fas fa-code"
+                downloadLink={`/scriptsToDownload/_common/Client/ClientBuildDeployerForLinuxServer.ps1`}
+            />
+            <div className="text-center p-1 text-warning pb-2">Note : It will override any existing files with the same name & It will keep other files {"[Right Click & Run with PowerShell]"}</div>
         </div>
     )
 }
