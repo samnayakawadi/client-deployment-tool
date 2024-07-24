@@ -54,7 +54,8 @@ const Scripts = () => {
                 logoClass="fas fa-code"
                 downloadLink={`/scriptsToDownload/_common/Client/ClientBuildDeployerForLinuxServer.ps1`}
             />
-            <div className="text-center p-1 text-warning pb-2">Note : It will override any existing files with the same name & It will keep other files {"[Right Click & Run with PowerShell]"}</div>
+            <div className="text-center p-1 text-warning pb-2">Note : You need to download and install PuTTY to run this script. Visit <a className="underline" rel="noreferrer" target="_blank" href="https://putty.org/">https://putty.org/</a></div>
+            <div className="text-center p-1 text-warning pb-2">Note : It will override any existing files with the same name & It will keep other files {"(Right Click & Run with PowerShell)"}</div>
             <hr />
             <div className="text-center p-2">Step 6. Update Cloud Server URL</div>
             {/* <div className="bg-gray-800 text-white p-2 rounded mb-2">
@@ -64,6 +65,7 @@ const Scripts = () => {
                 <code>export cloud_server=http://10.244.2.206:7710</code>
             </div>
             <div className="text-center p-1 text-warning pb-2">Note : The default cloud server url is http://localhost:7710 In this case, You {"don't"} need to run above command</div>
+            <div className="text-center p-1 text-warning pb-2">Note : If you are using the cloud server, You need to provide the dummy/empty assessment.properties file alongside jars</div>
             <div className="pb-2"></div>
         </div>
     )
