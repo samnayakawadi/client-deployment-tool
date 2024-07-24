@@ -167,7 +167,7 @@ export const generateJSON = async (req, res) => {
 
             res.setHeader("Content-Type", "application/json")
             if (req.requestType === "download") {
-                res.setHeader("Content-Disposition", "attachment; filename=data.json")
+                res.setHeader("Content-Disposition", "attachment; filename=assessment.json")
             }
 
             setTimeout(() => {
@@ -201,7 +201,7 @@ export const generateProperties = async (req, res) => {
         res.setHeader('Content-Type', 'text/plain');
 
         if (req.requestType === "download") {
-            res.setHeader("Content-Disposition", "attachment; filename=data.properties")
+            res.setHeader("Content-Disposition", "attachment; filename=assessment.properties")
         }
 
         setTimeout(() => {
