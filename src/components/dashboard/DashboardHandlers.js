@@ -92,13 +92,13 @@ const DashboardHandlers = () => {
         const clientId = dashboardState.modals.downloadClient.clientId
 
         if (os === "linux") {
-            return `curl -o /var/www/data.json ${mainServer}/clients/generate-json?clientId=${clientId}`
+            return `curl -o /var/www/assessment.json ${mainServer}/clients/generate-json?clientId=${clientId}`
         } else if (os === "windows") {
             if (type === "command") {
-                return `Invoke-WebRequest -Uri "${mainServer}/clients/generate-json?clientId=${clientId}" -OutFile "C:/data.json"`
+                return `Invoke-WebRequest -Uri "${mainServer}/clients/generate-json?clientId=${clientId}" -OutFile "C:/assessment.json"`
             } else if (type === "text") {
-                // return `Invoke-WebRequest -Uri "${mainServer}/clients/generate-json?clientId=${clientId}" -OutFile "C:\/data.json"`
-                return `Invoke-WebRequest -Uri "${mainServer}/clients/generate-json?clientId=${clientId}" -OutFile "C:/data.json"`
+                // return `Invoke-WebRequest -Uri "${mainServer}/clients/generate-json?clientId=${clientId}" -OutFile "C:\/assessment.json"`
+                return `Invoke-WebRequest -Uri "${mainServer}/clients/generate-json?clientId=${clientId}" -OutFile "C:/assessment.json"`
             }
         }
     }

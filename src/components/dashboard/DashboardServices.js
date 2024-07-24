@@ -73,30 +73,30 @@ const DashboardServices = () => {
 
     const viewClientJSON = async (clientId) => {
         toast.dismiss()
-        const toastId = toast.loading("Fetching Data.json")
+        const toastId = toast.loading("Fetching assessment.json")
         try {
             const response = await axios.get(globalState.servers.main + "/clients/view-json?clientId=" + clientId, {
                 withCredentials: true
             })
-            toast.update(toastId, { render: "Data.json Fetched", type: "success", isLoading: false, autoClose: autoClose, closeOnClick: true })
+            toast.update(toastId, { render: "assessment.json Fetched", type: "success", isLoading: false, autoClose: autoClose, closeOnClick: true })
             return response.data;
         } catch (error) {
-            toast.update(toastId, { render: "Data.json Fetching Failed" + (error.response === undefined ? "Network Error" : error.response), type: "error", isLoading: false, autoClose: autoClose, closeOnClick: true })
+            toast.update(toastId, { render: "assessment.json Fetching Failed" + (error.response === undefined ? "Network Error" : error.response), type: "error", isLoading: false, autoClose: autoClose, closeOnClick: true })
             return null;
         }
     }
 
     const viewClientProperties = async (clientId) => {
         // toast.dismiss()
-        const toastId = toast.loading("Fetching Data.properties")
+        const toastId = toast.loading("Fetching assessment.properties")
         try {
             const response = await axios.get(globalState.servers.main + "/clients/generate-properties?clientId=" + clientId, {
                 withCredentials: true
             })
-            toast.update(toastId, { render: "Data.properties Fetched", type: "success", isLoading: false, autoClose: autoClose, closeOnClick: true })
+            toast.update(toastId, { render: "assessment.properties Fetched", type: "success", isLoading: false, autoClose: autoClose, closeOnClick: true })
             return response.data;
         } catch (error) {
-            toast.update(toastId, { render: "Data.properties Fetching Failed" + (error.response === undefined ? "Network Error" : error.response), type: "error", isLoading: false, autoClose: autoClose, closeOnClick: true })
+            toast.update(toastId, { render: "assessment.properties Fetching Failed" + (error.response === undefined ? "Network Error" : error.response), type: "error", isLoading: false, autoClose: autoClose, closeOnClick: true })
             return null;
         }
     }

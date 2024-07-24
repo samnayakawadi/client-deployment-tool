@@ -46,7 +46,7 @@ const Scripts = () => {
             />
             <div className="p-1" />
             <hr />
-            <div className="text-center p-2">Step 4. Download data.json & data.properties to /downloads folder ⬇️</div>
+            <div className="text-center p-2">Step 4. Download assessment.json & assessment.properties to /downloads folder ⬇️</div>
             <hr />
             <div className="text-center p-2">Step 5. Upload everything to /var/www ⬇️</div>
             <ScriptCard
