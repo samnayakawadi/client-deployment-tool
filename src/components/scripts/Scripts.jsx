@@ -10,9 +10,9 @@ const Scripts = () => {
 
     return (
         <div className="h-full p-2 flex flex-col gap-3">
-            <div className="text-center p-2">Build Assessment Directly from Your Machine</div>
+            <div className="text-center p-2 text-success">Build Assessment Directly from Your Machine</div>
             <hr />
-            <div className="text-center p-2">Step 1. Once in a Lifetime Setup ⬇️</div>
+            <div className="text-center p-2">Step 1. Once in a Lifetime Setup</div>
             <ScriptCard
                 scriptName="Configure WinRM"
                 logoClass="fas fa-code"
@@ -26,7 +26,7 @@ const Scripts = () => {
                 {scripts.branches.map((singleBranch, branchIndex) => (<option key={branchIndex}>{singleBranch}</option>))}
             </select>
             <hr />
-            <div className="text-center p-2">Step 3. Select Any One from Below ⬇️</div>
+            <div className="text-center p-2">Step 3. Select Any One from Below</div>
             <ScriptCard
                 scriptName="Build"
                 logoClass="fas fa-code"
@@ -46,9 +46,9 @@ const Scripts = () => {
             />
             <div className="p-1" />
             <hr />
-            <div className="text-center p-2">Step 4. Download assessment.json & assessment.properties to /downloads folder ⬇️</div>
+            <div className="text-center p-2">Step 4. Download assessment.json & assessment.properties to /downloads folder</div>
             <hr />
-            <div className="text-center p-2">Step 5. Upload everything to /var/www ⬇️</div>
+            <div className="text-center p-2">Step 5. Upload everything to /var/www</div>
             <ScriptCard
                 scriptName="Deployer for Linux"
                 logoClass="fas fa-code"
@@ -56,7 +56,7 @@ const Scripts = () => {
             />
             <div className="text-center p-1 text-warning pb-2">Note : It will override any existing files with the same name & It will keep other files {"[Right Click & Run with PowerShell]"}</div>
             <hr />
-            <div className="text-center p-2">Step 6. Update Cloud Server URL ⬇️</div>
+            <div className="text-center p-2">Step 6. Update Cloud Server URL</div>
             {/* <div className="bg-gray-800 text-white p-2 rounded mb-2">
                 <code>XYZ</code>
             </div> */}
