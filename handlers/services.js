@@ -48,6 +48,12 @@ export const questionAuthoringProperties = (data) => {
     ui.admin.seb.arcane.url = ${noURLProvidedString(ui.home.seb + "/arcane", false)}
     seb.url = https://safeexambrowser.org/download
     mobile.admin.key = ${noURLProvidedString("cdac@123", true)}
+
+    # Static - Session
+    server.servlet.session.cookie.name=meghsikshak
+    server.servlet.session.timeout=30m
+    server.servlet.session.persistent=true
+    server.servlet.session.cookie.http-only=false
     
     # Dynamic - Keycloak
     keycloak.auth-server-url=${noURLProvidedString(services.keycloak.serverUrl, true)}
