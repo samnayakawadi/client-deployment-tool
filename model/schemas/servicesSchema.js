@@ -7,6 +7,11 @@ const keycloak = mongoose.Schema({
     "serverUrl": String
 })
 
+const options = mongoose.Schema({
+    _id: false,
+    "courseStructureFinalPretestCall": Boolean
+})
+
 const services = mongoose.Schema({
     _id: false,
     "questionAuthoring": String,
@@ -31,5 +36,6 @@ export const servicesSchema = mongoose.Schema({
     _id: false,
     "services": services,
     "uploads": uploads,
+    "options": options,
     "keycloak": keycloak
 })

@@ -31,7 +31,8 @@ const uiServicesSchema = mongoose.Schema({
     "courseOrganizer": String,
     "courseCatalog": String,
     "learningAnalytics": String,
-    "userManagement": String
+    "userManagement": String,
+    "courseCompletion": String
 })
 
 const uiBrandingSchema = mongoose.Schema({

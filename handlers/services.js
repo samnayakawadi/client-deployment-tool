@@ -83,6 +83,9 @@ export const questionAuthoringProperties = (data) => {
     #Dynamic - Files
     qti.upload.url=${noURLProvidedString(services.uploads.assessmentQTIUpload, true)}
     file.upload.url=${noURLProvidedString(services.uploads.assessmentFileUpload, true)}
+
+    # Dynamic - Course Structure
+    options.course-structure.add-final-pretest.enabled=${services.options.courseStructureFinalPretestCall}
   `;
 
   return properties
