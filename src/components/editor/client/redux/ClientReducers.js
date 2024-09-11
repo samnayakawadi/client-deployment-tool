@@ -44,6 +44,15 @@ export const clientReducers = {
     updateServicesUploadsTab: (prevState, actions) => {
         prevState.data.services.uploads[actions.payload.name] = actions.payload.value
     },
+    updateServicesOptionsTab: (prevState, actions) => {
+
+        if (actions.payload.name === "courseStructureFinalPretestCall") {
+            prevState.data.services.options.courseStructureFinalPretestCall = !prevState.data.services.options.courseStructureFinalPretestCall
+        }
+        else {
+            prevState.data.services.options[actions.payload.name] = actions.payload.value
+        }
+    },
     updateServicesKeycloakTab: (prevState, actions) => {
         prevState.data.services.keycloak[actions.payload.name] = actions.payload.value
     },

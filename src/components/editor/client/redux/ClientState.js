@@ -61,6 +61,9 @@ export const clientState = {
                 "assessmentFileUpload": "",
                 "assessmentQTIUpload": ""
             },
+            "options": {
+                "courseStructureFinalPretestCall": false
+            },
             "keycloak": {
                 "realm": "",
                 "resource": "",

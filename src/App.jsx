@@ -3,7 +3,6 @@ import Navbar from "./components/navbar/Navbar"
 import GlobalComponent from "./components/global/GlobalComponent"
 import { Route, Routes } from "react-router"
 import ClientManager from "./components/editor/client/ClientManager"
-import Breadcrumb from "./components/breadcrumb/Breadcrumb"
 import DashboardManager from "./components/dashboard/DashboardManager"
 
 function App() {

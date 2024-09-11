@@ -117,6 +117,18 @@ const Services = () => {
                     <input type="text" name="learningAnalytics" value={services.learningAnalytics} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8080 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
+
+            <div className="flex flex-row gap-2 items-center">
+                <div className="basis-3/12 text-center">
+                    Course Completion
+                </div>
+                <div className="basis-1/12">
+                    8100
+                </div>
+                <div className="basis-8/12">
+                    <input type="text" name="courseCompletion" value={services.courseCompletion} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8080 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
+                </div>
+            </div>
         </div>
     )
 }

@@ -47,7 +47,7 @@ const Mongo = () => {
                     Host
                 </div>
                 <div className="basis-9/12">
-                    <input type="text" name="host" value={mongo.host} onChange={mongoHandlers.updateMongoTab} placeholder="E.g. 10.244.2.206 or megh3.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="host" value={mongo.host} onChange={mongoHandlers.updateMongoTab} placeholder="E.g. 10.244.2.206 or megh3.hyderabad.cdac.in (Do NOT add http://)" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
         </div>

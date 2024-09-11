@@ -23,7 +23,7 @@ const Uploads = () => {
                     Assessment File Upload
                 </div>
                 <div className="basis-9/12">
-                    <input type="text" name="assessmentFileUpload" value={uploads.assessmentFileUpload} onChange={servicesHandlers.updateUploadsTab} placeholder="E.g. D\:\\Uploaded Files by Question Authoring\\" className="input input-bordered input-secondary w-full focus:outline-none" />
+                    <input type="text" name="assessmentFileUpload" value={uploads.assessmentFileUpload} onChange={servicesHandlers.updateUploadsTab} placeholder="E.g. D\:\\Uploaded Files by Question Authoring\\ or /home/cdac-megh/assessment" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
             </div>
 
