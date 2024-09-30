@@ -52,6 +52,9 @@ export const getDefaultJson = (clientName) => {
                 "assessmentFileUpload": "",
                 "assessmentQTIUpload": ""
             },
+            "options": {
+                "courseStructureFinalPretestCall": false
+            },
             "keycloak": {
                 "realm": "",
                 "resource": "",
