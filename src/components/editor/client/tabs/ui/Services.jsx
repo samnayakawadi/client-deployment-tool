@@ -16,9 +16,24 @@ const Services = () => {
         dispatch(clientActions.updateSelectedTab({ menu: "ui", selectedTab: "services" }))
     }, [])
 
+    const serverMode = clientEditorState.data.ui.options.serverMode
+
     return (
         <div className="flex flex-col gap-2">
-            <div className="flex flex-row gap-2 items-center">
+
+            {serverMode === "PRO" && <div className="flex flex-row gap-2 items-center">
+                <div className="basis-3/12 text-center">
+                    Gateway URL
+                </div>
+                <div className="basis-1/12">
+                    8069 or {"/megh-api"}
+                </div>
+                <div className="basis-8/12">
+                    <input type="text" name="gatewayUrl" value={services.gatewayUrl} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8093 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
+                </div>
+            </div>}
+
+            {serverMode === "DEV" && <div className="flex flex-row gap-2 items-center">
                 <div className="basis-3/12 text-center">
                     Assessment Question Authoring
                 </div>
@@ -28,9 +43,9 @@ const Services = () => {
                 <div className="basis-8/12">
                     <input type="text" name="questionAuthoring" value={services.questionAuthoring} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8093 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
-            </div>
+            </div>}
 
-            <div className="flex flex-row gap-2 items-center">
+            {serverMode === "DEV" && <div className="flex flex-row gap-2 items-center">
                 <div className="basis-3/12 text-center">
                     Assessment Quiz Authoring
                 </div>
@@ -40,9 +55,9 @@ const Services = () => {
                 <div className="basis-8/12">
                     <input type="text" name="quizAuthoring" value={services.quizAuthoring} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8094 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
-            </div>
+            </div>}
 
-            <div className="flex flex-row gap-2 items-center">
+            {serverMode === "DEV" && <div className="flex flex-row gap-2 items-center">
                 <div className="basis-3/12 text-center">
                     Assessment Delivery
                 </div>
@@ -52,9 +67,9 @@ const Services = () => {
                 <div className="basis-8/12">
                     <input type="text" name="delivery" value={services.delivery} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8095 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
-            </div>
+            </div>}
 
-            <div className="flex flex-row gap-2 items-center">
+            {serverMode === "DEV" && <div className="flex flex-row gap-2 items-center">
                 <div className="basis-3/12 text-center">
                     Assessment Admin
                 </div>
@@ -64,11 +79,11 @@ const Services = () => {
                 <div className="basis-8/12">
                     <input type="text" name="admin" value={services.admin} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8096 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
-            </div>
+            </div>}
 
             <hr className="border-1 border-gray-700" />
 
-            <div className="flex flex-row gap-2 items-center">
+            {serverMode === "DEV" && <div className="flex flex-row gap-2 items-center">
                 <div className="basis-3/12 text-center">
                     Course Organizer
                 </div>
@@ -78,9 +93,9 @@ const Services = () => {
                 <div className="basis-8/12">
                     <input type="text" name="courseOrganizer" value={services.courseOrganizer} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8082 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
-            </div>
+            </div>}
 
-            <div className="flex flex-row gap-2 items-center">
+            {serverMode === "DEV" && <div className="flex flex-row gap-2 items-center">
                 <div className="basis-3/12 text-center">
                     User Management
                 </div>
@@ -90,10 +105,9 @@ const Services = () => {
                 <div className="basis-8/12">
                     <input type="text" name="userManagement" value={services.userManagement} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8080 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
-            </div>
+            </div>}
 
-
-            <div className="flex flex-row gap-2 items-center">
+            {serverMode === "DEV" && <div className="flex flex-row gap-2 items-center">
                 <div className="basis-3/12 text-center">
                     Course Catalog
                 </div>
@@ -103,10 +117,9 @@ const Services = () => {
                 <div className="basis-8/12">
                     <input type="text" name="courseCatalog" value={services.courseCatalog} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8085 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
-            </div>
+            </div>}
 
-
-            <div className="flex flex-row gap-2 items-center">
+            {serverMode === "DEV" && <div className="flex flex-row gap-2 items-center">
                 <div className="basis-3/12 text-center">
                     Learning Analytics
                 </div>
@@ -116,9 +129,9 @@ const Services = () => {
                 <div className="basis-8/12">
                     <input type="text" name="learningAnalytics" value={services.learningAnalytics} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8080 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
-            </div>
+            </div>}
 
-            <div className="flex flex-row gap-2 items-center">
+            {serverMode === "DEV" && <div className="flex flex-row gap-2 items-center">
                 <div className="basis-3/12 text-center">
                     Course Completion
                 </div>
@@ -128,7 +141,7 @@ const Services = () => {
                 <div className="basis-8/12">
                     <input type="text" name="courseCompletion" value={services.courseCompletion} onChange={uiHandlers.updateServicesTab} placeholder="E.g. http://10.244.2.206:8080 or http://megh1.hyderabad.cdac.in" className="input input-bordered input-secondary w-full focus:outline-none" />
                 </div>
-            </div>
+            </div>}
         </div>
     )
 }

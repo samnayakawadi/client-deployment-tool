@@ -16,6 +16,7 @@ export const clientState = {
                 "seb": ""
             },
             "services": {
+                "gatewayUrl": "",
                 "questionAuthoring": "",
                 "quizAuthoring": "",
                 "delivery": "",
@@ -25,9 +26,10 @@ export const clientState = {
                 "learningAnalytics": ""
             },
             "options": {
-                "waitingTime": "",
-                "autoClose": "",
+                "waitingTime": "1000",
+                "autoClose": "2000",
                 "isStandalone": false,
+                "serverMode": "DEV",
                 "isNewContentDelivery": false
             },
             "branding": {
