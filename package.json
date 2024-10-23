@@ -12,6 +12,7 @@
   "author": "Samir Nayakawadi",
   "license": "ISC",
   "dependencies": {
+    "client-deployment-tool": "file:",
     "cors": "^2.8.5",
     "crypto-js": "^4.2.0",
     "dotenv": "^16.3.1",

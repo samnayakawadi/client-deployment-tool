@@ -3,6 +3,7 @@ export const getDefaultJson = (clientName) => {
         clientName,
         "ui": {
             "services": {
+                "gatewayUrl": "",
                 "questionAuthoring": "",
                 "quizAuthoring": "",
                 "delivery": "",
@@ -17,9 +18,10 @@ export const getDefaultJson = (clientName) => {
                 "seb": ""
             },
             "options": {
-                "waitingTime": "",
-                "autoClose": "",
-                "isStandalone": false
+                "waitingTime": "1000",
+                "autoClose": "2000",
+                "isStandalone": false,
+                "serverMode": "DEV"
             },
             "branding": {
                 "logo": "",

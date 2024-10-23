@@ -26,7 +26,8 @@ const getServers = (home, services, options) => {
     }
     else if (options.serverMode === "PRO") {
         return {
-            home: noURLProvidedString(home.homePage, true)
+            home: noURLProvidedString(home.homePage, true),
+            gatewayUrl: noURLProvidedString(services.gatewayUrl, true)
         }
     }
 }
