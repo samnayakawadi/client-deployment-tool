@@ -24,6 +24,7 @@ const uiHomeSchema = mongoose.Schema({
 
 const uiServicesSchema = mongoose.Schema({
     _id: false,
+    "gatewayUrl": String,
     "questionAuthoring": String,
     "quizAuthoring": String,
     "delivery": String,
