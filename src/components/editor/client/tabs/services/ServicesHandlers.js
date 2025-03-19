@@ -17,6 +17,10 @@ const ServicesHandlers = () => {
         dispatch(clientActions.updateServicesOptionsTab(e.target))
     }
 
+    const updateLrsTab = (e) => {
+        dispatch(clientActions.updateServicesLrsTab(e.target))
+    }
+
     const updateKeycloakTab = (e) => {
         dispatch(clientActions.updateServicesKeycloakTab(e.target))
     }
@@ -25,7 +29,8 @@ const ServicesHandlers = () => {
         updateServicesTab,
         updateUploadsTab,
         updateKeycloakTab,
-        updateOptionsTab
+        updateOptionsTab,
+        updateLrsTab
     }
 
     return servicesHandlers

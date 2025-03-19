@@ -53,6 +53,9 @@ export const clientReducers = {
             prevState.data.services.options[actions.payload.name] = actions.payload.value
         }
     },
+    updateServicesLrsTab: (prevState, actions) => {
+        prevState.data.services.lrs[actions.payload.name] = actions.payload.value
+    },
     updateServicesKeycloakTab: (prevState, actions) => {
         prevState.data.services.keycloak[actions.payload.name] = actions.payload.value
     },

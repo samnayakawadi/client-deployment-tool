@@ -11,6 +11,7 @@ const ServicesSelector = () => {
                 <Link to="/editor/services/services" className={`tab ${selectedTab === "services" && "tab-active"}`}>Services</Link>
                 <Link to="/editor/services/uploads" className={`tab ${selectedTab === "uploads" && "tab-active"}`}>Uploads</Link>
                 <Link to="/editor/services/options" className={`tab ${selectedTab === "options" && "tab-active"}`}>Options</Link>
+                <Link to="/editor/services/lrs" className={`tab ${selectedTab === "lrs" && "tab-active"}`}>LRS</Link>
                 <Link to="/editor/services/keycloak" className={`tab ${selectedTab === "keycloak" && "tab-active"}`}>Keycloak</Link>
             </div>
         </div>
