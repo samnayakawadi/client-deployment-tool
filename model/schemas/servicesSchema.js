@@ -12,6 +12,13 @@ const options = mongoose.Schema({
     "courseStructureFinalPretestCall": Boolean
 })
 
+const lrs = mongoose.Schema({
+    _id: false,
+    "service": String,
+    "homepage": String,
+    "token": String,
+})
+
 const services = mongoose.Schema({
     _id: false,
     "questionAuthoring": String,
@@ -37,5 +44,6 @@ export const servicesSchema = mongoose.Schema({
     "services": services,
     "uploads": uploads,
     "options": options,
+    "lrs": lrs,
     "keycloak": keycloak
 })

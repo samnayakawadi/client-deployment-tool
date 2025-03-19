@@ -86,6 +86,12 @@ export const questionAuthoringProperties = (data) => {
 
     # Dynamic - Course Structure
     options.course-structure.add-final-pretest.enabled=${noURLProvidedString(String(services.options.courseStructureFinalPretestCall), true)}
+
+    # LRS
+    services.assessment.lrs=${noURLProvidedString(String(services.lrs.service), false)}
+    lrs.homepage=${noURLProvidedString(String(services.lrs.homepage), false)}
+    lrs.headers.authorization=${noURLProvidedString(String(services.lrs.token), false)}
+    lrs.x-experience-api-version=1.0.0
   `;
 
   return properties

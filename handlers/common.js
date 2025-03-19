@@ -57,6 +57,11 @@ export const getDefaultJson = (clientName) => {
             "options": {
                 "courseStructureFinalPretestCall": false
             },
+            "lrs": {
+                "service": "",
+                "homepage": "",
+                "token": ""
+            },
             "keycloak": {
                 "realm": "",
                 "resource": "",
