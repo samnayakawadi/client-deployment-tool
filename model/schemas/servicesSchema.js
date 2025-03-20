@@ -14,6 +14,7 @@ const options = mongoose.Schema({
 
 const lrs = mongoose.Schema({
     _id: false,
+    "enable": Boolean,
     "service": String,
     "homepage": String,
     "token": String,

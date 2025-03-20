@@ -88,6 +88,7 @@ export const questionAuthoringProperties = (data) => {
     options.course-structure.add-final-pretest.enabled=${noURLProvidedString(String(services.options.courseStructureFinalPretestCall), true)}
 
     # LRS
+    lrs.enable=${noURLProvidedString(String(services.lrs.enable), false)}
     services.assessment.lrs=${noURLProvidedString(String(services.lrs.service), false)}
     lrs.homepage=${noURLProvidedString(String(services.lrs.homepage), false)}
     lrs.headers.authorization=${noURLProvidedString(String(services.lrs.token), false)}

@@ -58,6 +58,7 @@ export const getDefaultJson = (clientName) => {
                 "courseStructureFinalPretestCall": false
             },
             "lrs": {
+                "enable": false,
                 "service": "",
                 "homepage": "",
                 "token": ""

@@ -158,7 +158,7 @@ export const generateJSON = async (req, res) => {
     try {
 
         const dbClient = await clientsCollection.findOne({ _id: clientId })
-        const json = convertDBUIJsonToV1(dbClient.ui)
+        const json = convertDBUIJsonToV1(dbClient.ui, dbClient.services)
 
         if (dbClient) {
 
@@ -181,7 +181,6 @@ export const generateJSON = async (req, res) => {
             })
         }
     } catch (error) {
-        console.log(error)
         res.status(500).json({
             status: "INTERNALSERVERERROR",
             message: error
@@ -209,7 +208,6 @@ export const generateProperties = async (req, res) => {
         }, process.env.network_delay)
 
     } catch (error) {
-        console.log(error)
         res.status(500).json({
             status: "INTERNALSERVERERROR",
             message: error

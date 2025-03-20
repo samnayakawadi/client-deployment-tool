@@ -32,9 +32,11 @@ const getServers = (home, services, options) => {
     }
 }
 
-export const convertDBUIJsonToV1 = (uiJson) => {
+export const convertDBUIJsonToV1 = (uiJson, servicesJson) => {
 
     const { _id: clientId, clientName, services, home, options, branding, keycloak, } = uiJson
+
+    const { lrs } = servicesJson
 
     const dataToUpdate = {
         clientId,
@@ -60,7 +62,8 @@ export const convertDBUIJsonToV1 = (uiJson) => {
             autoClose: options.autoClose,
             isStandalone: options.isStandalone,
             isNewContentDelivery: options.isNewContentDelivery,
-            serverMode: options.serverMode
+            serverMode: options.serverMode,
+            enableLrs: lrs.enable,
         }
     }
 
