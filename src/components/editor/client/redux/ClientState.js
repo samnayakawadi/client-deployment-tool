@@ -63,6 +63,12 @@ export const clientState = {
                 "assessmentFileUpload": "",
                 "assessmentQTIUpload": ""
             },
+            "lrs": {
+                "enable": false,
+                "service": "",
+                "homepage": "",
+                "token": ""
+            },
             "options": {
                 "courseStructureFinalPretestCall": false
             },

@@ -54,7 +54,14 @@ export const clientReducers = {
         }
     },
     updateServicesLrsTab: (prevState, actions) => {
-        prevState.data.services.lrs[actions.payload.name] = actions.payload.value
+
+        if (actions.payload.name === "enable") {
+            prevState.data.services.lrs.enable = !prevState.data.services.lrs.enable
+        }
+        else {
+            prevState.data.services.lrs[actions.payload.name] = actions.payload.value
+        }
+
     },
     updateServicesKeycloakTab: (prevState, actions) => {
         prevState.data.services.keycloak[actions.payload.name] = actions.payload.value

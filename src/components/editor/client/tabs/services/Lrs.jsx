@@ -18,6 +18,17 @@ const Lrs = () => {
 
     return (
         <div className="flex flex-col gap-2">
+
+            <div className="flex flex-row gap-2 items-center">
+                <div className="basis-3/12 text-center">
+                    Enable LRS
+                </div>
+                <div className="basis-9/12">
+                    {/* <input type="text" name="autoClose" value={options.autoClose} onChange={uiHandlers.updateOptionsTab} placeholder="E.g. 2000" className="input input-bordered input-secondary w-full focus:outline-none" /> */}
+                    <input type="checkbox" name="enable" checked={lrs?.enable} onClick={servicesHandlers.updateLrsTab} className="toggle toggle-success" />
+                </div>
+            </div>
+
             <div className="flex flex-row gap-2 items-center">
                 <div className="basis-3/12 text-center">
                     LRS Service
