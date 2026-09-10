@@ -93,6 +93,10 @@ export const questionAuthoringProperties = (data) => {
     lrs.homepage=${noURLProvidedString(String(services.lrs.homepage), false)}
     lrs.headers.authorization=${noURLProvidedString(String(services.lrs.token), false)}
     lrs.x-experience-api-version=1.0.0
+
+    # 2. ADD THESE TWO LINES TO BYPASS THE SELF-SIGNED CERT ERROR
+    keycloak.disable-trust-manager=true
+    keycloak.allow-any-hostname=true
   `;
 
   return properties
